@@ -1,0 +1,243 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+    scroll-behavior:smooth;
+  }
+  
+  body{
+    background:white;
+    color:#222;
+  }
+  
+  /* ================= NAVBAR ================= */
+  
+  .navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:90px;
+    padding:0 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    z-index:1000;
+    border-bottom:1px solid #eee;
+  }
+  
+  .brand{
+    display:flex;
+    align-items:center;
+    height:100%;
+  }
+  
+  .logo-img{
+    height:75px;
+    width:auto;
+    object-fit:contain;
+    display:block;
+    margin-left:-45px;
+  }
+  
+  .logo-text{
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-left:-45px;
+  }
+  
+  .navbar nav a{
+    margin:0 22px;
+    text-decoration:none;
+    color:#444;
+    font-weight:500;
+    transition:0.25s;
+  }
+  
+  .navbar nav a:hover{
+    color:#ff4b4b;
+  }
+  
+  .hire-btn{
+    background:#ff4b4b;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:6px;
+    cursor:pointer;
+  }
+  
+  .hire-btn:hover{
+    background:#e53e3e;
+  }
+  
+  /* ================= SECTIONS GENERAL ================= */
+  
+  section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:120px 80px;
+    scroll-margin-top:100px;
+  }
+  
+  section h2{
+    font-size:38px;
+    margin-bottom:25px;
+    text-align:center;
+  }
+  
+  /* ALTERNATING BACKGROUNDS */
+  
+  #home{ background:white; }
+  #about{ background:#f7f8fb; }
+  #services{ background:white; }
+  #works{ background:#f7f8fb; }
+  #contact{ background:white; }
+  
+  /* ================= HERO ================= */
+  
+  .hero{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+  }
+  
+  .hero-left{
+    max-width:520px;
+  }
+  
+  .intro{
+    color:#ff4b4b;
+    font-weight:600;
+    letter-spacing:1px;
+  }
+  
+  .hero h1{
+    font-size:58px;
+    margin:10px 0;
+  }
+  
+  .hero h2{
+    font-size: 30px;
+    color:#666;
+    margin-left: -230px;
+  }
+  
+  .hero-desc{
+    margin:20px 0 30px;
+    line-height:1.6;
+    color:#555;
+  }
+  
+  .hero-buttons button{
+    padding:14px 26px;
+    margin-right:15px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:500;
+  }
+  
+  .primary{
+    background:#ff4b4b;
+    color:white;
+    border:none;
+  }
+  
+  .primary:hover{
+    background:#e53e3e;
+  }
+  
+  .outline{
+    border:1px solid #ccc;
+    background:transparent;
+  }
+  
+  .outline:hover{
+    border-color:#ff4b4b;
+    color:#ff4b4b;
+  }
+  
+  .hero-right{
+    display:flex;
+    justify-content:flex-end; /* pushes image to right */
+    align-items:center;
+   /* controls how far right */
+  }
+  
+  
+  /* image frame */
+  .hero-right img{
+    width:500px;        /* control size */
+    height:500px;       /* rectangle shape */
+    object-fit:contain; /* keeps original face shape */
+   
+    /* fills empty sides neatly */
+          /* breathing space */
+   
+  }
+  
+  
+  /* ================= ABOUT ================= */
+  
+  .about p{
+    max-width:750px;
+    margin:auto;
+    text-align:center;
+    color:#555;
+    line-height:1.7;
+  }
+  
+  /* ================= SKILLS & PROJECTS ================= */
+  
+  .service-grid{
+    margin-top:40px;
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  
+  .service-card{
+    background:white;
+    padding:30px;
+    width:260px;
+    border-radius:12px;
+    transition:0.35s;
+    cursor:pointer;
+    text-align:center;
+  }
+  
+  .service-card:hover{
+    transform:translateY(-10px) scale(1.04);
+    box-shadow:0 18px 35px rgba(0,0,0,0.15);
+  }
+  
+  /* ================= CONTACT ================= */
+  
+  .contact p{
+    margin:15px auto 25px;
+    color:#555;
+    max-width:650px;
+    text-align:center;
+  }
+  
+  /* ================= FOOTER ================= */
+  
+  .footer{
+    text-align:center;
+    padding:30px;
+    background:#111;
+    color:#aaa;
+  }
+  
+  .project-link {
+    color:  #0C2340;        /* normal color */
+    text-decoration: none;  /* remove underline */
+    transition: color 0.3s ease;
+  }
+  
+  
