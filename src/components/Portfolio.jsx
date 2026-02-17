@@ -148,8 +148,8 @@ function Portfolio() {
     </div>
     <div className="service-card">
       <h3>
-        <Link to="/skycast" className="project-link">
-          SkyCast
+        <Link to="/car" className="project-link">
+          Neo Wheels 
         </Link>
       </h3>
       <p>
