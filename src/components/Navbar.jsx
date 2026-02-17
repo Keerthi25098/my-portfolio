@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import Logo from "../assets/logo.png";
 import "./Navbar.css";
 
 function Navbar() {
   return (
     <header className="navbar">
       <div className="brand">
-        <img src={logo} alt="logo" className="logo-img" />
+        <img src={Logo} alt="logo" className="logo-img" />
         <span className="logo-text">OWLORO</span>
       </div>
 
