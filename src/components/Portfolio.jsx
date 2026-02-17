@@ -100,34 +100,49 @@ function Portfolio() {
         </div>
       </section>
 
+{/* PROJECTS */}
+<section id="works" className="services">
+  <h2>My Projects</h2>
 
-      {/* PROJECTS */}
-      <section id="works" className="services">
-        <h2>My Projects</h2>
+  <div className="service-grid">
 
-        <div className="service-grid">
-        <div className="service-card">
-  <h3 id="dual">
-    <Link to="/dual" className="project-link">
-      Intern Management System
-    </Link>
-  </h3>
+    {/* Intern Management */}
+    <div className="service-card">
+      <h3>
+        <Link to="/dual" className="project-link">
+          Intern Management System
+        </Link>
+      </h3>
+      <p>Website for task assignment & tracking using React and LocalStorage</p>
+    </div>
 
-  <p>Website for task assignment & tracking using React and LocalStorage</p>
-</div>
+    {/* Employee Management */}
+    <div className="service-card">
+      <h3>Employee Management System</h3>
+      <p>CRUD operations using React.js & Material UI</p>
+    </div>
 
+    {/* E-Vehicle Platform */}
+    <div className="service-card">
+      <h3>E-Vehicle Platform</h3>
+      <p>Vehicle listing & charging station locator interface</p>
+    </div>
 
-          <div className="service-card">
-            <h3>Employee Management System</h3>
-            <p>CRUD operations using React.js & Material UI</p>
-          </div>
+    {/* ✅ NEW SkyCast Project */}
+    <div className="service-card">
+      <h3>
+        <Link to="/skycast" className="project-link">
+          SkyCast
+        </Link>
+      </h3>
+      <p>
+        A simple React weather application that fetches real-time weather data using an API.
+      </p>
+    </div>
 
-          <div className="service-card">
-            <h3>E-Vehicle Platform</h3>
-            <p>Vehicle listing & charging station locator interface</p>
-          </div>
-        </div>
-      </section>
+  </div>
+</section>
+
 
 
       {/* FOOTER */}
