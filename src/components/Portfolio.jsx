@@ -118,7 +118,9 @@ function Portfolio() {
 
     {/* Employee Management */}
     <div className="service-card">
-      <h3>Employee Management System</h3>
+      <h3><Link to="/owlix" className="project-link">
+          Employee HUB
+        </Link></h3>
       <p>CRUD operations using React.js & Material UI</p>
     </div>
 

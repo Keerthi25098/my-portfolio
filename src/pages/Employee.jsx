@@ -1,16 +1,16 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import "./ProjectDetails.css";
-import poster from "../assets/poster.png";
 
-function Weather() {
+
+function Employee() {
   return (
     <>
       <Navbar />
 
       <div className="project-container">
         {/* Project Title */}
-        <h1>SkyCast</h1>
+        <h1>Owlix</h1>
 
         {/* Short Project Description */}
         
@@ -23,12 +23,12 @@ function Weather() {
 
         {/* Buttons */}
         <div className="project-buttons">
-          <a href="https://github.com/Keerthi25098/SkyCast" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-          <a href="https://skycastify.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <a href="https://github.com/Keerthi25098/Owlix" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          <a href="https://owlix.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
         </div>
       </div>
     </>
   );
 }
 
-export default Weather;
+export default Employee;

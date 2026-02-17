@@ -4,6 +4,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/about";
 import Ecommerce from "./pages/Ecommerce";
 import Weather from "./pages/Weather";
+import Employee from "./pages/Employee";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
          <Route path="/about" element={<About />} />
          <Route path="/dual" element={<Ecommerce />} />
          <Route path="/skycast" element={<Weather />} />
+         <Route path="/owlix" element={<Employee />} />
       </Routes>
     </BrowserRouter>
     

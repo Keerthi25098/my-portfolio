@@ -24,7 +24,7 @@ function Ecommerce() {
         {/* Buttons */}
         <div className="project-buttons">
           <a href="https://github.com/Keerthi25098/OwlTracKR" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-          <a href="https://singular-kheer-76d349.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <a href="https://owltrackr.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
         </div>
       </div>
     </>
