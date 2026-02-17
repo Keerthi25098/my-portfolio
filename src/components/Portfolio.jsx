@@ -136,6 +136,26 @@ function Portfolio() {
         A simple React weather application that fetches real-time weather data using an API.
       </p>
     </div>
+    <div className="service-card">
+      <h3>
+      <Link to="/calc" className="project-link">
+          CalcVerse
+        </Link>
+      </h3>
+      <p>
+      A smart all-in-one web app
+      </p>
+    </div>
+    <div className="service-card">
+      <h3>
+        <Link to="/skycast" className="project-link">
+          SkyCast
+        </Link>
+      </h3>
+      <p>
+        A simple React weather application that fetches real-time weather data using an API.
+      </p>
+    </div>
 
   </div>
 </section>
