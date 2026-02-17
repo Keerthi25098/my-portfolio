@@ -161,24 +161,24 @@
     color:#ff4b4b;
   }
   
-  .hero-right{
-    display:flex;
-    justify-content:flex-end; /* pushes image to right */
-    align-items:center;
-   /* controls how far right */
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
   }
-  
-  
-  /* image frame */
   .hero-right img{
-    width:500px;        /* control size */
-    height:500px;       /* rectangle shape */
-    object-fit:contain; /* keeps original face shape */
-   
-    /* fills empty sides neatly */
-          /* breathing space */
-   
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 50%;
+  
+    transform: translateY(10px);   /* move slightly DOWN */
+  
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border: 6px solid #ffffff;
   }
+  
   
   
   /* ================= ABOUT ================= */

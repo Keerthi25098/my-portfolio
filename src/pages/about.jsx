@@ -51,7 +51,7 @@ function About() {
       </section>
 
     </div>
-    <Ecommerce/>
+  
     
     </>
   );

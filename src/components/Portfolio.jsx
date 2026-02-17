@@ -3,8 +3,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Portfolio.css";
-import profile from "../assets/profile.jpg";
-import logo from "../assets/logo.png";
+import profile from "../assets/profile.jpg"
+import logo from "../assets/Logo.png";
 
 function Portfolio() {
 
@@ -90,12 +90,12 @@ function Portfolio() {
 
           <div className="service-card">
             <h3>UI Frameworks</h3>
-            <p>Tailwind CSS, Material UI, Responsive Design</p>
+            <p>Bootstrap, Tailwind CSS</p>
           </div>
 
           <div className="service-card">
             <h3>Tools & Others</h3>
-            <p>Git, GitHub, Figma, REST APIs</p>
+            <p>Git, GitHub, Figma, Canva, Netlify,</p>
           </div>
         </div>
       </section>
@@ -121,14 +121,9 @@ function Portfolio() {
       <h3><Link to="/owlix" className="project-link">
           Employee HUB
         </Link></h3>
-      <p>CRUD operations using React.js & Material UI</p>
+      <p>CRUD operations using React.js </p>
     </div>
 
-    {/* E-Vehicle Platform */}
-    <div className="service-card">
-      <h3>E-Vehicle Platform</h3>
-      <p>Vehicle listing & charging station locator interface</p>
-    </div>
 
     {/* ✅ NEW SkyCast Project */}
     <div className="service-card">

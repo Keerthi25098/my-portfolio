@@ -13,13 +13,14 @@ function Employee() {
         <h1>Owlix</h1>
 
         {/* Short Project Description */}
-        
         <p className="project-desc">
-          A role-based intern management website with separate dashboards for
-          trainer and interns. Trainers can assign tasks and review submissions,
-          while interns can view tasks, submit work and track status.
-          Built using React, JavaScript and LocalStorage with a clean responsive UI.
-        </p>
+  Owlix is an employee management web application that allows users to add,
+  update, delete, and search employee records efficiently. The system provides
+  an organized interface to manage employee details and instantly view changes.
+  Built using React and JavaScript with LocalStorage for data persistence,
+  the application features a clean, responsive, and user-friendly UI.
+</p>
+
 
         {/* Buttons */}
         <div className="project-buttons">

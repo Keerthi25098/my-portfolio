@@ -15,10 +15,7 @@ function Weather() {
         {/* Short Project Description */}
         
         <p className="project-desc">
-          A role-based intern management website with separate dashboards for
-          trainer and interns. Trainers can assign tasks and review submissions,
-          while interns can view tasks, submit work and track status.
-          Built using React, JavaScript and LocalStorage with a clean responsive UI.
+        A simple weather forecasting web application that displays real-time weather information for searched cities. The app fetches live data from external weather APIs using secure API keys and presents temperature, humidity, wind speed, and weather conditions in a clean and responsive user interface. Developed using modern web technologies with dynamic data handling and user-friendly search functionality.
         </p>
 
         {/* Buttons */}
