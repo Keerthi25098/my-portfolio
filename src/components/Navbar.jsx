@@ -14,7 +14,8 @@ function Navbar() {
       <nav>
         <Link to="/">Home</Link>
         <a href="/#services">Skills</a>
-        <a href="/#works">Projects</a>
+       
+        <Link to="/projects">Projects</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
       </nav>

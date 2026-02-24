@@ -7,7 +7,8 @@ import Weather from "./pages/Weather";
 import Employee from "./pages/Employee";
 import Calculator from "./pages/Calculator";
 import Car from "./pages/Car";
-
+import ProjectPage from "./pages/Projects";
+import MyJourney from "./pages/MyJourney";
 function App() {
   return (
    
@@ -16,11 +17,13 @@ function App() {
         <Route path="/" element={<Portfolio />} />
         <Route path="/Contact" element={<Contact />} />
          <Route path="/about" element={<About />} />
+         <Route path="/projects" element={<ProjectPage />} />
          <Route path="/dual" element={<Ecommerce />} />
          <Route path="/skycast" element={<Weather />} />
          <Route path="/owlix" element={<Employee />} />
          <Route path="/calc" element={<Calculator />} />
          <Route path="/car" element={<Car />} />
+         <Route path="/journey" element={<MyJourney />} />
       </Routes>
     </BrowserRouter>
     

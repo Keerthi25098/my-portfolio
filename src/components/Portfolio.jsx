@@ -1,25 +1,21 @@
-
-
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Portfolio.css";
-import profile from "../assets/profile.jpg"
+import profile from "../assets/profile.jpg";
 import logo from "../assets/Logo.png";
 
 function Portfolio() {
+  const navigate = useNavigate();
 
-  const goToWorks = () => {
-    document.getElementById("works").scrollIntoView({ behavior: "smooth" });
+  // Open resume in a new tab
+  const handleViewResume = () => {
+    window.open("/Resume_Keerthika_KT.pdf", "_blank");
   };
 
-  // View Resume (from public folder)
-  const handleResume = () => {
-    window.open("/Keerthika_Resume.pdf", "_blank");
-  };
+ 
 
   return (
     <div className="website">
-
       {/* NAVBAR */}
       <header className="navbar">
         <div className="brand">
@@ -30,9 +26,7 @@ function Portfolio() {
         <nav>
           <a href="#home">Home</a>
           <a href="#services">Skills</a>
-          <a href="#works">Projects</a>
-
-          {/* Page Navigation */}
+          <Link to="/projects">Projects</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </nav>
@@ -44,13 +38,10 @@ function Portfolio() {
         </button>
       </header>
 
-
       {/* HERO */}
       <section id="home" className="hero">
-
         <div className="hero-left">
           <p className="intro">Hello, I'm</p>
-
           <h1>Keerthika K T</h1>
           <h2>Frontend Developer</h2>
 
@@ -61,22 +52,22 @@ function Portfolio() {
           </p>
 
           <div className="hero-buttons">
-            <button className="primary" onClick={goToWorks}>
-              View Projects
+            <button className="primary" onClick={() => navigate("/journey")}>
+              My Journey
             </button>
 
-            <button className="outline" onClick={handleResume}>
+            <button className="outline" onClick={handleViewResume}>
               View Resume
             </button>
+
+         
           </div>
         </div>
 
         <div className="hero-right">
           <img src={profile} alt="Keerthika profile" />
         </div>
-
       </section>
-
 
       {/* SKILLS */}
       <section id="services" className="services">
@@ -95,78 +86,15 @@ function Portfolio() {
 
           <div className="service-card">
             <h3>Tools & Others</h3>
-            <p>Git, GitHub, Figma, Canva, Netlify,</p>
+            <p>Git, GitHub, Figma, Canva, Netlify</p>
           </div>
         </div>
       </section>
-
-{/* PROJECTS */}
-<section id="works" className="services">
-  <h2>My Projects</h2>
-
-  <div className="service-grid">
-
-    {/* Intern Management */}
-    <div className="service-card">
-      <h3>
-        <Link to="/dual" className="project-link">
-          Intern Management System
-        </Link>
-      </h3>
-      <p>Website for task assignment & tracking using React and LocalStorage</p>
-    </div>
-
-    {/* Employee Management */}
-    <div className="service-card">
-      <h3><Link to="/owlix" className="project-link">
-          Employee HUB
-        </Link></h3>
-      <p>CRUD operations using React.js </p>
-    </div>
-
-
-    {/* ✅ NEW SkyCast Project */}
-    <div className="service-card">
-      <h3>
-        <Link to="/skycast" className="project-link">
-          SkyCast
-        </Link>
-      </h3>
-      <p>
-        A simple React weather application that fetches real-time weather data using an API.
-      </p>
-    </div>
-    <div className="service-card">
-      <h3>
-      <Link to="/calc" className="project-link">
-          CalcVerse
-        </Link>
-      </h3>
-      <p>
-      A smart all-in-one web app
-      </p>
-    </div>
-    <div className="service-card">
-      <h3>
-        <Link to="/car" className="project-link">
-          Neo Wheels 
-        </Link>
-      </h3>
-      <p>
-        A simple React weather application that fetches real-time weather data using an API.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
 
       {/* FOOTER */}
       <footer className="footer">
         © 2026 Keerthika K T — React Frontend Developer
       </footer>
-
     </div>
   );
 }

@@ -21,8 +21,8 @@ function Car() {
 
         {/* Buttons */}
         <div className="project-buttons">
-          <a href="https://github.com/Keerthi25098/NEO_Wheelss" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-          <a href="https://neo-wheels.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <a href="https://github.com/Keerthi25098/NEO_Wheels-2.0" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          <a href="https://neo-wheels-2-0.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
         </div>
       </div>
     </>
