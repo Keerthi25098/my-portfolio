@@ -4,19 +4,19 @@ import Navbar from "../components/Navbar";
 export default function MyJourney() {
   const journey = [
     {
-      year: "2012 - 2018",
+      year: "2007 - 2022",
       title: "School Education",
-      description: "Completed my schooling with a focus on science and mathematics, developing foundational skills in problem-solving and logical thinking.",
+      description: "Completed my schooling with a focus on computer and mathematics, developing foundational skills in problem-solving and logical thinking.",
     },
     {
-      year: "2018 - 2022",
+      year: "2022 - 2026",
       title: "Bachelor's Degree",
-      description: "Pursued B.E in Computer Science Engineering at Arunachala College of Engineering. Learned full-stack development, OOP, data structures, and algorithms.",
+      description: "Pursuing B.E in Computer Science Engineering at Arunachala College of Engineering. Learned full-stack development, OOP, data structures, and algorithms.",
     },
     {
       year: "2023 - 2025",
       title: "Internships & Training",
-      description: "Completed multiple internships in web development, including a 3-month internship at Cybackers Tech Solutions in Coimbatore. Gained practical experience in React, Flutter, Firebase, and UI/UX design.",
+      description: "Completed multiple internships in web development, including a 3-month internship at IBacus Tech Solutions in Coimbatore. Gained practical experience in React, Firebase, and UI/UX design.",
     },
     {
       year: "2025",
