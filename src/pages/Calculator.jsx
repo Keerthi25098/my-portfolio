@@ -8,7 +8,7 @@ function Calculator() {
     <>
       <Navbar />
 
-      <div className="project-container">
+      <div className="project-container"> 
         {/* Project Title */}
         <h1>CalcVerse</h1>
 

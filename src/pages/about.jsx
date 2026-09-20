@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.css";
-import profile from "../assets/profile.jpg";
+import profile from "../assets/profile.png";
 import Navbar from "../components/Navbar";
 import Ecommerce from "./Ecommerce";
 
