@@ -32,16 +32,16 @@ import cloudi5Development from "../assets/journey/currently.jpeg";
 // PROJECT IMAGES
 // =====================================================
 
-import grindoImage from "../assets/journey/currently.jpeg";
-import choteKisanImage from "../assets/journey/currently.jpeg";
-import hireMindsImage from "../assets/journey/currently.jpeg";
-import tryZoneImage from "../assets/journey/currently.jpeg";
-import akshithaImage from "../assets/journey/currently.jpeg";
-import owltrackrImage from "../assets/journey/currently.jpeg";
-import employeeHubImage from "../assets/journey/currently.jpeg";
-import skycastImage from "../assets/journey/currently.jpeg";
-import neoWheelsImage from "../assets/journey/currently.jpeg";
-import calcVerseImage from "../assets/journey/currently.jpeg";
+import grindoImage from "../assets/grindo.jpeg";
+import choteKisanImage from "../assets/chotekisan.jpeg";
+import hireMindsImage from "../assets/hireminds.jpeg";
+import tryZoneImage from "../assets/tryzone.jpeg";
+import akshithaImage from "../assets/akshitha.jpeg";
+import owltrackrImage from "../assets/owltrakr.jpeg";
+import employeeHubImage from "../assets/owlix.jpeg";
+import skycastImage from "../assets/weather.jpeg";
+import neoWheelsImage from "../assets/neo.jpeg";
+import calcVerseImage from "../assets/calcverse.jpeg";
 
 // =====================================================
 // JOURNEY DATA
@@ -381,7 +381,6 @@ const ArrowButton = ({
         onClick={onClick}
       >
         <span className="button__icon-wrapper">
-
           <svg
             viewBox="0 0 14 15"
             fill="none"
@@ -407,7 +406,6 @@ const ArrowButton = ({
               fill="currentColor"
             />
           </svg>
-
         </span>
 
         {children}
@@ -415,29 +413,20 @@ const ArrowButton = ({
     );
   }
 
+  const isExternal =
+    href &&
+    (href.startsWith("http://") || href.startsWith("https://"));
+
   return (
     <a
       href={href}
       className={`button ${className}`}
       style={{ "--clr": "#7808d0" }}
-      download={download ? true : undefined}
-      target={
-        href &&
-        (href.startsWith("http://") ||
-          href.startsWith("https://"))
-          ? "_blank"
-          : undefined
-      }
-      rel={
-        href &&
-        (href.startsWith("http://") ||
-          href.startsWith("https://"))
-          ? "noopener noreferrer"
-          : undefined
-      }
+      download={download || undefined}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
     >
       <span className="button__icon-wrapper">
-
         <svg
           viewBox="0 0 14 15"
           fill="none"
@@ -463,7 +452,6 @@ const ArrowButton = ({
             fill="currentColor"
           />
         </svg>
-
       </span>
 
       {children}
@@ -508,37 +496,25 @@ const Portfolio = () => {
       ===================================================== */}
 
       <section className="hero" id="home">
-
         <div className="hero-bg"></div>
 
         <header className="hero-navbar">
-
           <a href="#home" className="hero-logo">
             K<span>.</span>
           </a>
 
           <nav className="hero-nav">
-
             <a href="#home" className="nav-active">
               Home
             </a>
 
-            <a href="#work">
-              Work
-            </a>
+            <a href="#work">Work</a>
 
-            <a href="#about">
-              About
-            </a>
+            <a href="#about">About</a>
 
-            <a href="#education">
-              Education
-            </a>
+            <a href="#education">Education</a>
 
-            <a href="#skills">
-              Skills
-            </a>
-
+            <a href="#skills">Skills</a>
           </nav>
 
           {/* =================================================
@@ -546,28 +522,20 @@ const Portfolio = () => {
           ================================================= */}
 
           <ArrowButton
-            href="/Keerthika-KT-Resume.pdf"
-            download={true}
+            href="/resumee-keerthika.pdf"
+            download="resumee-keerthika.pdf"
             className="download-cv-button"
           >
             Download CV
           </ArrowButton>
-
         </header>
 
         <main className="hero-main">
-
           <div className="hero-editorial">
-
             <div className="hero-copy">
+              <p className="hero-greeting">Hello, I'm</p>
 
-              <p className="hero-greeting">
-                Hello, I'm
-              </p>
-
-              <h1 className="hero-name">
-                Keerthika KT
-              </h1>
+              <h1 className="hero-name">Keerthika KT</h1>
 
               <div className="hero-role">
                 <span>Frontend</span>
@@ -583,17 +551,13 @@ const Portfolio = () => {
               </p>
 
               <div className="hero-buttons">
-
                 <ArrowButton href="#work">
                   View projects
                 </ArrowButton>
-
               </div>
-
             </div>
 
             <div className="hero-visual">
-
               <img
                 src={blob}
                 alt=""
@@ -602,21 +566,15 @@ const Portfolio = () => {
               />
 
               <div className="profile-image-card">
-
                 <img
                   src={profile}
                   alt="Keerthika"
                   className="hero-image"
                 />
-
               </div>
-
             </div>
-
           </div>
-
         </main>
-
       </section>
 
       {/* =====================================================
@@ -624,12 +582,10 @@ const Portfolio = () => {
       ===================================================== */}
 
       {showContactModal && (
-
         <div
           className="contact-modal-overlay"
           onClick={() => setShowContactModal(false)}
         >
-
           <div
             className="contact-modal"
             role="dialog"
@@ -637,11 +593,7 @@ const Portfolio = () => {
             aria-labelledby="contact-modal-title"
             onClick={(event) => event.stopPropagation()}
           >
-
-            {/* MODAL TOP */}
-
             <div className="contact-modal-top">
-
               <span className="contact-modal-label">
                 LET'S CONNECT
               </span>
@@ -654,19 +606,12 @@ const Portfolio = () => {
               >
                 ×
               </button>
-
             </div>
 
-            {/* MODAL INTRO */}
-
             <div className="contact-modal-intro">
-
-              <div className="contact-modal-number">
-                01
-              </div>
+              <div className="contact-modal-number">01</div>
 
               <div>
-
                 <h2 id="contact-modal-title">
                   Let’s connect<span>.</span>
                 </h2>
@@ -675,43 +620,25 @@ const Portfolio = () => {
                   Have a project, opportunity or simply want to
                   say hello? Feel free to reach out.
                 </p>
-
               </div>
-
             </div>
 
-            {/* PERSONAL DETAILS */}
-
             <div className="contact-profile">
-
               <div className="contact-profile-image">
-
                 <img
                   src={profile}
                   alt="Keerthika KT"
                 />
-
               </div>
 
               <div className="contact-profile-info">
+                <h3>Keerthika KT</h3>
 
-                <h3>
-                  Keerthika KT
-                </h3>
+                <p>Frontend / Web Developer</p>
 
-                <p>
-                  Frontend / Web Developer
-                </p>
-
-                <span>
-                  Coimbatore, Tamil Nadu
-                </span>
-
+                <span>Coimbatore, Tamil Nadu</span>
               </div>
-
             </div>
-
-            {/* CONTACT DETAILS */}
 
             <div className="contact-modal-details">
 
@@ -721,16 +648,13 @@ const Portfolio = () => {
                 href="mailto:keerthikeerthi32155@gmail.com"
                 className="contact-modal-item"
               >
-
                 <div className="contact-item-icon">
-
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-
                     <rect
                       x="3"
                       y="5"
@@ -748,27 +672,18 @@ const Portfolio = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
-
                   </svg>
-
                 </div>
 
                 <div className="contact-item-content">
-
-                  <span>
-                    EMAIL
-                  </span>
+                  <span>EMAIL</span>
 
                   <strong>
                     keerthikeerthi32155@gmail.com
                   </strong>
-
                 </div>
 
-                <span className="contact-item-arrow">
-                  ↗
-                </span>
-
+                <span className="contact-item-arrow">↗</span>
               </a>
 
               {/* LINKEDIN */}
@@ -779,16 +694,13 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="contact-modal-item"
               >
-
                 <div className="contact-item-icon">
-
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-
                     <rect
                       x="4"
                       y="4"
@@ -826,42 +738,30 @@ const Portfolio = () => {
                       strokeWidth="1.7"
                       strokeLinecap="round"
                     />
-
                   </svg>
-
                 </div>
 
                 <div className="contact-item-content">
-
-                  <span>
-                    LINKEDIN
-                  </span>
+                  <span>LINKEDIN</span>
 
                   <strong>
                     linkedin.com/in/keerthika25
                   </strong>
-
                 </div>
 
-                <span className="contact-item-arrow">
-                  ↗
-                </span>
-
+                <span className="contact-item-arrow">↗</span>
               </a>
 
               {/* LOCATION */}
 
               <div className="contact-modal-item contact-static-item">
-
                 <div className="contact-item-icon">
-
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-
                     <path
                       d="M12 21C12 21 19 14.5 19 8.5C19 4.91 15.87 2 12 2C8.13 2 5 4.91 5 8.5C5 14.5 12 21 12 21Z"
                       stroke="currentColor"
@@ -875,38 +775,28 @@ const Portfolio = () => {
                       stroke="currentColor"
                       strokeWidth="1.7"
                     />
-
                   </svg>
-
                 </div>
 
                 <div className="contact-item-content">
-
-                  <span>
-                    LOCATION
-                  </span>
+                  <span>LOCATION</span>
 
                   <strong>
                     Coimbatore, Tamil Nadu
                   </strong>
-
                 </div>
-
               </div>
 
               {/* ROLE */}
 
               <div className="contact-modal-item contact-static-item">
-
                 <div className="contact-item-icon">
-
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-
                     <rect
                       x="3"
                       y="7"
@@ -934,46 +824,27 @@ const Portfolio = () => {
                       stroke="currentColor"
                       strokeWidth="1.7"
                     />
-
                   </svg>
-
                 </div>
 
                 <div className="contact-item-content">
+                  <span>ROLE</span>
 
-                  <span>
-                    ROLE
-                  </span>
-
-                  <strong>
-                    Web Developer
-                  </strong>
-
+                  <strong>Web Developer</strong>
                 </div>
-
               </div>
-
             </div>
 
-            {/* MODAL FOOTER */}
-
             <div className="contact-modal-footer">
-
-              <span>
-                OPEN TO NEW OPPORTUNITIES
-              </span>
+              <span>OPEN TO NEW OPPORTUNITIES</span>
 
               <span className="contact-status">
                 <span></span>
                 Available to connect
               </span>
-
             </div>
-
           </div>
-
         </div>
-
       )}
 
       {/* =====================================================
@@ -984,11 +855,8 @@ const Portfolio = () => {
         className="journey-section"
         id="about"
       >
-
         <div className="journey-intro">
-
           <div className="journey-intro-inner">
-
             <span className="name">
               ABOUT MY JOURNEY
             </span>
@@ -1006,26 +874,19 @@ const Portfolio = () => {
               and a constant desire to learn, build and explore
               new possibilities.
             </p>
-
           </div>
-
         </div>
 
         <div className="journey-timeline">
-
           {journeySteps.map((step) => (
-
             <article
               className="journey-step"
               key={step.number}
             >
-
               <div className="step-content">
-
                 <div className="step-text">
 
                   <div className="step-company">
-
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -1033,7 +894,6 @@ const Portfolio = () => {
                       className="location-icon"
                       aria-hidden="true"
                     >
-
                       <path
                         d="M12 21C12 21 19 14.5 19 8.5C19 4.91 15.87 2 12 2C8.13 2 5 4.91 5 8.5 5 14.5 12 21 12 21Z"
                         stroke="currentColor"
@@ -1047,22 +907,14 @@ const Portfolio = () => {
                         stroke="currentColor"
                         strokeWidth="1.8"
                       />
-
                     </svg>
 
-                    <span>
-                      {step.company}
-                    </span>
-
+                    <span>{step.company}</span>
                   </div>
 
-                  <h3>
-                    {step.title}
-                  </h3>
+                  <h3>{step.title}</h3>
 
-                  <p>
-                    {step.description}
-                  </p>
+                  <p>{step.description}</p>
 
                   <ArrowButton
                     href={step.certificate}
@@ -1070,35 +922,25 @@ const Portfolio = () => {
                   >
                     View Certificate
                   </ArrowButton>
-
                 </div>
 
                 <div className="step-image-wrapper">
-
                   <div className="journey-image-card">
-
                     <img
                       src={step.image}
                       alt={`${step.title} at ${step.company}`}
                       className="journey-step-image"
                     />
-
                   </div>
 
                   <div className="step-image-number">
                     {step.number}
                   </div>
-
                 </div>
-
               </div>
-
             </article>
-
           ))}
-
         </div>
-
       </section>
 
       {/* =====================================================
@@ -1109,9 +951,7 @@ const Portfolio = () => {
         className="education-section"
         id="education"
       >
-
         <div className="education-heading">
-
           <span className="education-label">
             03 — EDUCATION
           </span>
@@ -1125,7 +965,6 @@ const Portfolio = () => {
             computer science while helping me develop a continuous
             interest in technology and web development.
           </p>
-
         </div>
 
         <div className="education-list">
@@ -1133,16 +972,13 @@ const Portfolio = () => {
           {/* SCHOOL */}
 
           <article className="education-item">
-
             <div className="education-icon">
-
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
               >
-
                 <path
                   d="M3 21V10L12 4L21 10V21"
                   stroke="currentColor"
@@ -1172,13 +1008,10 @@ const Portfolio = () => {
                   strokeWidth="1.7"
                   strokeLinecap="round"
                 />
-
               </svg>
-
             </div>
 
             <div className="education-content">
-
               <span className="education-type">
                 SCHOOL EDUCATION
               </span>
@@ -1192,34 +1025,27 @@ const Portfolio = () => {
               </p>
 
               <p>
-                Completed my schooling at{" "}
+                Completed my{" "}
                 <strong>
-                  S.M. Matric Hr. Sec. School, Mylaudy
+                  schooling at S.M. Matric Hr. Sec. School, Mylaudy
                 </strong>
                 , with{" "}
-                <strong>
-                  above 80% marks
-                </strong>{" "}
+                <strong>above 80% marks</strong>{" "}
                 in both 10th and 12th examinations.
               </p>
-
             </div>
-
           </article>
 
           {/* COLLEGE */}
 
           <article className="education-item">
-
             <div className="education-icon">
-
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
               >
-
                 <path
                   d="M3 9L12 4L21 9L12 14L3 9Z"
                   stroke="currentColor"
@@ -1249,13 +1075,10 @@ const Portfolio = () => {
                   r="1"
                   fill="currentColor"
                 />
-
               </svg>
-
             </div>
 
             <div className="education-content">
-
               <span className="education-type">
                 UNDERGRADUATE DEGREE
               </span>
@@ -1275,18 +1098,12 @@ const Portfolio = () => {
                   and Engineering
                 </strong>{" "}
                 with a{" "}
-                <strong>
-                  CGPA of 8.5
-                </strong>
+                <strong>CGPA of 8.5</strong>
                 , graduating in 2026.
               </p>
-
             </div>
-
           </article>
-
         </div>
-
       </section>
 
       {/* =====================================================
@@ -1297,9 +1114,7 @@ const Portfolio = () => {
         className="skills-section"
         id="skills"
       >
-
         <div className="skills-heading">
-
           <span className="skills-label">
             04 — SKILLS
           </span>
@@ -1307,19 +1122,15 @@ const Portfolio = () => {
           <h2>
             What I <span>work with.</span>
           </h2>
-
         </div>
 
         <div className="skills-slider">
-
           <div className="skills-track">
 
             {skills.map((skill, index) => (
-
               <React.Fragment
                 key={`skill-first-${index}`}
               >
-
                 <button
                   type="button"
                   className={`skill-item ${
@@ -1331,7 +1142,6 @@ const Portfolio = () => {
                     setSelectedSkill(skill.name)
                   }
                 >
-
                   <img
                     src={skill.logo}
                     alt=""
@@ -1339,27 +1149,20 @@ const Portfolio = () => {
                     aria-hidden="true"
                   />
 
-                  <span>
-                    {skill.name}
-                  </span>
-
+                  <span>{skill.name}</span>
                 </button>
 
                 <span
                   className="skill-separator"
                   aria-hidden="true"
                 ></span>
-
               </React.Fragment>
-
             ))}
 
             {skills.map((skill, index) => (
-
               <React.Fragment
                 key={`skill-second-${index}`}
               >
-
                 <button
                   type="button"
                   className={`skill-item ${
@@ -1371,7 +1174,6 @@ const Portfolio = () => {
                     setSelectedSkill(skill.name)
                   }
                 >
-
                   <img
                     src={skill.logo}
                     alt=""
@@ -1379,31 +1181,21 @@ const Portfolio = () => {
                     aria-hidden="true"
                   />
 
-                  <span>
-                    {skill.name}
-                  </span>
-
+                  <span>{skill.name}</span>
                 </button>
 
                 <span
                   className="skill-separator"
                   aria-hidden="true"
                 ></span>
-
               </React.Fragment>
-
             ))}
-
           </div>
-
         </div>
 
         {selectedSkill && (
-
           <div className="skill-details">
-
             <div className="skill-details-top">
-
               <span className="skill-details-label">
                 SELECTED SKILL
               </span>
@@ -1418,33 +1210,23 @@ const Portfolio = () => {
               >
                 ×
               </button>
-
             </div>
 
             <div className="skill-details-content">
-
               <div className="skill-details-number">
                 04
               </div>
 
               <div>
-
-                <h3>
-                  {selectedSkill}
-                </h3>
+                <h3>{selectedSkill}</h3>
 
                 <p>
                   {skillDescriptions[selectedSkill]}
                 </p>
-
               </div>
-
             </div>
-
           </div>
-
         )}
-
       </section>
 
       {/* =====================================================
@@ -1455,11 +1237,8 @@ const Portfolio = () => {
         className="work-section"
         id="work"
       >
-
         <div className="work-heading">
-
           <div>
-
             <span className="work-label">
               05 — MY WORK
             </span>
@@ -1467,7 +1246,6 @@ const Portfolio = () => {
             <h2>
               Things I’ve <span>built.</span>
             </h2>
-
           </div>
 
           <p className="work-intro">
@@ -1475,20 +1253,15 @@ const Portfolio = () => {
             experimenting and working with modern frontend
             technologies.
           </p>
-
         </div>
 
         <div className="projects-grid">
-
           {projects.map((project) => (
-
             <article
               className="project-card"
               key={project.number}
             >
-
               <div className="project-image-wrapper">
-
                 <img
                   src={project.image}
                   alt={`${project.title} project`}
@@ -1502,38 +1275,25 @@ const Portfolio = () => {
                 <div className="project-category">
                   {project.category}
                 </div>
-
               </div>
 
               <div className="project-content">
+                <h3>{project.title}</h3>
 
-                <h3>
-                  {project.title}
-                </h3>
-
-                <p>
-                  {project.description}
-                </p>
+                <p>{project.description}</p>
 
                 <div className="project-links">
-
                   <ArrowButton
                     href={project.live}
                     className="project-button"
                   >
                     Live Demo
                   </ArrowButton>
-
                 </div>
-
               </div>
-
             </article>
-
           ))}
-
         </div>
-
       </section>
 
       {/* =====================================================
@@ -1544,11 +1304,8 @@ const Portfolio = () => {
         className="footer-section"
         id="contact"
       >
-
         <div className="footer-top">
-
           <div className="footer-heading">
-
             <h2>
               Let’s build something
               <br />
@@ -1560,7 +1317,6 @@ const Portfolio = () => {
               and adapt to new environments. I enjoy taking on new
               challenges and continuously improving as a developer.
             </p>
-
           </div>
 
           <div className="footer-contact">
@@ -1571,7 +1327,6 @@ const Portfolio = () => {
               href="mailto:keerthikeerthi32155@gmail.com"
               className="footer-contact-item"
             >
-
               <span className="footer-contact-label">
                 EMAIL
               </span>
@@ -1579,7 +1334,6 @@ const Portfolio = () => {
               <span className="footer-contact-value">
                 keerthikeerthi32155@gmail.com
               </span>
-
             </a>
 
             {/* LINKEDIN */}
@@ -1590,7 +1344,6 @@ const Portfolio = () => {
               rel="noopener noreferrer"
               className="footer-contact-item"
             >
-
               <span className="footer-contact-label">
                 LINKEDIN
               </span>
@@ -1598,7 +1351,6 @@ const Portfolio = () => {
               <span className="footer-contact-value">
                 linkedin.com/in/keerthika25
               </span>
-
             </a>
 
             {/* GITHUB */}
@@ -1609,7 +1361,6 @@ const Portfolio = () => {
               rel="noopener noreferrer"
               className="footer-contact-item"
             >
-
               <span className="footer-contact-label">
                 GITHUB
               </span>
@@ -1617,15 +1368,11 @@ const Portfolio = () => {
               <span className="footer-contact-value">
                 github.com/Keerthi25098
               </span>
-
             </a>
 
           </div>
-
         </div>
-
       </footer>
-
     </>
   );
 };
