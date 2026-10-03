@@ -29,7 +29,6 @@ exports.handler = async (event, context) => {
 
         // If Resend API key is configured, send transactional email via API
         if (resendApiKey) {
-            const fetch = (await import('node-fetch')).default;
             const response = await fetch('https://api.resend.com/emails', {
                 method: 'POST',
                 headers: {
