@@ -1,0 +1,450 @@
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+.about-section {
+    position: relative;
+
+    /* Do NOT force the section to exactly 100vh */
+    min-height: 100vh;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+
+    background: var(--bg-secondary);
+
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+
+    /*
+       Extra top padding gives breathing space above
+       the "About Me" pill.
+    */
+    padding: 7rem 0 5rem;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+}
+
+/* =====================================================
+   ABOUT GRID
+===================================================== */
+
+.about-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 3rem;
+
+    align-items: center;
+}
+
+/* =====================================================
+   LEFT PROFILE COLUMN
+===================================================== */
+
+.about-visual-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-card {
+    width: 100%;
+    max-width: 400px;
+
+    padding: 1.1rem;
+
+    border-radius: var(--radius-xl);
+
+    border: 1px solid var(--glass-border);
+
+    box-shadow: var(--shadow-lg);
+
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   PROFILE IMAGE
+===================================================== */
+
+.about-img-frame {
+    width: 100%;
+
+    /*
+       Smaller height so the entire About section
+       fits comfortably without clipping.
+    */
+    height: 255px;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    margin-bottom: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--gradient-soft);
+}
+
+.about-profile-img {
+    width: 100%;
+    height: 100%;
+
+    /*
+       IMPORTANT:
+       Keeps the entire image visible.
+    */
+    object-fit: contain;
+
+    object-position: center;
+
+    display: block;
+
+    transition: transform var(--transition-normal);
+}
+
+.about-card:hover .about-profile-img {
+    transform: scale(1.02);
+}
+
+/* =====================================================
+   HIGHLIGHTS
+===================================================== */
+
+.about-highlights-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.55rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+
+    gap: 0.65rem;
+
+    font-size: 0.83rem;
+
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    color: var(--text-main);
+}
+
+.check-icon {
+    color: var(--brand-purple);
+
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   RIGHT CONTENT
+===================================================== */
+
+.about-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* =====================================================
+   PARAGRAPHS
+===================================================== */
+
+.about-paragraphs {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    margin-bottom: 1.3rem;
+}
+
+.bio-p {
+    font-size: 0.94rem;
+
+    color: var(--text-muted);
+
+    line-height: 1.55;
+
+    margin: 0;
+}
+
+/* =====================================================
+   STAT CARDS
+===================================================== */
+
+.about-stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0.75rem;
+}
+
+.stat-card {
+    min-width: 0;
+
+    padding: 0.8rem;
+
+    border-radius: var(--radius-md);
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.6rem;
+
+    border: 1px solid var(--border-color);
+
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--brand-purple);
+
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.1);
+}
+
+/* =====================================================
+   STAT ICON
+===================================================== */
+
+.stat-icon-box {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    background: var(--gradient-soft);
+
+    color: var(--brand-purple);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   STAT TEXT
+===================================================== */
+
+.stat-label {
+    font-size: 0.77rem;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    color: var(--text-main);
+
+    margin: 0;
+}
+
+.stat-sub {
+    font-size: 0.67rem;
+
+    line-height: 1.25;
+
+    color: var(--text-subtle);
+
+    margin: 0.18rem 0 0;
+}
+
+/* =====================================================
+   LARGE SCREEN
+===================================================== */
+
+@media (min-width: 1200px) {
+    .about-section {
+        padding-top: 6.5rem;
+        padding-bottom: 4.5rem;
+    }
+
+    .about-img-frame {
+        height: 270px;
+    }
+
+    .bio-p {
+        font-size: 0.96rem;
+    }
+}
+
+/* =====================================================
+   TABLET / SMALL LAPTOP
+===================================================== */
+
+@media (max-width: 1100px) {
+    .about-section {
+        padding-top: 6.5rem;
+        padding-bottom: 4rem;
+    }
+
+    .about-grid {
+        gap: 2rem;
+    }
+
+    .about-card {
+        max-width: 360px;
+    }
+
+    .about-img-frame {
+        height: 240px;
+    }
+
+    .bio-p {
+        font-size: 0.9rem;
+    }
+
+    .stat-card {
+        padding: 0.7rem;
+    }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 992px) {
+    .about-section {
+        min-height: auto;
+
+        /*
+           More space because the layout becomes vertical.
+        */
+        padding-top: 6rem;
+        padding-bottom: 5rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 2.5rem;
+    }
+
+    .about-visual-col {
+        order: 1;
+    }
+
+    .about-text-col {
+        order: 2;
+    }
+
+    .about-card {
+        max-width: 390px;
+    }
+
+    .about-img-frame {
+        height: 280px;
+    }
+
+    .about-paragraphs {
+        gap: 0.9rem;
+    }
+
+    .bio-p {
+        font-size: 0.95rem;
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+    .about-section {
+        padding-top: 5rem;
+        padding-bottom: 4rem;
+    }
+
+    .about-grid {
+        gap: 1.75rem;
+    }
+
+    .about-card {
+        padding: 0.9rem;
+    }
+
+    .about-img-frame {
+        height: 260px;
+    }
+
+    .about-highlights-list {
+        gap: 0.5rem;
+    }
+
+    .highlight-item {
+        font-size: 0.8rem;
+    }
+
+    .about-paragraphs {
+        gap: 0.8rem;
+
+        margin-bottom: 1.25rem;
+    }
+
+    .bio-p {
+        font-size: 0.9rem;
+
+        line-height: 1.55;
+    }
+
+    .about-stats-grid {
+        grid-template-columns: 1fr;
+
+        gap: 0.7rem;
+    }
+
+    .stat-card {
+        padding: 0.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    .stat-sub {
+        font-size: 0.72rem;
+    }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+    .about-section {
+        padding-top: 4.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .about-img-frame {
+        height: 230px;
+    }
+
+    .highlight-item {
+        font-size: 0.76rem;
+    }
+
+    .bio-p {
+        font-size: 0.86rem;
+    }
+}

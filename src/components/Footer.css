@@ -1,0 +1,124 @@
+.footer-container {
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    padding: 4rem 0 2rem 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    max-width: 380px;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.03em;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo span {
+    color: var(--brand-pink);
+}
+
+.footer-tagline {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.footer-location {
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+}
+
+.footer-links-group {
+    display: flex;
+    gap: 4rem;
+}
+
+@media (max-width: 600px) {
+    .footer-links-group {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+}
+
+.footer-nav,
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer-nav-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav a,
+.footer-social a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover,
+.footer-social a:hover {
+    color: var(--brand-purple);
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.back-to-top-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.back-to-top-btn:hover {
+    border-color: var(--brand-purple);
+    color: var(--brand-purple);
+    transform: translateY(-2px);
+}

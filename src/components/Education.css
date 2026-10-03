@@ -1,0 +1,85 @@
+.education-section {
+    position: relative;
+    background: var(--bg-primary);
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.education-card {
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    gap: 1.5rem;
+    transition: all var(--transition-fast);
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-lg);
+}
+
+.edu-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: var(--gradient-soft);
+    color: var(--brand-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.edu-years {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--brand-pink);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.edu-qualification {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+}
+
+.edu-field {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.edu-institution {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.edu-desc {
+    font-size: 0.9rem;
+    color: var(--text-subtle);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.edu-grade-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    background: var(--gradient-soft);
+    color: var(--brand-purple);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
