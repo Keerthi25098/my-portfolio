@@ -11,31 +11,6 @@ import {
 import './Projects.css';
 
 // =====================================================
-// PROJECT IMAGES
-// IMPORTANT:
-// These files must exist inside:
-// src/assets/
-// =====================================================
-
-import neoWheelsImg from '../assets/neo-wheels.png';
-import owltrackrImg from '../assets/owltrackr.png';
-import owlixImg from '../assets/owlix.png';
-import skycastImg from '../assets/skycast.png';
-import calcverseImg from '../assets/calcverse.png';
-
-// =====================================================
-// PROJECT IMAGE MAP
-// =====================================================
-
-const projectImages = {
-    'Neo Wheels 2.0': neoWheelsImg,
-    'OwlTracKR': owltrackrImg,
-    'Owlix': owlixImg,
-    'SkyCast': skycastImg,
-    'CalcVerse': calcverseImg
-};
-
-// =====================================================
 // GITHUB ICON
 // =====================================================
 
@@ -54,7 +29,14 @@ function GithubIcon({ size = 18 }) {
 }
 
 // =====================================================
-// PROJECT IMAGE COMPONENT
+// IMAGE FALLBACK
+// =====================================================
+
+const FALLBACK_IMAGE =
+    'https://placehold.co/1200x700/f5f3ff/475569?text=Project+Preview';
+
+// =====================================================
+// PROJECT IMAGE
 // =====================================================
 
 function ProjectImage({
@@ -63,16 +45,22 @@ function ProjectImage({
     className,
     ...props
 }) {
-    const [hasError, setHasError] = useState(false);
+    const [imageSrc, setImageSrc] = useState(
+        src || FALLBACK_IMAGE
+    );
+
+    const handleImageError = () => {
+        setImageSrc(FALLBACK_IMAGE);
+    };
 
     return (
         <img
-            src={hasError ? '/project-placeholder.png' : src}
+            src={imageSrc}
             alt={alt || 'Project preview'}
             className={className}
             loading="lazy"
             decoding="async"
-            onError={() => setHasError(true)}
+            onError={handleImageError}
             {...props}
         />
     );
@@ -93,25 +81,17 @@ export default function Projects({ projectsList }) {
     const [activeModalProject, setActiveModalProject] =
         useState(null);
 
-    // -------------------------------------------------
+    // =================================================
     // PROJECT DATA
-    // -------------------------------------------------
+    // =================================================
 
     const projects = Array.isArray(projectsList)
-        ? projectsList.map((project) => ({
-            ...project,
-
-            // Use local imported image
-            image_url:
-                projectImages[project.title] ||
-                project.image_url ||
-                '/project-placeholder.png'
-        }))
+        ? projectsList
         : [];
 
-    // -------------------------------------------------
+    // =================================================
     // CATEGORIES
-    // -------------------------------------------------
+    // =================================================
 
     const categories = useMemo(() => {
 
@@ -132,9 +112,9 @@ export default function Projects({ projectsList }) {
 
     }, [projects]);
 
-    // -------------------------------------------------
+    // =================================================
     // FILTER PROJECTS
-    // -------------------------------------------------
+    // =================================================
 
     const filteredProjects = useMemo(() => {
 
@@ -172,6 +152,7 @@ export default function Projects({ projectsList }) {
                 matchesCategory &&
                 matchesSearch
             );
+
         });
 
     }, [
@@ -180,16 +161,16 @@ export default function Projects({ projectsList }) {
         searchQuery
     ]);
 
-    // -------------------------------------------------
+    // =================================================
     // CLOSE MODAL
-    // -------------------------------------------------
+    // =================================================
 
     const closeModal = () => {
         setActiveModalProject(null);
     };
 
     // =================================================
-    // RETURN
+    // COMPONENT
     // =================================================
 
     return (
@@ -202,7 +183,7 @@ export default function Projects({ projectsList }) {
             <div className="section-container">
 
                 {/* =====================================
-                    HEADER
+                    SECTION HEADER
                 ====================================== */}
 
                 <div className="section-header">
@@ -231,12 +212,12 @@ export default function Projects({ projectsList }) {
                 </div>
 
                 {/* =====================================
-                    CONTROLS
+                    FILTER + SEARCH
                 ====================================== */}
 
                 <div className="projects-control-bar">
 
-                    {/* CATEGORY FILTER */}
+                    {/* CATEGORY */}
 
                     <div className="category-pills">
 
@@ -354,7 +335,7 @@ export default function Projects({ projectsList }) {
                                 >
 
                                     {/* =========================
-                                        IMAGE
+                                        PROJECT IMAGE
                                     ========================== */}
 
                                     <div className="bento-img-container">
@@ -369,6 +350,8 @@ export default function Projects({ projectsList }) {
                                             }
                                             className="bento-img"
                                         />
+
+                                        {/* OVERLAY */}
 
                                         <div className="bento-overlay">
 
@@ -392,6 +375,8 @@ export default function Projects({ projectsList }) {
 
                                         </div>
 
+                                        {/* FEATURED */}
+
                                         {project.is_featured && (
 
                                             <span className="featured-badge">
@@ -403,10 +388,12 @@ export default function Projects({ projectsList }) {
                                     </div>
 
                                     {/* =========================
-                                        CONTENT
+                                        PROJECT CONTENT
                                     ========================== */}
 
                                     <div className="bento-content">
+
+                                        {/* HEADER */}
 
                                         <div className="bento-header">
 
@@ -428,6 +415,8 @@ export default function Projects({ projectsList }) {
 
                                         </div>
 
+                                        {/* TITLE */}
+
                                         <h3
                                             className="project-title"
                                             onClick={() =>
@@ -441,6 +430,8 @@ export default function Projects({ projectsList }) {
                                                 'Untitled Project'}
 
                                         </h3>
+
+                                        {/* DESCRIPTION */}
 
                                         <p className="project-desc">
 
@@ -492,9 +483,11 @@ export default function Projects({ projectsList }) {
 
                                             )}
 
-                                        {/* ACTIONS */}
+                                        {/* ACTION BUTTONS */}
 
                                         <div className="bento-actions">
+
+                                            {/* LIVE */}
 
                                             {project.live_url &&
                                                 project.live_url !==
@@ -522,6 +515,8 @@ export default function Projects({ projectsList }) {
                                                     </a>
 
                                                 )}
+
+                                            {/* GITHUB */}
 
                                             {project.github_url && (
 
@@ -561,7 +556,7 @@ export default function Projects({ projectsList }) {
                 </motion.div>
 
                 {/* =====================================
-                    NO PROJECTS
+                    NO RESULTS
                 ====================================== */}
 
                 {filteredProjects.length ===
@@ -617,7 +612,9 @@ export default function Projects({ projectsList }) {
 
                         <div className="modal-body">
 
-                            {/* IMAGE */}
+                            {/* =================================
+                                MODAL IMAGE
+                            ================================== */}
 
                             <div className="modal-img-wrapper">
 
@@ -634,7 +631,9 @@ export default function Projects({ projectsList }) {
 
                             </div>
 
-                            {/* DETAILS */}
+                            {/* =================================
+                                MODAL DETAILS
+                            ================================== */}
 
                             <div className="modal-details">
 
@@ -715,6 +714,8 @@ export default function Projects({ projectsList }) {
 
                                 <div className="modal-actions">
 
+                                    {/* LIVE WEBSITE */}
+
                                     {activeModalProject.live_url &&
                                         activeModalProject.live_url !==
                                             '#' && (
@@ -739,6 +740,8 @@ export default function Projects({ projectsList }) {
                                             </a>
 
                                         )}
+
+                                    {/* GITHUB */}
 
                                     {activeModalProject.github_url && (
 
