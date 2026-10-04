@@ -1,85 +1,684 @@
+/* =====================================================
+   EDUCATION SECTION — LIGHT WHITE & TEAL
+===================================================== */
+
 .education-section {
     position: relative;
-    background: var(--bg-primary);
+    background: #ffffff;
+    overflow: hidden;
+    isolation: isolate;
 }
+
+.education-section::before {
+    content: "";
+    position: absolute;
+
+    top: 10%;
+    left: -150px;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(5, 122, 155, 0.055);
+
+    filter: blur(70px);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.education-section::after {
+    content: "";
+
+    position: absolute;
+
+    right: -130px;
+    bottom: 5%;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(5, 122, 155, 0.045);
+
+    filter: blur(70px);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =====================================================
+   EDUCATION GRID
+===================================================== */
 
 .education-grid {
+    position: relative;
+    z-index: 1;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    align-items: stretch;
 }
 
-.education-card {
-    padding: 2rem;
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--glass-border);
+
+/* =====================================================
+   EDUCATION CARD
+===================================================== */
+
+.education-card,
+.education-card.glass-panel {
+    position: relative;
+
     display: flex;
-    gap: 1.5rem;
-    transition: all var(--transition-fast);
+    align-items: flex-start;
+
+    gap: 1.25rem;
+
+    min-width: 0;
+
+    padding: 1.8rem;
+
+    background: #ffffff !important;
+
+    color: #111111 !important;
+
+    border: 1px solid #e1e7e9;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    opacity: 1;
+    visibility: visible;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.055),
+        0 2px 8px rgba(0, 0, 0, 0.025);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
+
+/* =====================================================
+   TEAL TOP ACCENT
+===================================================== */
+
+.education-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 45%;
+    height: 3px;
+
+    background: #057a9b;
+
+    transition: width 0.35s ease;
+}
+
+
+/* =====================================================
+   DECORATIVE CORNER
+===================================================== */
+
+.education-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    top: -105px;
+    right: -85px;
+
+    border: 1px solid rgba(5, 122, 155, 0.12);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 18px rgba(5, 122, 155, 0.025),
+        0 0 0 38px rgba(5, 122, 155, 0.015);
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
 
 .education-card:hover {
     transform: translateY(-5px);
-    border-color: var(--border-hover);
-    box-shadow: var(--shadow-lg);
+
+    border-color: #057a9b;
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.09),
+        0 0 18px rgba(5, 122, 155, 0.06);
 }
+
+.education-card:hover::before {
+    width: 100%;
+}
+
+.education-card:hover::after {
+    transform: translate(-10px, 10px);
+}
+
+
+/* =====================================================
+   EDUCATION ICON
+===================================================== */
 
 .edu-icon-box {
-    width: 52px;
-    height: 52px;
-    border-radius: 16px;
-    background: var(--gradient-soft);
-    color: var(--brand-purple);
+    position: relative;
+    z-index: 2;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
+    width: 56px;
+    height: 56px;
+
+    min-width: 56px;
+
     flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: #057a9b !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid rgba(5, 122, 155, 0.25);
+
+    box-shadow:
+        0 7px 18px rgba(5, 122, 155, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.edu-years {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--brand-pink);
-    margin-bottom: 0.25rem;
+.edu-icon-box svg {
     display: block;
+
+    width: 25px;
+    height: 25px;
+
+    color: #ffffff !important;
+
+    stroke: #ffffff !important;
 }
 
-.edu-qualification {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--text-main);
-    margin-bottom: 0.25rem;
+.education-card:hover .edu-icon-box {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(5, 122, 155, 0.25);
 }
 
-.edu-field {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+
+/* =====================================================
+   EDUCATION CONTENT
+===================================================== */
+
+.edu-content {
+    position: relative;
+    z-index: 2;
+
+    flex: 1;
+
+    min-width: 0;
+
+    color: #111111 !important;
 }
 
-.edu-institution {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
-}
 
-.edu-desc {
-    font-size: 0.9rem;
-    color: var(--text-subtle);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
+/* =====================================================
+   YEARS
+===================================================== */
 
-.edu-grade-badge {
+.education-card .edu-years {
     display: inline-flex;
+
     align-items: center;
-    gap: 0.35rem;
-    padding: 0.3rem 0.8rem;
-    border-radius: 999px;
-    background: var(--gradient-soft);
-    color: var(--brand-purple);
-    font-size: 0.8rem;
+
+    gap: 0.5rem;
+
+    margin: 0 0 0.8rem;
+
+    padding: 0.35rem 0.7rem;
+
+    color: #057a9b !important;
+
+    background: #eef8fa;
+
+    border: 1px solid #d2ebf0;
+
+    border-radius: 7px;
+
+    font-family: var(--font-mono, monospace);
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+}
+
+.edu-years::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #057a9b;
+}
+
+
+/* =====================================================
+   QUALIFICATION
+===================================================== */
+
+.education-card .edu-qualification {
+    display: block;
+
+    margin: 0 0 0.5rem;
+
+    color: #111111 !important;
+
+    -webkit-text-fill-color: #111111 !important;
+
+    font-size: 1.22rem;
+
+    font-weight: 800;
+
+    line-height: 1.4;
+
+    letter-spacing: -0.025em;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   FIELD OF STUDY
+===================================================== */
+
+.education-card .edu-field,
+.education-card .edu-field.gradient-text {
+    display: block;
+
+    margin: 0 0 0.75rem;
+
+    color: #057a9b !important;
+
+    -webkit-text-fill-color: #057a9b !important;
+
+    background: none !important;
+
+    background-image: none !important;
+
+    -webkit-background-clip: border-box !important;
+
+    background-clip: border-box !important;
+
+    font-size: 1rem;
+
+    font-weight: 750;
+
+    line-height: 1.5;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   INSTITUTION
+===================================================== */
+
+.education-card .edu-institution {
+    position: relative;
+
+    display: block;
+
+    margin: 0 0 0.8rem;
+
+    padding-left: 1rem;
+
+    color: #444444 !important;
+
+    -webkit-text-fill-color: #444444 !important;
+
+    font-size: 0.88rem;
+
     font-weight: 600;
+
+    line-height: 1.65;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    overflow-wrap: anywhere;
+}
+
+.edu-institution::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0.65em;
+    left: 0;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #057a9b;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.education-card .edu-desc {
+    display: block;
+
+    margin: 0 0 1.1rem;
+
+    color: #666666 !important;
+
+    -webkit-text-fill-color: #666666 !important;
+
+    font-size: 0.84rem;
+
+    line-height: 1.75;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   GRADE / CGPA BADGE
+===================================================== */
+
+.education-card .edu-grade-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.45rem;
+
+    width: fit-content;
+
+    max-width: 100%;
+
+    padding: 0.5rem 0.8rem;
+
+    color: #057a9b !important;
+
+    -webkit-text-fill-color: #057a9b !important;
+
+    background: #eef8fa;
+
+    border: 1px solid #cfe8ee;
+
+    border-radius: 9px;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+}
+
+.edu-grade-badge svg {
+    width: 15px;
+    height: 15px;
+
+    flex-shrink: 0;
+
+    color: #057a9b !important;
+
+    stroke: #057a9b !important;
+}
+
+.education-card:hover .edu-grade-badge {
+    background: #e5f5f8;
+
+    border-color: #a9d8e1;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .education-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 1.1rem;
+    }
+
+    .education-card,
+    .education-card.glass-panel {
+        gap: 1rem;
+
+        padding: 1.35rem;
+
+        border-radius: 18px;
+    }
+
+    .edu-icon-box {
+        width: 46px;
+        height: 46px;
+
+        min-width: 46px;
+
+        border-radius: 12px;
+    }
+
+    .edu-icon-box svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .education-card .edu-qualification {
+        font-size: 1.08rem;
+    }
+
+    .education-card .edu-field {
+        font-size: 0.9rem;
+    }
+
+    .education-card .edu-institution {
+        font-size: 0.82rem;
+    }
+
+    .education-card .edu-desc {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .education-grid {
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 1rem;
+    }
+
+    .education-card,
+    .education-card.glass-panel {
+        gap: 0.85rem;
+
+        padding: 1.2rem;
+
+        border-radius: 16px;
+    }
+
+    .edu-icon-box {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+
+        border-radius: 11px;
+    }
+
+    .edu-icon-box svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .education-card .edu-years {
+        margin-bottom: 0.65rem;
+
+        padding: 0.3rem 0.55rem;
+
+        font-size: 0.69rem;
+    }
+
+    .education-card .edu-qualification {
+        font-size: 1rem;
+    }
+
+    .education-card .edu-field {
+        font-size: 0.86rem;
+    }
+
+    .education-card .edu-institution {
+        font-size: 0.8rem;
+    }
+
+    .education-card .edu-desc {
+        font-size: 0.79rem;
+
+        line-height: 1.65;
+    }
+
+    .education-card .edu-grade-badge {
+        padding: 0.42rem 0.65rem;
+
+        font-size: 0.73rem;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .education-card,
+    .education-card.glass-panel {
+        gap: 0.7rem;
+
+        padding: 1rem;
+    }
+
+    .edu-icon-box {
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+    }
+
+    .education-card .edu-qualification {
+        font-size: 0.93rem;
+    }
+
+    .education-card .edu-field {
+        font-size: 0.81rem;
+    }
+
+    .education-card .edu-institution {
+        font-size: 0.76rem;
+    }
+
+    .education-card .edu-desc {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .education-card,
+    .education-card::before,
+    .education-card::after,
+    .edu-icon-box,
+    .edu-grade-badge {
+        transition: none !important;
+    }
+
+    .education-card:hover,
+    .education-card:hover .edu-icon-box {
+        transform: none;
+    }
 }

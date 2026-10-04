@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import {
     Award,
-    Briefcase,
     Code,
     CheckCircle,
     Sparkles
 } from 'lucide-react';
 
-import profileImg from '../assets/profile.png';
+import profileImg from '../assets/journey/currently.jpeg';
 import './About.css';
 
 export default function About({ aboutContent }) {
@@ -48,7 +47,6 @@ export default function About({ aboutContent }) {
 
     /* ============================================
        COUNTER ANIMATION
-       Starts when About section enters viewport
     ============================================ */
 
     useEffect(() => {
@@ -74,13 +72,10 @@ export default function About({ aboutContent }) {
                             1
                         );
 
-                        /* Smooth ease-out animation */
                         const easeOut =
                             1 - Math.pow(1 - progress, 3);
 
-
                         setCounters({
-
                             experience: Math.floor(
                                 counterTargets.experience * easeOut
                             ),
@@ -96,36 +91,26 @@ export default function About({ aboutContent }) {
                             achievement: Math.floor(
                                 counterTargets.achievement * easeOut
                             )
-
                         });
 
-
                         if (progress < 1) {
-
                             requestAnimationFrame(
                                 animateCounters
                             );
-
                         }
-
                     };
-
 
                     requestAnimationFrame(
                         animateCounters
                     );
-
                 }
-
             },
             {
                 threshold: 0.25
             }
         );
 
-
         observer.observe(section);
-
 
         return () => {
             observer.disconnect();
@@ -143,64 +128,6 @@ export default function About({ aboutContent }) {
 
             <div className="section-container">
 
-
-                {/* ============================================
-                    SECTION HEADER
-                ============================================ */}
-
-                <motion.div
-                    className="section-header"
-
-                    initial={{
-                        opacity: 0,
-                        y: 20
-                    }}
-
-                    whileInView={{
-                        opacity: 1,
-                        y: 0
-                    }}
-
-                    viewport={{
-                        once: true,
-                        amount: 0.3
-                    }}
-
-                    transition={{
-                        duration: 0.6
-                    }}
-                >
-
-                    <span className="section-tag">
-
-                        <Sparkles size={14} />
-
-                        <span>
-                            About Me
-                        </span>
-
-                    </span>
-
-
-                    <h2 className="section-title">
-
-                        {aboutContent?.heading ||
-                            'I Create Products, Not Just Interfaces.'}
-
-                    </h2>
-
-
-                    <p className="section-subtitle">
-
-                        {aboutContent?.subheading ||
-                            'A quick introduction about who I am, my philosophy, and my journey.'}
-
-                    </p>
-
-                </motion.div>
-
-
-
                 {/* ============================================
                     MAIN ABOUT GRID
                 ============================================ */}
@@ -209,7 +136,7 @@ export default function About({ aboutContent }) {
 
 
                     {/* ========================================
-                        LEFT PROFILE COLUMN
+                        LEFT IMAGE COLUMN
                     ======================================== */}
 
                     <motion.div
@@ -235,16 +162,13 @@ export default function About({ aboutContent }) {
                         }}
                     >
 
-                        <div className="about-card glass-panel">
-
-
-                            {/* PROFILE IMAGE */}
+                        <div className="about-card">
 
                             <div className="about-img-frame">
 
                                 <img
                                     src={profileImage}
-                                    alt="Keerthika KT"
+                                    alt="Keerthika KT at Cloudi5 Technologies"
                                     className="about-profile-img"
 
                                     loading="lazy"
@@ -253,7 +177,7 @@ export default function About({ aboutContent }) {
                                     onError={(event) => {
 
                                         console.error(
-                                            'About profile image failed to load:',
+                                            'About image failed to load:',
                                             event.currentTarget.src
                                         );
 
@@ -262,65 +186,9 @@ export default function About({ aboutContent }) {
 
                             </div>
 
-
-
-                            {/* ==================================
-                                HIGHLIGHTS
-                            ================================== */}
-
-                            <div className="about-highlights-list">
-
-
-                                <div className="highlight-item">
-
-                                    <CheckCircle
-                                        size={18}
-                                        className="check-icon"
-                                    />
-
-                                    <span>
-                                        React.js & Modern Frontend Engineering
-                                    </span>
-
-                                </div>
-
-
-
-                                <div className="highlight-item">
-
-                                    <CheckCircle
-                                        size={18}
-                                        className="check-icon"
-                                    />
-
-                                    <span>
-                                        Responsive UI/UX & Modern Web Design
-                                    </span>
-
-                                </div>
-
-
-
-                                <div className="highlight-item">
-
-                                    <CheckCircle
-                                        size={18}
-                                        className="check-icon"
-                                    />
-
-                                    <span>
-                                        Full Stack Integration with PHP, Laravel & MySQL
-                                    </span>
-
-                                </div>
-
-
-                            </div>
-
                         </div>
 
                     </motion.div>
-
 
 
                     {/* ========================================
@@ -352,11 +220,36 @@ export default function About({ aboutContent }) {
 
 
                         {/* ==================================
+                            ABOUT HEADER
+                        ================================== */}
+
+                        <div className="about-content-header">
+
+
+
+                            <h2 className="section-title">
+
+                                {aboutContent?.heading ||
+                                    'I Create Products, Not Just Interfaces.'}
+
+                            </h2>
+
+
+                            <p className="section-subtitle">
+
+                                {aboutContent?.subheading ||
+                                    'A quick introduction about who I am, my philosophy, and my journey.'}
+
+                            </p>
+
+                        </div>
+
+
+                        {/* ==================================
                             ABOUT PARAGRAPHS
                         ================================== */}
 
                         <div className="about-paragraphs">
-
 
                             <p className="bio-p">
 
@@ -367,28 +260,24 @@ export default function About({ aboutContent }) {
                             </p>
 
 
-
                             <p className="bio-p">
 
                                 {aboutContent?.bio_paragraph_2 ||
 
-                                    'My focus centers on high usability, pixel-perfect layouts, fast load times, and seamless interactive experiences. I pay close attention to design details and intuitive navigation.'}
+                                    'My focus centers on high usability, pixel-perfect layouts, fast load times, and seamless interactive experiences. I pay strict attention to design details and intuitive navigation.'}
 
                             </p>
-
 
 
                             <p className="bio-p">
 
                                 {aboutContent?.bio_paragraph_3 ||
 
-                                    'From working on client projects at Cloudi5 Technologies to building applications during internships, I continuously expand my skills across React, JavaScript, PHP, Laravel, MySQL, and modern web tooling.'}
+                                    'From working on client landing pages at Cloudi5 Technologies to building web applications during internships, I continuously expand my skill set across React, PHP, Laravel, MySQL, and modern web tooling.'}
 
                             </p>
 
-
                         </div>
-
 
 
                         {/* ==================================
@@ -396,7 +285,6 @@ export default function About({ aboutContent }) {
                         ================================== */}
 
                         <div className="about-mini-points">
-
 
                             <div className="mini-point">
 
@@ -407,7 +295,6 @@ export default function About({ aboutContent }) {
                                 </span>
 
                             </div>
-
 
 
                             <div className="mini-point">
@@ -421,7 +308,6 @@ export default function About({ aboutContent }) {
                             </div>
 
 
-
                             <div className="mini-point">
 
                                 <Award size={17} />
@@ -432,15 +318,11 @@ export default function About({ aboutContent }) {
 
                             </div>
 
-
                         </div>
-
 
                     </motion.div>
 
-
                 </div>
-
 
 
                 {/* ============================================
@@ -470,76 +352,52 @@ export default function About({ aboutContent }) {
                     }}
                 >
 
-
-                    {/* ==================================
-                        EXPERIENCE
-                    ================================== */}
+                    {/* EXPERIENCE */}
 
                     <div className="counter-item">
 
                         <div className="counter-number">
-
                             {counters.experience}+
-
                         </div>
 
                         <div className="counter-label">
-
                             Months Experience
-
                         </div>
 
                     </div>
 
 
-
-                    {/* ==================================
-                        PROJECTS
-                    ================================== */}
+                    {/* PROJECTS */}
 
                     <div className="counter-item">
 
                         <div className="counter-number">
-
                             {counters.projects}+
-
                         </div>
 
                         <div className="counter-label">
-
                             Featured Projects
-
                         </div>
 
                     </div>
 
 
-
-                    {/* ==================================
-                        INTERNSHIPS
-                    ================================== */}
+                    {/* INTERNSHIPS */}
 
                     <div className="counter-item">
 
                         <div className="counter-number">
-
                             {counters.internships}+
-
                         </div>
 
                         <div className="counter-label">
-
                             Industry Internships
-
                         </div>
 
                     </div>
 
 
-
-                    {/* ==================================
-                        ACHIEVEMENT
-                    ================================== */}
+                    {/* ACHIEVEMENT */}
 
                     <div className="counter-item">
 
@@ -554,21 +412,15 @@ export default function About({ aboutContent }) {
                         </div>
 
                         <div className="counter-label">
-
                             National Competition
-
                         </div>
 
                     </div>
 
-
                 </motion.div>
-
 
             </div>
 
         </section>
-
     );
-
 }

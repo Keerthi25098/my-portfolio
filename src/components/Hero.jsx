@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import {
     ArrowDown,
     Mail,
-    Sparkles,
     Code,
     Terminal
 } from 'lucide-react';
@@ -128,11 +127,6 @@ export default function Hero({ heroContent, siteSettings }) {
 
                             <span className="badge-pulse" />
 
-                            <Sparkles
-                                size={14}
-                                className="badge-sparkle"
-                            />
-
                             <span>
                                 {siteSettings?.availability_status ||
                                     'Open to Opportunities'}
@@ -237,31 +231,52 @@ export default function Hero({ heroContent, siteSettings }) {
 
                     <div className="hero-cta-group">
 
-                        {/* View Projects */}
+
+                        {/* =========================================
+                            VIEW MY WORK - UIVERSE STYLE
+                        ========================================= */}
 
                         <a
                             href="#projects"
-                            className="button"
+                            className="hero-main-button"
+                            aria-label="View my work"
                         >
 
-                            <svg
-                                className="svgIcon"
-                                viewBox="0 0 512 512"
-                                height="1em"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                            >
+                            <span className="hero-button-text">
+                                View my work
+                            </span>
 
-                                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 0 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.2-18.4 18.4zM288 256a32 32 0 1 0-64 0 32 32 0 0 0 64 0z" />
+                            <span className="hero-button-icon">
 
-                            </svg>
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true"
+                                >
 
-                            View my work
+                                    <path
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                    />
+
+                                    <path
+                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                        fill="currentColor"
+                                    />
+
+                                </svg>
+
+                            </span>
 
                         </a>
 
 
-                        {/* Let's Talk */}
+                        {/* =========================================
+                            LET'S TALK
+                        ========================================= */}
 
                         <a
                             href="#contact"
@@ -278,9 +293,9 @@ export default function Hero({ heroContent, siteSettings }) {
                     </div>
 
 
-                    {/* =============================================
+                    {/* =================================================
                         SOCIAL LINKS
-                    ============================================= */}
+                    ================================================= */}
 
                     <div className="hero-social-links">
 

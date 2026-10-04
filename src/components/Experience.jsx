@@ -1,22 +1,15 @@
-
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import {
     Calendar,
     Award,
     Sparkles,
-    ExternalLink,
+    X,
     ArrowUpRight,
+    CheckCircle2,
 } from 'lucide-react';
 
 import './Experience.css';
-
-import cloudi5Image from '../assets/journey/currently.jpeg';
-import ibacusImage from '../assets/journey/react.jpeg';
-import competitionImage from '../assets/journey/game.jpeg';
-import akInfoparkImage from '../assets/journey/flipcart.jpeg';
-import techvoltImage from '../assets/journey/figma.png';
-import networkSystemsImage from '../assets/journey/java.png';
 
 const experienceList = [
     {
@@ -26,14 +19,17 @@ const experienceList = [
         role_title: 'From Intern to Developer',
         year_label: '2026',
         is_current: true,
+
         description:
-            'Expanded technical skills across full frontend and backend web development stack working on real production client projects.',
+            'Expanded technical skills across frontend and backend web development while working on real production client projects.',
+
         responsibilities: [
             'Developed responsive website components using React.js, HTML5, CSS3, and Bootstrap.',
-            'Implemented backend functionality and integrations using PHP, Laravel, and MySQL.',
-            'Managed cloud server deployments on AWS EC2 and InMotion web hosting platforms.',
-            'Customized client WordPress sites and optimized web page load performance.',
+            'Implemented backend functionality using PHP, Laravel, and MySQL.',
+            'Managed deployments using AWS EC2 and InMotion hosting.',
+            'Customized WordPress sites and optimized web performance.',
         ],
+
         technologies: [
             'React.js',
             'JavaScript',
@@ -44,11 +40,10 @@ const experienceList = [
             'AWS EC2',
             'WordPress',
         ],
-        image: cloudi5Image,
-        imageAlt: 'Cloudi5 Technologies professional experience',
-        color: '#f7e5ef',
+
         certificate_url: '',
     },
+
     {
         id: 5,
         number_label: '05',
@@ -56,13 +51,16 @@ const experienceList = [
         role_title: 'React.js Intern',
         year_label: '2025',
         is_current: false,
+
         description:
-            'Completed an intensive 3-month React.js internship in Coimbatore building modular frontend web applications.',
+            'Completed an intensive 3-month React.js internship focused on modular frontend web applications.',
+
         responsibilities: [
             'Built reusable React components with clean state management.',
-            'Designed responsive UI layouts and integrated RESTful backend endpoints.',
-            'Collaborated on web application user interfaces and stateful form controls.',
+            'Designed responsive interfaces and integrated REST APIs.',
+            'Worked with forms, UI components, and application state.',
         ],
+
         technologies: [
             'React.js',
             'JavaScript',
@@ -70,11 +68,10 @@ const experienceList = [
             'REST API',
             'Git',
         ],
-        image: ibacusImage,
-        imageAlt: 'React.js development internship',
-        color: '#e7e8fb',
+
         certificate_url: '',
     },
+
     {
         id: 4,
         number_label: '04',
@@ -82,23 +79,25 @@ const experienceList = [
         role_title: 'National Web Game Competition',
         year_label: '2024',
         is_current: false,
+
         description:
-            'Won Second Prize at the National Level IT Symposium for developing an interactive web game under tight time constraints.',
+            'Won Second Prize at a National Level IT Symposium by developing an interactive web game under strict time constraints.',
+
         responsibilities: [
-            'Engineered interactive game logic and visual rendering using HTML5 Canvas & JS.',
-            'Collaborated under competition time limits to present working prototype to judges.',
+            'Built interactive game logic using JavaScript and HTML5 Canvas.',
+            'Worked under competition time limits to deliver a functional prototype.',
         ],
+
         technologies: [
             'JavaScript',
             'HTML5 Canvas',
             'CSS Animations',
             'Game Logic',
         ],
-        image: competitionImage,
-        imageAlt: 'National web game competition achievement',
-        color: '#e4f2e8',
+
         certificate_url: '',
     },
+
     {
         id: 3,
         number_label: '03',
@@ -106,23 +105,25 @@ const experienceList = [
         role_title: 'Web Development Intern',
         year_label: '2024',
         is_current: false,
+
         description:
-            'Completed web development internship focused on crafting real e-commerce website structures.',
+            'Completed a web development internship focused on building real-world e-commerce website structures.',
+
         responsibilities: [
-            'Developed a functional Flipkart website clone featuring product grids and checkout UI.',
-            'Deepened core knowledge of HTML5 structure, CSS flexbox/grid, and DOM JS manipulation.',
+            'Developed a functional Flipkart website clone with product grids and checkout UI.',
+            'Strengthened HTML, CSS Flexbox, Grid, and JavaScript DOM concepts.',
         ],
+
         technologies: [
             'HTML5',
             'CSS3',
             'JavaScript',
             'UI Design',
         ],
-        image: akInfoparkImage,
-        imageAlt: 'Web development internship project',
-        color: '#fff0df',
+
         certificate_url: '',
     },
+
     {
         id: 2,
         number_label: '02',
@@ -130,23 +131,25 @@ const experienceList = [
         role_title: 'Figma UI/UX Intern',
         year_label: '2023',
         is_current: false,
+
         description:
             'Introduced to modern UI design systems, visual hierarchy, wireframing, and interactive prototyping.',
+
         responsibilities: [
-            'Designed mobile & web UI wireframes using Figma vector tools.',
-            'Created component style guides, typography specs, and user flow diagrams.',
+            'Designed mobile and web wireframes using Figma.',
+            'Created typography systems, component guides, and user flows.',
         ],
+
         technologies: [
             'Figma',
             'UI/UX Design',
             'Wireframing',
             'Prototyping',
         ],
-        image: techvoltImage,
-        imageAlt: 'Figma UI/UX design internship',
-        color: '#f4e7f7',
+
         certificate_url: '',
     },
+
     {
         id: 1,
         number_label: '01',
@@ -154,12 +157,15 @@ const experienceList = [
         role_title: 'Java Full Stack Student',
         year_label: '2023',
         is_current: false,
+
         description:
-            'Learned foundational full-stack software development principles, object-oriented Java, and database queries.',
+            'Learned foundational software development principles, object-oriented Java, and database concepts.',
+
         responsibilities: [
-            'Studied Java OOP principles, NetBeans IDE, and database management.',
-            'Discovered a strong passion for frontend interactive engineering and web development.',
+            'Studied Java OOP, NetBeans IDE, and database management.',
+            'Developed an early interest in frontend and interactive web development.',
         ],
+
         technologies: [
             'Java',
             'SQL',
@@ -167,205 +173,433 @@ const experienceList = [
             'CSS',
             'OOP Principles',
         ],
-        image: networkSystemsImage,
-        imageAlt: 'Java Full Stack Development training',
-        color: '#e4effc',
+
         certificate_url: '',
     },
 ];
 
-function ExperienceCard({ item, index, total, progress }) {
-    const cardRef = useRef(null);
 
-    const { scrollYProgress } = useScroll({
-        target: cardRef,
-        offset: ['start end', 'start start'],
-    });
+/* =========================================================
+   EXPERIENCE CARD
+========================================================= */
 
-    const imageScale = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [1.15, 1]
-    );
-
-    const start = index / total;
-    const targetScale = 1 - (total - index - 1) * 0.035;
-
-    const scale = useTransform(
-        progress,
-        [start, 1],
-        [1, targetScale]
-    );
-
+function ExperienceCard({ item, onClick, index }) {
     return (
-        <div
-            ref={cardRef}
-            className="experience-card-wrapper"
-            style={{ zIndex: index + 1 }}
+        <motion.button
+            type="button"
+            className={`experience-card ${
+                item.is_current ? 'experience-card-current' : ''
+            }`}
+            onClick={onClick}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{
+                once: true,
+                amount: 0.15,
+            }}
+            transition={{
+                duration: 0.45,
+                delay: index * 0.06,
+            }}
+            whileHover={{
+                y: -7,
+            }}
         >
-            <motion.article
-                className="experience-stack-card"
-                style={{
-                    backgroundColor: item.color,
-                    scale,
-                }}
-            >
-                <div className="experience-card-top">
-                    <span className="experience-card-number">
-                        EXPERIENCE / {item.number_label}
+
+            {/* CARD TOP */}
+            <div className="experience-card-top">
+
+                <span className="experience-number">
+                    {item.number_label}
+                </span>
+
+                <div className="experience-card-meta">
+
+                    <span className="experience-year">
+                        <Calendar size={12} />
+                        {item.year_label}
                     </span>
 
-                    <div className="experience-card-badges">
-                        <span className="experience-year">
-                            <Calendar size={14} />
-                            {item.year_label}
+                    {item.is_current && (
+                        <span className="experience-current">
+                            <span />
+                            Current
                         </span>
+                    )}
 
-                        {item.is_current && (
-                            <span className="experience-current">
-                                <span className="experience-current-dot" />
-                                Current Role
-                            </span>
-                        )}
-                    </div>
                 </div>
 
-                <div className="experience-card-layout">
-                    <div className="experience-card-content">
-                        <span className="experience-card-label">
-                            {item.number_label} / 06
-                        </span>
+            </div>
 
-                        <h3 className="experience-company">
-                            {item.company}
-                        </h3>
 
-                        <h4 className="experience-role">
-                            {item.role_title}
-                        </h4>
+            {/* CARD BODY */}
+            <div className="experience-card-body">
 
-                        <p className="experience-description">
-                            {item.description}
-                        </p>
+             
+                <h3>
+                    {item.company}
+                </h3>
 
-                        <ul className="experience-responsibilities">
-                            {item.responsibilities.map((responsibility, i) => (
-                                <li key={i}>
-                                    <span className="experience-bullet" />
-                                    <span>{responsibility}</span>
-                                </li>
-                            ))}
-                        </ul>
+                <h4>
+                    {item.role_title}
+                </h4>
 
-                        <div className="experience-technologies">
-                            {item.technologies.map((technology, i) => (
-                                <span
-                                    className="experience-tech-tag"
-                                    key={`${technology}-${i}`}
-                                >
-                                    {technology}
-                                </span>
-                            ))}
-                        </div>
+            </div>
 
-                        <div className="experience-card-footer">
-                            {item.certificate_url ? (
-                                <a
-                                    href={item.certificate_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="experience-certificate"
-                                >
-                                    <Award size={16} />
-                                    <span>View Certificate</span>
-                                    <ExternalLink size={14} />
-                                </a>
-                            ) : (
-                                <span className="experience-certificate experience-certificate-placeholder">
-                                    <Award size={16} />
-                                    <span>View Certificate</span>
-                                    <ExternalLink size={14} />
-                                </span>
-                            )}
 
-                            <span className="experience-card-count">
-                                {item.number_label}
-                                <ArrowUpRight size={16} />
-                            </span>
-                        </div>
-                    </div>
+            {/* CARD FOOTER */}
+            <div className="experience-card-bottom">
 
-                    <div className="experience-card-image">
-                        <motion.img
-                            src={item.image}
-                            alt={item.imageAlt}
-                            style={{ scale: imageScale }}
-                            loading={index < 2 ? 'eager' : 'lazy'}
-                        />
+                <span className="experience-view">
+                    View details
+                </span>
 
-                        <div className="experience-image-overlay">
-                            <span>{item.company}</span>
-                            <span>{item.year_label}</span>
-                        </div>
-                    </div>
-                </div>
-            </motion.article>
-        </div>
+                <span className="experience-card-arrow">
+                    <ArrowUpRight size={15} />
+                </span>
+
+            </div>
+
+        </motion.button>
     );
 }
 
-export default function Experience() {
-    const sectionRef = useRef(null);
 
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ['start start', 'end end'],
-    });
+/* =========================================================
+   EXPERIENCE MODAL
+========================================================= */
+
+function ExperienceModal({ item, onClose }) {
+    useEffect(() => {
+        if (!item) return;
+
+        const handleEscape = (event) => {
+            if (event.key === 'Escape') {
+                onClose();
+            }
+        };
+
+        document.addEventListener(
+            'keydown',
+            handleEscape
+        );
+
+        document.body.style.overflow = 'hidden';
+
+        return () => {
+            document.removeEventListener(
+                'keydown',
+                handleEscape
+            );
+
+            document.body.style.overflow = '';
+        };
+    }, [item, onClose]);
+
+    if (!item) {
+        return null;
+    }
+
+    return (
+        <AnimatePresence>
+            <motion.div
+                className="experience-modal-overlay"
+                initial={{
+                    opacity: 0,
+                }}
+                animate={{
+                    opacity: 1,
+                }}
+                exit={{
+                    opacity: 0,
+                }}
+                onClick={onClose}
+            >
+
+                <motion.div
+                    className="experience-modal"
+                    initial={{
+                        opacity: 0,
+                        scale: 0.94,
+                        y: 25,
+                    }}
+                    animate={{
+                        opacity: 1,
+                        scale: 1,
+                        y: 0,
+                    }}
+                    exit={{
+                        opacity: 0,
+                        scale: 0.94,
+                        y: 25,
+                    }}
+                    transition={{
+                        duration: 0.3,
+                        ease: [0.22, 1, 0.36, 1],
+                    }}
+                    onClick={(event) => {
+                        event.stopPropagation();
+                    }}
+                >
+
+                    {/* MODAL HEADER */}
+                    <div className="experience-modal-header">
+
+                        <div className="modal-header-left">
+
+                            <span className="modal-number">
+                                {item.number_label}
+                            </span>
+
+                            <div className="modal-meta">
+
+                                <span className="modal-year">
+                                    <Calendar size={13} />
+                                    {item.year_label}
+                                </span>
+
+                                {item.is_current && (
+                                    <span className="modal-current">
+                                        <span />
+                                        Current Role
+                                    </span>
+                                )}
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            className="modal-close"
+                            onClick={onClose}
+                            aria-label="Close experience details"
+                        >
+                            <X size={20} />
+                        </button>
+
+                    </div>
+
+
+                    {/* MODAL TITLE */}
+                    <div className="experience-modal-title">
+
+                        <span className="modal-overline">
+                            PROFESSIONAL EXPERIENCE
+                        </span>
+
+                        <h2>
+                            {item.company}
+                        </h2>
+
+                        <h3>
+                            {item.role_title}
+                        </h3>
+
+                    </div>
+
+
+                    {/* DESCRIPTION */}
+                    <div className="experience-modal-description">
+
+                        <p>
+                            {item.description}
+                        </p>
+
+                    </div>
+
+
+                    {/* DETAILS */}
+                    <div className="experience-modal-grid">
+
+                        {/* RESPONSIBILITIES */}
+                        <div className="modal-detail-section">
+
+                            <div className="modal-section-heading">
+
+                                <span className="modal-section-icon">
+                                    <CheckCircle2 size={16} />
+                                </span>
+
+                                <h4>
+                                    Key Responsibilities
+                                </h4>
+
+                            </div>
+
+                            <ul className="modal-responsibilities">
+
+                                {item.responsibilities.map(
+                                    (
+                                        responsibility,
+                                        index
+                                    ) => (
+                                        <li
+                                            key={index}
+                                        >
+                                            <span className="modal-bullet" />
+
+                                            <span>
+                                                {responsibility}
+                                            </span>
+                                        </li>
+                                    )
+                                )}
+
+                            </ul>
+
+                        </div>
+
+
+                        {/* TECHNOLOGIES */}
+                        <div className="modal-detail-section">
+
+                            <div className="modal-section-heading">
+
+                                <span className="modal-section-icon">
+                                    <Sparkles size={16} />
+                                </span>
+
+                                <h4>
+                                    Technologies & Skills
+                                </h4>
+
+                            </div>
+
+                            <div className="modal-technologies">
+
+                                {item.technologies.map(
+                                    (
+                                        technology,
+                                        index
+                                    ) => (
+                                        <span
+                                            key={`${technology}-${index}`}
+                                        >
+                                            {technology}
+                                        </span>
+                                    )
+                                )}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    {/* MODAL FOOTER */}
+                    <div className="experience-modal-footer">
+
+                        {item.certificate_url ? (
+                            <a
+                                href={
+                                    item.certificate_url
+                                }
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="modal-certificate"
+                            >
+                                <Award size={16} />
+                                View Certificate
+                            </a>
+                        ) : (
+                            <span className="modal-certificate disabled">
+                                <Award size={16} />
+                                Certificate unavailable
+                            </span>
+                        )}
+
+                        <button
+                            type="button"
+                            className="modal-done-button"
+                            onClick={onClose}
+                        >
+                            Close
+                        </button>
+
+                    </div>
+
+                </motion.div>
+
+            </motion.div>
+        </AnimatePresence>
+    );
+}
+
+
+/* =========================================================
+   MAIN EXPERIENCE SECTION
+========================================================= */
+
+export default function Experience() {
+    const [selectedExperience, setSelectedExperience] =
+        useState(null);
 
     return (
         <section
-            className="experience-section"
             id="experience"
-            ref={sectionRef}
+            className="experience-section"
         >
-            <header className="experience-heading">
-                <span className="experience-eyebrow">
-                    <Sparkles size={15} />
-                    Career Journey
-                </span>
 
-                <h2 className="experience-title">
-                    Professional Experience
-                </h2>
+            <div className="experience-container">
 
-              
-              
-            </header>
+                {/* SECTION HEADER */}
+                <header className="experience-heading">
 
-            <div className="experience-stack">
-                {experienceList.map((item, index) => (
-                    <ExperienceCard
-                        key={item.id}
-                        item={item}
-                        index={index}
-                        total={experienceList.length}
-                        progress={scrollYProgress}
-                    />
-                ))}
+                    <span className="experience-eyebrow">
+                        <Sparkles size={14} />
+                        Career Journey
+                    </span>
+
+                    <h2 className="experience-title">
+                        My Professional Journey
+                    </h2>
+
+                    <p className="experience-subtitle">
+                        From learning the fundamentals of software
+                        development to building real-world applications,
+                        every experience has shaped the developer I am
+                        today.
+                    </p>
+
+                </header>
+
+
+                {/* EXPERIENCE CARDS */}
+                <div className="experience-grid">
+
+                    {experienceList.map(
+                        (item, index) => (
+                            <ExperienceCard
+                                key={item.id}
+                                item={item}
+                                index={index}
+                                onClick={() =>
+                                    setSelectedExperience(
+                                        item
+                                    )
+                                }
+                            />
+                        )
+                    )}
+
+                </div>
+
+
+             
             </div>
 
-            <footer className="experience-ending">
-                <span className="experience-ending-eyebrow">
-                    THE JOURNEY CONTINUES
-                </span>
 
-                <h3>Learning through every experience.</h3>
+            {/* MODAL */}
+            <ExperienceModal
+                item={selectedExperience}
+                onClose={() =>
+                    setSelectedExperience(null)
+                }
+            />
 
-                <p>
-                    Building skills, solving problems, and growing with
-                    every new opportunity.
-                </p>
-            </footer>
         </section>
     );
 }

@@ -15,7 +15,7 @@
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 
-    padding: 5.5rem 0 4rem;
+    padding: rem 0 4rem;
 
     box-sizing: border-box;
 
@@ -57,45 +57,45 @@
 
 /* =====================================================
    PROFILE CARD
+   NO BACKGROUND / NO BORDER / NO SHADOW
 ===================================================== */
 
 .about-card {
     width: 100%;
 
-    max-width: 360px;
+    max-width: 350px !important;
 
-    padding: 0.9rem;
+    padding: 0;
 
-    border-radius: var(--radius-xl);
+    border: none;
 
-    border: 1px solid var(--glass-border);
+    box-shadow: none;
 
-    box-shadow: var(--shadow-lg);
+    background: transparent;
 
     box-sizing: border-box;
 
-    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: none;
 
-    backdrop-filter: blur(18px);
-
-    -webkit-backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: none;
 }
 
 
 /* =====================================================
-   PROFILE IMAGE
+   PROFILE IMAGE FRAME
+   COMPLETELY TRANSPARENT
 ===================================================== */
 
 .about-img-frame {
     width: 100%;
 
-    height: 235px;
+    height: 400px;
 
     overflow: hidden;
 
-    border-radius: var(--radius-lg);
+    border-radius: 0;
 
-    margin-bottom: 0.85rem;
+    margin-bottom: 1rem;
 
     display: flex;
 
@@ -103,9 +103,13 @@
 
     justify-content: center;
 
-    background: var(--gradient-soft);
+    background: transparent;
 }
 
+
+/* =====================================================
+   PROFILE IMAGE
+===================================================== */
 
 .about-profile-img {
     width: 100%;
@@ -118,12 +122,14 @@
 
     display: block;
 
+    background: transparent;
+
     transition: transform var(--transition-normal);
 }
 
 
 .about-card:hover .about-profile-img {
-    transform: scale(1.025);
+    transform: scale(1.03);
 }
 
 
@@ -136,7 +142,7 @@
 
     flex-direction: column;
 
-    gap: 0.45rem;
+    gap: 0.55rem;
 }
 
 
@@ -145,11 +151,11 @@
 
     align-items: center;
 
-    gap: 0.55rem;
+    gap: 0.6rem;
 
-    font-size: 0.78rem;
+    font-size: 0.86rem;
 
-    line-height: 1.3;
+    line-height: 1.4;
 
     font-weight: 600;
 
@@ -158,7 +164,7 @@
 
 
 .check-icon {
-    color: var(--brand-purple);
+    color: #057a9b;
 
     flex-shrink: 0;
 }
@@ -186,18 +192,18 @@
 
     flex-direction: column;
 
-    gap: 0.65rem;
+    gap: 0.8rem;
 
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.4rem;
 }
 
 
 .bio-p {
-    font-size: 0.92rem;
+    font-size: 1rem;
 
     color: var(--text-muted);
 
-    line-height: 1.52;
+    line-height: 1.65;
 
     margin: 0;
 }
@@ -212,7 +218,7 @@
 
     flex-wrap: wrap;
 
-    gap: 0.65rem;
+    gap: 0.7rem;
 }
 
 
@@ -221,9 +227,9 @@
 
     align-items: center;
 
-    gap: 0.4rem;
+    gap: 0.45rem;
 
-    padding: 0.5rem 0.75rem;
+    padding: 0.55rem 0.8rem;
 
     border-radius: 999px;
 
@@ -233,7 +239,7 @@
 
     color: var(--text-main);
 
-    font-size: 0.76rem;
+    font-size: 0.8rem;
 
     font-weight: 600;
 
@@ -245,7 +251,7 @@
 
 
 .mini-point svg {
-    color: var(--brand-purple);
+    color: #057a9b;
 
     flex-shrink: 0;
 }
@@ -254,7 +260,7 @@
 .mini-point:hover {
     transform: translateY(-2px);
 
-    border-color: var(--brand-purple);
+    border-color: #057a9b;
 
     background: rgba(255, 255, 255, 0.9);
 }
@@ -328,7 +334,7 @@
 ===================================================== */
 
 .counter-number {
-    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-size: clamp(2.3rem, 4vw, 3.5rem);
 
     line-height: 1;
 
@@ -345,7 +351,7 @@
 
 
 .counter-number sup {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 
     font-weight: 700;
 
@@ -362,11 +368,11 @@
 ===================================================== */
 
 .counter-label {
-    margin-top: 0.65rem;
+    margin-top: 0.7rem;
 
-    font-size: 0.85rem;
+    font-size: 0.9rem;
 
-    line-height: 1.3;
+    line-height: 1.35;
 
     color: var(--text-muted);
 
@@ -392,7 +398,7 @@
 @media (min-width: 1200px) {
 
     .about-section {
-        padding-top: 5.5rem;
+       
 
         padding-bottom: 3.5rem;
     }
@@ -405,20 +411,22 @@
     }
 
 
+    /* Larger image */
+
     .about-card {
-        max-width: 375px;
+        max-width: 450px;
     }
 
 
     .about-img-frame {
-        height: 245px;
+        height: 460px;
     }
 
 
     .bio-p {
-        font-size: 0.95rem;
+        font-size: 1.02rem;
 
-        line-height: 1.55;
+        line-height: 1.65;
     }
 
 
@@ -435,7 +443,7 @@
 
 
     .counter-label {
-        font-size: 0.88rem;
+        font-size: 0.9rem;
     }
 
 }
@@ -460,17 +468,19 @@
 
 
     .about-card {
-        max-width: 340px;
+        max-width: 400px;
     }
 
 
     .about-img-frame {
-        height: 225px;
+        height: 380px;
     }
 
 
     .bio-p {
-        font-size: 0.88rem;
+        font-size: 0.95rem;
+
+        line-height: 1.6;
     }
 
 
@@ -495,7 +505,7 @@
     .about-section {
         min-height: auto;
 
-        padding-top: 5rem;
+    
 
         padding-bottom: 4rem;
 
@@ -523,17 +533,19 @@
 
 
     .about-card {
-        max-width: 380px;
+        max-width: 430px;
     }
 
 
     .about-img-frame {
-        height: 270px;
+        height: 420px;
     }
 
 
     .bio-p {
-        font-size: 0.92rem;
+        font-size: 0.98rem;
+
+        line-height: 1.6;
     }
 
 
@@ -548,7 +560,7 @@
 
 
     .counter-label {
-        font-size: 0.8rem;
+        font-size: 0.84rem;
     }
 
 }
@@ -561,8 +573,7 @@
 @media (max-width: 768px) {
 
     .about-section {
-        padding-top: 4.5rem;
-
+      
         padding-bottom: 3.5rem;
     }
 
@@ -573,19 +584,23 @@
 
 
     .about-card {
-        padding: 0.8rem;
+        padding: 0;
 
-        max-width: 350px;
+        max-width: 380px;
     }
 
 
     .about-img-frame {
-        height: 245px;
+        height: 360px;
+
+        margin-bottom: 1rem;
     }
 
 
     .highlight-item {
-        font-size: 0.78rem;
+        font-size: 0.82rem;
+
+        line-height: 1.4;
     }
 
 
@@ -597,9 +612,9 @@
 
 
     .bio-p {
-        font-size: 0.88rem;
+        font-size: 0.92rem;
 
-        line-height: 1.5;
+        line-height: 1.58;
     }
 
 
@@ -609,13 +624,15 @@
 
 
     .mini-point {
-        font-size: 0.7rem;
+        font-size: 0.74rem;
 
         padding: 0.45rem 0.65rem;
     }
 
 
-    /* 2 x 2 counters */
+    /* ============================================
+       2 x 2 COUNTERS
+    ============================================ */
 
     .about-counters {
         grid-template-columns: repeat(2, 1fr);
@@ -644,7 +661,7 @@
 
 
     .counter-label {
-        font-size: 0.75rem;
+        font-size: 0.78rem;
 
         white-space: normal;
     }
@@ -659,29 +676,35 @@
 @media (max-width: 480px) {
 
     .about-section {
-        padding-top: 4rem;
+      
 
         padding-bottom: 3rem;
     }
 
 
     .about-card {
-        max-width: 310px;
+        max-width: 340px;
+
+        padding: 0;
     }
 
 
     .about-img-frame {
-        height: 220px;
+        height: 320px;
+
+        margin-bottom: 0.9rem;
     }
 
 
     .highlight-item {
-        font-size: 0.73rem;
+        font-size: 0.76rem;
     }
 
 
     .bio-p {
-        font-size: 0.84rem;
+        font-size: 0.88rem;
+
+        line-height: 1.55;
     }
 
 
@@ -705,7 +728,7 @@
 
 
     .counter-label {
-        font-size: 0.7rem;
+        font-size: 0.72rem;
     }
 
 }

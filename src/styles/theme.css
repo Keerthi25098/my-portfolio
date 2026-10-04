@@ -148,22 +148,34 @@ button, input, textarea, select {
   max-width: 720px;
   margin: 0 auto 3.5rem auto;
 }
+/* =====================================================
+   SECTION TAG
+===================================================== */
 
 .section-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+
   padding: 0.35rem 1rem;
+
   border-radius: 9999px;
+
+  border: 1px solid rgba(5, 122, 155, 0.2);
+
+  background: rgba(5, 122, 155, 0.08);
+
+  color: #057a9b;
+
   font-size: 0.85rem;
   font-weight: 600;
+
   letter-spacing: 0.05em;
+
   text-transform: uppercase;
-  background: var(--gradient-soft);
-  color: var(--brand-purple);
+
   margin-bottom: 1rem;
 }
-
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;

@@ -4,6 +4,7 @@
 
 .navbar-header {
   position: fixed;
+
   top: 20px;
   left: 0;
   right: 0;
@@ -41,34 +42,22 @@
 
   gap: 20px;
 
-  /*
-     Deep plum glass background
-  */
-  background:
-    linear-gradient(
-      135deg,
-      rgba(48, 36, 58, 0.97),
-      rgba(61, 43, 70, 0.95)
-    );
+  background: #000000;
 
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
   border-radius: 999px;
 
   box-shadow:
-    0 15px 40px
-      rgba(48, 36, 58, 0.22),
-    0 4px 12px
-      rgba(48, 36, 58, 0.12);
+    0 15px 40px rgba(0, 0, 0, 0.22),
+    0 4px 12px rgba(0, 0, 0, 0.12);
 
   pointer-events: auto;
 
-  transition:
-    all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 
@@ -80,20 +69,13 @@
   top: 12px;
 }
 
-.navbar-header.scrolled
-.navbar-container {
+.navbar-header.scrolled .navbar-container {
   min-height: 60px;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(43, 32, 52, 0.98),
-      rgba(57, 40, 67, 0.97)
-    );
+  background: #000000;
 
   box-shadow:
-    0 15px 42px
-      rgba(48, 36, 58, 0.28);
+    0 15px 42px rgba(0, 0, 0, 0.28);
 }
 
 
@@ -124,35 +106,30 @@
 
   text-decoration: none;
 
-  background:
-    linear-gradient(
-      135deg,
-      #c982aa,
-      #9a78c8
-    );
+  background: #057a9b;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
   box-shadow:
-    0 5px 16px
-      rgba(201, 130, 170, 0.22);
+    0 5px 16px rgba(5, 122, 155, 0.25);
 
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
 .navbar-logo:hover {
   transform: scale(1.06);
 
+  background: #0690b7;
+
   box-shadow:
-    0 7px 22px
-      rgba(201, 130, 170, 0.35);
+    0 7px 22px rgba(5, 122, 155, 0.4);
 }
 
 .logo-dot {
-  color: #f5b8d5;
+  color: #ffffff;
 }
 
 
@@ -200,8 +177,7 @@
 .nav-link:hover {
   color: #ffffff;
 
-  background:
-    rgba(255, 255, 255, 0.08);
+  background: rgba(5, 122, 155, 0.16);
 
   transform: translateY(-1px);
 }
@@ -209,16 +185,10 @@
 .nav-link.active {
   color: #ffffff;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(201, 130, 170, 0.28),
-      rgba(154, 120, 200, 0.28)
-    );
+  background: rgba(5, 122, 155, 0.25);
 
   box-shadow:
-    inset 0 0 0 1px
-      rgba(255, 255, 255, 0.08);
+    inset 0 0 0 1px rgba(5, 122, 155, 0.35);
 }
 
 
@@ -257,11 +227,9 @@
 
   border-radius: 50%;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
-  background:
-    rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
 
   color: #ffffff;
 
@@ -276,13 +244,11 @@
 .theme-toggle-btn:hover {
   transform: rotate(12deg);
 
-  border-color:
-    rgba(201, 130, 170, 0.5);
+  border-color: #057a9b;
 
-  color: #f3b5d2;
+  color: #057a9b;
 
-  background:
-    rgba(201, 130, 170, 0.14);
+  background: rgba(5, 122, 155, 0.14);
 }
 
 
@@ -303,11 +269,9 @@
 
   border-radius: 999px;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
-  background:
-    rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.09);
 
   color: #ffffff;
 
@@ -316,116 +280,182 @@
 
   text-decoration: none;
 
-  transition:
-    all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .btn-cv-download:hover {
   color: #ffffff;
 
-  border-color:
-    rgba(216, 157, 192, 0.45);
+  border-color: #057a9b;
 
-  background:
-    rgba(216, 157, 192, 0.18);
+  background: rgba(5, 122, 155, 0.2);
 
   transform: translateY(-1px);
 
   box-shadow:
-    0 6px 18px
-      rgba(201, 130, 170, 0.12);
+    0 6px 18px rgba(5, 122, 155, 0.16);
 }
 
 
 /* =====================================================
    LET'S TALK BUTTON
+   UIVERSE STYLE
 ===================================================== */
 
 .button {
-  width: 120px;
-  height: 40px;
+  background: #057a9b;
 
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  color: #ffffff;
 
-  gap: 8px;
+  font-family: inherit;
 
-  padding: 0 10px;
+  border: 1px solid #057a9b;
 
-  border: none;
-
-  border-radius: 999px;
-
-  /*
-     Soft pink instead of neon green
-  */
-  background:
-    linear-gradient(
-      135deg,
-      #d996b9,
-      #b982c7
-    );
-
-  color: #30243a;
+  text-align: center;
 
   font-size: 0.82rem;
-  font-weight: 750;
 
-  white-space: nowrap;
+  font-weight: 600;
+
+  border-radius: 2rem;
+
+  letter-spacing: 0.04em;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  position: relative;
+
+  height: 40px;
+
+  min-width: 126px;
+
+  padding-right: 3.1em;
+
+  padding-left: 1rem;
 
   cursor: pointer;
 
-  box-shadow:
-    0 5px 15px
-      rgba(201, 130, 170, 0.22);
+  box-sizing: border-box;
 
   transition:
-    transform 0.25s ease,
-    background 0.35s ease,
-    box-shadow 0.25s ease;
-}
-
-.button:hover {
-  background:
-    linear-gradient(
-      135deg,
-      #e3a7c7,
-      #c893d5
-    );
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 9px 22px
-      rgba(201, 130, 170, 0.3);
-}
-
-.button:active {
-  transform: scale(0.97);
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.2s ease,
+    box-shadow 0.35s ease;
 }
 
 
 /* =====================================================
-   LET'S TALK ICON
+   BUTTON TEXT
 ===================================================== */
 
-.svgIcon {
-  width: 25px;
-  height: 25px;
+.button-text {
+  position: relative;
 
-  flex-shrink: 0;
+  z-index: 1;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   BUTTON ICON CIRCLE
+===================================================== */
+
+.button-icon {
+  background: #ffffff;
+
+  margin-left: 1em;
+
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 32px;
+
+  width: 32px;
+
+  border-radius: 50%;
+
+  right: 4px;
+
+  color: #057a9b;
 
   transition:
-    transform 0.8s ease;
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.2s ease;
 }
 
-.svgIcon path {
-  fill: #30243a;
+
+/* =====================================================
+   BUTTON ICON
+===================================================== */
+
+.button-icon svg {
+  width: 18px;
+
+  transition:
+    transform 0.3s ease-out;
+
+  will-change: transform;
 }
 
-.button:hover .svgIcon {
-  transform: rotate(250deg);
+
+/* =====================================================
+   BUTTON HOVER
+===================================================== */
+
+.button:hover {
+  background-color: #ffffff;
+
+  color: #057a9b;
+
+  border: 1px solid #057a9b;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 18px rgba(5, 122, 155, 0.2);
+}
+
+
+/* =====================================================
+   ICON HOVER
+===================================================== */
+
+.button:hover .button-icon {
+  background: #057a9b;
+
+  color: #ffffff;
+}
+
+.button:hover .button-icon svg {
+  transform:
+    translateX(0.1em)
+    rotate(-25deg);
+}
+
+
+/* =====================================================
+   ACTIVE
+===================================================== */
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:active .button-icon {
+  transform: scale(0.95);
 }
 
 
@@ -444,11 +474,9 @@
 
   border-radius: 50%;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
-  background:
-    rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
 
   color: #ffffff;
 
@@ -456,12 +484,14 @@
 
   transition:
     background 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .mobile-menu-btn:hover {
-  background:
-    rgba(255, 255, 255, 0.14);
+  background: rgba(5, 122, 155, 0.2);
+
+  border-color: rgba(5, 122, 155, 0.6);
 
   transform: scale(1.04);
 }
@@ -483,41 +513,32 @@
 
   border-radius: 24px;
 
-  /*
-     Same dark plum theme
-  */
-  background:
-    linear-gradient(
-      145deg,
-      rgba(48, 36, 58, 0.98),
-      rgba(61, 43, 70, 0.98)
-    );
+  background: #000000;
 
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
   box-shadow:
-    0 20px 55px
-      rgba(48, 36, 58, 0.3);
+    0 20px 55px rgba(0, 0, 0, 0.3);
 
   pointer-events: auto;
 
-  animation:
-    mobileMenuIn 0.25s ease;
+  animation: mobileMenuIn 0.25s ease;
 }
 
 @keyframes mobileMenuIn {
 
   from {
     opacity: 0;
+
     transform: translateY(-8px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -529,6 +550,7 @@
 
 .mobile-nav-links {
   display: flex;
+
   flex-direction: column;
 
   gap: 4px;
@@ -536,7 +558,9 @@
 
 .mobile-nav-link {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   padding: 12px 14px;
@@ -546,6 +570,7 @@
   color: rgba(255, 255, 255, 0.72);
 
   font-size: 0.95rem;
+
   font-weight: 600;
 
   text-decoration: none;
@@ -559,12 +584,7 @@
 .mobile-nav-link.active {
   color: #ffffff;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(201, 130, 170, 0.2),
-      rgba(154, 120, 200, 0.2)
-    );
+  background: rgba(5, 122, 155, 0.2);
 }
 
 .mobile-active-dot {
@@ -573,12 +593,10 @@
 
   border-radius: 50%;
 
-  background:
-    #e1a1c2;
+  background: #057a9b;
 
   box-shadow:
-    0 0 0 4px
-      rgba(225, 161, 194, 0.1);
+    0 0 0 4px rgba(5, 122, 155, 0.12);
 }
 
 
@@ -588,6 +606,7 @@
 
 .mobile-drawer-actions {
   display: flex;
+
   flex-direction: column;
 
   gap: 10px;
@@ -596,57 +615,108 @@
 
   padding-top: 14px;
 
-  border-top: 1px solid
-    rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .mobile-cv {
   width: 100%;
-
-  min-height: 44px;
 }
+
+
+/* =====================================================
+   MOBILE LET'S TALK
+===================================================== */
 
 .mobile-talk-button {
   width: 100%;
 
   min-height: 44px;
 
-  border: none;
+  padding: 5px 6px 5px 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border: 1px solid #057a9b;
 
   border-radius: 999px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #d996b9,
-      #b982c7
-    );
+  background: #057a9b;
 
-  color: #30243a;
+  color: #ffffff;
 
   font-size: 0.9rem;
-  font-weight: 750;
+
+  font-weight: 700;
 
   cursor: pointer;
 
-  box-shadow:
-    0 5px 15px
-      rgba(201, 130, 170, 0.18);
-
   transition:
-    transform 0.2s ease,
-    background 0.2s ease;
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.2s ease;
 }
 
 .mobile-talk-button:hover {
-  background:
-    linear-gradient(
-      135deg,
-      #e3a7c7,
-      #c893d5
-    );
+  background: #ffffff;
+
+  color: #057a9b;
+
+  border-color: #057a9b;
 
   transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   MOBILE TALK ICON
+===================================================== */
+
+.mobile-talk-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #057a9b;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.25s ease;
+}
+
+.mobile-talk-button:hover .mobile-talk-icon {
+  background: #057a9b;
+
+  color: #ffffff;
+}
+
+.mobile-talk-button:hover .mobile-talk-icon svg {
+  transform:
+    translateX(2px)
+    rotate(-25deg);
+}
+
+.mobile-talk-icon svg {
+  width: 18px;
+
+  transition:
+    transform 0.3s ease;
 }
 
 
@@ -668,13 +738,14 @@
 
   .nav-link {
     padding-left: 9px;
+
     padding-right: 9px;
 
     font-size: 0.78rem;
   }
 
   .button {
-    width: 112px;
+    min-width: 118px;
   }
 }
 
@@ -688,8 +759,7 @@
   .navbar-header {
     top: 12px;
 
-    padding:
-      0 12px;
+    padding: 0 12px;
   }
 
   .navbar-header.scrolled {
@@ -701,8 +771,7 @@
 
     min-height: 60px;
 
-    padding:
-      7px 8px 7px 14px;
+    padding: 7px 8px 7px 14px;
   }
 
   .navbar-menu {
@@ -713,29 +782,39 @@
     display: none;
   }
 
-  /*
-     Compact Let's Talk button
-     on mobile.
-  */
+
+  /* Compact Uiverse button */
 
   .button {
+    min-width: 42px;
+
     width: 42px;
+
     height: 42px;
 
     padding: 0;
 
     justify-content: center;
 
-    gap: 0;
+    border-radius: 50%;
   }
 
-  .button span {
+  .button-text {
     display: none;
   }
 
-  .svgIcon {
-    width: 22px;
-    height: 22px;
+  .button-icon {
+    position: static;
+
+    width: 34px;
+
+    height: 34px;
+
+    margin: 0;
+  }
+
+  .button-icon svg {
+    width: 18px;
   }
 
   .mobile-menu-btn {
@@ -748,6 +827,7 @@
 
   .theme-toggle-btn {
     width: 38px;
+
     height: 38px;
   }
 }
@@ -762,8 +842,7 @@
   .navbar-header {
     top: 8px;
 
-    padding:
-      0 8px;
+    padding: 0 8px;
   }
 
   .navbar-container {
@@ -771,12 +850,12 @@
 
     border-radius: 20px;
 
-    padding:
-      6px 7px 6px 10px;
+    padding: 6px 7px 6px 10px;
   }
 
   .navbar-logo {
     width: 38px;
+
     height: 38px;
 
     font-size: 1.3rem;
@@ -784,21 +863,37 @@
 
   .theme-toggle-btn {
     width: 36px;
+
     height: 36px;
   }
 
   .button {
     width: 36px;
+
+    min-width: 36px;
+
     height: 36px;
+  }
+
+  .button-icon {
+    width: 29px;
+
+    height: 29px;
+  }
+
+  .button-icon svg {
+    width: 16px;
   }
 
   .mobile-menu-btn {
     width: 36px;
+
     height: 36px;
   }
 
   .mobile-drawer {
     left: 4px;
+
     right: 4px;
 
     border-radius: 20px;
@@ -816,6 +911,7 @@
   .navbar-logo,
   .nav-link,
   .button,
+  .button-icon,
   .mobile-menu-btn,
   .mobile-drawer {
     transition: none;

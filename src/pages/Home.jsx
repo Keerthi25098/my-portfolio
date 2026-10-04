@@ -9,7 +9,7 @@ import Education from '../components/Education';
 import Services from '../components/Services';
 
 import ContactSection from '../components/ContactSection';
-import Footer from '../components/Footer';
+
 import { dataService } from '../services/dataService';
 import './Home.css';
 
@@ -94,7 +94,7 @@ export default function Home() {
               
                 <ContactSection siteSettings={siteSettings} />
             </main>
-            <Footer siteSettings={siteSettings} />
+
         </div>
     );
 }

@@ -272,86 +272,8 @@ export default function ContactSection({
                         </div>
 
 
-                        {/* Contact Details */}
-                        <div className="contact-details">
-
-                            <a
-                                href={`mailto:${email}`}
-                                className="contact-detail"
-                            >
-
-                                <div className="contact-detail-icon">
-                                    <Mail size={16} />
-                                </div>
-
-                                <div className="contact-detail-text">
-
-                                    <span>
-                                        Email
-                                    </span>
-
-                                    <strong>
-                                        {email}
-                                    </strong>
-
-                                </div>
-
-                            </a>
 
 
-                            <div className="contact-detail">
-
-                                <div className="contact-detail-icon">
-                                    <MapPin size={16} />
-                                </div>
-
-                                <div className="contact-detail-text">
-
-                                    <span>
-                                        Location
-                                    </span>
-
-                                    <strong>
-                                        {location}
-                                    </strong>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        {/* Social Links */}
-                        <div className="hire-socials">
-
-                            <span className="social-title">
-                                Connect with me
-                            </span>
-
-                            <div className="social-links">
-
-                                <a
-                                    href={github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="GitHub"
-                                >
-                                    <GithubIcon size={17} />
-                                </a>
-
-                                <a
-                                    href={linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="LinkedIn"
-                                >
-                                    <LinkedinIcon size={17} />
-                                </a>
-
-                            </div>
-
-                        </div>
 
                     </div>
 
@@ -400,34 +322,7 @@ export default function ContactSection({
 
                             <>
 
-                                {/* Form Header */}
-                                <div className="form-top-content">
-
-                                    <div>
-
-                                        <span className="form-label">
-                                            GET STARTED
-                                        </span>
-
-                                        <h3>
-                                            Tell me about your project
-                                        </h3>
-
-                                    </div>
-
-                                    <div className="form-heading-icon">
-                                        <Send size={18} />
-                                    </div>
-
-                                </div>
-
-
-                                <p className="form-description">
-                                    Have an idea, project, or opportunity?
-                                    Send me a message and let's discuss it.
-                                </p>
-
-
+                      
                                 {/* Error */}
                                 {errorMsg && (
                                     <div className="form-message form-error">

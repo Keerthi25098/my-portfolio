@@ -271,12 +271,6 @@ export default function Projects({ projectsList }) {
                         Featured Projects
                     </h2>
 
-                    <p className="section-subtitle">
-                        Explore my real production client
-                        websites, web applications,
-                        e-commerce platforms, and
-                        interactive software tools.
-                    </p>
 
                 </div>
 
@@ -286,58 +280,7 @@ export default function Projects({ projectsList }) {
 
                 <div className="projects-control-bar">
 
-                    <div className="category-pills">
-                        {categories.map((category) => (
-                            <button
-                                key={category}
-                                type="button"
-                                className={`filter-pill ${
-                                    selectedCategory === category
-                                        ? 'active'
-                                        : ''
-                                }`}
-                                onClick={() =>
-                                    setSelectedCategory(category)
-                                }
-                            >
-                                {category}
-                            </button>
-                        ))}
-                    </div>
-
-                    <div className="project-search-box glass-panel">
-
-                        <Search
-                            size={15}
-                            className="search-icon"
-                        />
-
-                        <input
-                            type="text"
-                            placeholder="Search projects or skills..."
-                            value={searchQuery}
-                            onChange={(event) =>
-                                setSearchQuery(
-                                    event.target.value
-                                )
-                            }
-                            className="search-input"
-                        />
-
-                        {searchQuery && (
-                            <button
-                                type="button"
-                                onClick={() =>
-                                    setSearchQuery('')
-                                }
-                                className="clear-search-btn"
-                                aria-label="Clear search"
-                            >
-                                <X size={14} />
-                            </button>
-                        )}
-
-                    </div>
+          
 
                 </div>
 
@@ -461,33 +404,6 @@ export default function Projects({ projectsList }) {
 
                                         {/* TECHNOLOGIES */}
 
-                                        {Array.isArray(
-                                            project.technologies
-                                        ) &&
-                                            project.technologies.length >
-                                                0 && (
-                                                <div className="project-tech-badges">
-                                                    {project.technologies
-                                                        .slice(0, 4)
-                                                        .map(
-                                                            (
-                                                                technology,
-                                                                technologyIndex
-                                                            ) => (
-                                                                <span
-                                                                    key={
-                                                                        technologyIndex
-                                                                    }
-                                                                    className="tech-badge-sm"
-                                                                >
-                                                                    {
-                                                                        technology
-                                                                    }
-                                                                </span>
-                                                            )
-                                                        )}
-                                                </div>
-                                            )}
 
                                         {/* LIVE DEMO ONLY */}
 

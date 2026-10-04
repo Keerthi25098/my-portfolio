@@ -1,1289 +1,993 @@
-/* =====================================================
+/* =========================================================
    EXPERIENCE SECTION
-===================================================== */
+========================================================= */
 
 .experience-section {
-    position: relative;
+    width: 100%;
+    padding: 6rem 0 5rem;
 
-    overflow: clip;
+    background: #ffffff;
+    color: #000000;
 
-    padding: 5.5rem 24px 4.5rem;
+    overflow: hidden;
+}
 
-    background: var(--bg-secondary);
-
-    color: var(--text-main);
+.experience-container {
+    width: min(1400px, 92%);
+    margin: 0 auto;
 }
 
 
-/* =====================================================
-   SECTION HEADING
-===================================================== */
+/* =========================================================
+   SECTION HEADER
+========================================================= */
 
 .experience-heading {
-    max-width: 820px;
+    max-width: 760px;
 
-    margin: 0 auto;
-
-    padding: 0.5rem 0 4rem;
+    margin: 0 auto 3rem;
 
     text-align: center;
 }
 
-
-/* =====================================================
-   EYEBROW
-===================================================== */
-
 .experience-eyebrow {
     display: inline-flex;
-
     align-items: center;
+    gap: 0.45rem;
 
-    gap: 8px;
+    padding: 0.45rem 0.8rem;
 
-    padding: 9px 16px;
+    border: 1px solid rgba(5, 122, 155, 0.25);
+    border-radius: 999px;
 
-    border: 1px solid #efd8e7;
+    background: rgba(5, 122, 155, 0.07);
+    color: #057a9b;
 
-    border-radius: 50px;
-
-    background: #fff2f9;
-
-    color: #a25d88;
-
-    font-size: 0.8rem;
-
-    font-weight: 750;
+    font-size: 0.7rem;
+    font-weight: 700;
 
     letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
-
-
-/* =====================================================
-   MAIN TITLE
-===================================================== */
 
 .experience-title {
-    margin: 25px 0 0;
+    margin: 0.9rem 0 0.7rem;
 
-    color: var(--text-main);
+    color: #000000;
 
-    font-size:60px;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
 
     font-weight: 800;
-
-    line-height: 1.1;
-
-    letter-spacing: -0.055em;
 }
-
-
-.experience-title span {
-    color: var(--brand-purple);
-}
-
-
-/* =====================================================
-   SUBTITLE
-===================================================== */
 
 .experience-subtitle {
-    max-width: 620px;
+    max-width: 680px;
 
-    margin: 20px auto 0;
+    margin: 0 auto;
 
-    color: var(--text-muted);
+    color: #666666;
 
-    font-size: 1rem;
-
+    font-size: 0.95rem;
     line-height: 1.7;
 }
 
 
-/* =====================================================
-   SCROLL HINT
-===================================================== */
-
-.experience-scroll-hint {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-top: 28px;
-
-    color: var(--text-muted);
-
-    font-size: 0.84rem;
-
-    font-weight: 600;
-}
-
-
-.experience-scroll-dot {
-    width: 8px;
-
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: var(--brand-purple);
-
-    box-shadow:
-        0 0 0 5px rgba(182, 110, 154, 0.12);
-}
-
-
-/* =====================================================
-   STACKING LAYOUT
-===================================================== */
-
-.experience-stack {
-    position: relative;
-
-    width: 100%;
-
-    max-width: 1160px;
-
-    margin: 0 auto;
-}
-
-
-.experience-card-wrapper {
-    position: sticky;
-
-    top: 86px;
-
-    display: flex;
-
-    align-items: flex-start;
-
-    justify-content: center;
-
-    height: 82vh;
-
-    min-height: 550px;
-
-    padding-bottom: 35px;
-}
-
-
-/* =====================================================
-   EXPERIENCE CARD
-===================================================== */
-
-.experience-stack-card {
-    position: relative;
-
-    width: 100%;
-
-    max-width: 1080px;
-
-    height: min(650px, calc(82vh - 15px));
-
-    min-height: 510px;
-
-    padding: clamp(22px, 3vw, 34px);
-
-    overflow: hidden;
-
-    border: 1px solid rgba(76, 53, 82, 0.08);
-
-    border-radius: 27px;
-
-    box-shadow:
-        0 20px 55px rgba(58, 39, 66, 0.09),
-        0 3px 10px rgba(58, 39, 66, 0.04);
-
-    transform-origin: top center;
-
-    will-change: transform;
-}
-
-
-/* =====================================================
-   CARD HEADER
-===================================================== */
-
-.experience-card-top {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-bottom: 19px;
-}
-
-
-.experience-card-number {
-    color: #795c7d;
-
-    font-size: 0.76rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.13em;
-}
-
-
-/* =====================================================
-   CARD BADGES
-===================================================== */
-
-.experience-card-badges {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: flex-end;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-}
-
-
-.experience-year,
-.experience-current {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-    padding: 7px 11px;
-
-    border: 1px solid rgba(75, 54, 82, 0.1);
-
-    border-radius: 50px;
-
-    background: rgba(255, 255, 255, 0.62);
-
-    color: #66566f;
-
-    font-size: 0.76rem;
-
-    font-weight: 700;
-
-    white-space: nowrap;
-}
-
-
-.experience-current {
-    border-color: #d4e9d9;
-
-    background: #f1faf2;
-
-    color: #347849;
-}
-
-
-.experience-current-dot {
-    width: 7px;
-
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: #55a86c;
-}
-
-
-/* =====================================================
-   TWO COLUMN CARD
-===================================================== */
-
-.experience-card-layout {
+/* =========================================================
+   SIX CARD GRID
+========================================================= */
+
+.experience-grid {
     display: grid;
 
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: 0.7rem;
 
     align-items: stretch;
-
-    gap: clamp(22px, 3.5vw, 42px);
-
-    height: calc(100% - 44px);
-
-    min-height: 0;
 }
 
 
-/* =====================================================
-   CARD CONTENT
-===================================================== */
+/* =========================================================
+   EXPERIENCE CARD
+========================================================= */
 
-.experience-card-content {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    justify-content: flex-start;
+.experience-card {
+    position: relative;
 
     min-width: 0;
+    min-height: 245px;
 
-    min-height: 0;
-
-    overflow-y: auto;
-
-    padding-right: 5px;
-
-    scrollbar-width: thin;
-
-    scrollbar-color:
-        rgba(126, 91, 130, 0.3)
-        transparent;
-}
-
-
-.experience-card-content::-webkit-scrollbar {
-    width: 4px;
-}
-
-
-.experience-card-content::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-
-.experience-card-content::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-
-    background: rgba(126, 91, 130, 0.3);
-}
-
-
-/* =====================================================
-   CARD LABEL
-===================================================== */
-
-.experience-card-label {
-    margin-bottom: 9px;
-
-    color: var(--brand-purple);
-
-    font-size: 0.75rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.12em;
-}
-
-
-/* =====================================================
-   COMPANY NAME
-===================================================== */
-
-.experience-company {
-    margin: 0;
-
-    color: var(--text-main);
-
-    font-size: clamp(1.65rem, 2.6vw, 2.3rem);
-
-    font-weight: 800;
-
-    line-height: 1.16;
-
-    letter-spacing: -0.04em;
-
-    overflow-wrap: anywhere;
-}
-
-
-/* =====================================================
-   ROLE
-===================================================== */
-
-.experience-role {
-    margin: 8px 0 0;
-
-    color: #a05f8b;
-
-    font-size: clamp(1.05rem, 1.5vw, 1.22rem);
-
-    font-weight: 700;
-
-    line-height: 1.45;
-}
-
-
-/* =====================================================
-   DESCRIPTION
-===================================================== */
-
-.experience-description {
-    margin: 14px 0 15px;
-
-    color: var(--text-muted);
-
-    font-size: 0.94rem;
-
-    line-height: 1.6;
-}
-
-
-/* =====================================================
-   RESPONSIBILITIES
-===================================================== */
-
-.experience-responsibilities {
     display: flex;
-
     flex-direction: column;
-
-    gap: 8px;
-
-    margin: 0 0 14px;
 
     padding: 0;
 
-    list-style: none;
+    border: 1px solid #dedede;
+    border-radius: 16px;
+
+    background: #ffffff;
+    color: #000000;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.035);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.experience-card:hover {
+    border-color: #057a9b;
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+.experience-card-current {
+    border-color: #057a9b;
+
+    box-shadow:
+        0 8px 28px rgba(5, 122, 155, 0.08);
 }
 
 
-.experience-responsibilities li {
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.experience-card-top {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    align-items: flex-start;
+    min-height: 62px;
 
-    gap: 10px;
+    padding: 0.8rem;
 
-    color: var(--text-muted);
+    border-bottom: 1px solid #eeeeee;
 
-    font-size: 0.87rem;
+    background: #fafafa;
+}
 
-    line-height: 1.55;
+.experience-number {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #000000;
+    color: #ffffff;
+
+    font-size: 0.62rem;
+    font-weight: 800;
+}
+
+.experience-card-current .experience-number {
+    background: #057a9b;
+}
+
+.experience-card-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 0.35rem;
+}
+
+.experience-year {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    color: #777777;
+
+    font-size: 0.62rem;
+    font-weight: 700;
 }
 
 
-.experience-bullet {
-    flex-shrink: 0;
+/* =========================================================
+   CURRENT BADGE
+========================================================= */
 
-    width: 7px;
+.experience-current {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
 
-    height: 7px;
+    padding: 0.25rem 0.45rem;
 
-    margin-top: 7px;
+    border-radius: 999px;
 
-    border-radius: 2px;
+    background: rgba(5, 122, 155, 0.1);
 
-    background: #bd7ca5;
+    color: #057a9b;
+
+    font-size: 0.52rem;
+    font-weight: 800;
+}
+
+.experience-current span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #057a9b;
+}
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.experience-card-body {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 1rem 0.85rem;
+}
+
+.experience-small-label {
+    display: block;
+
+    margin-bottom: 0.55rem;
+
+    color: #057a9b;
+
+    font-size: 0.52rem;
+    font-weight: 800;
+
+    letter-spacing: 0.09em;
+}
+
+.experience-card h3 {
+    margin: 0;
+
+    color: #000000;
+
+    font-size: 0.92rem;
+    line-height: 1.3;
+
+    font-weight: 800;
+
+    letter-spacing: -0.015em;
+}
+
+.experience-card h4 {
+    margin: 0.4rem 0 0;
+
+    color: #057a9b;
+
+    font-size: 0.68rem;
+    line-height: 1.4;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.experience-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 52px;
+
+    padding: 0.7rem 0.85rem;
+
+    border-top: 1px solid #eeeeee;
+
+    background: #ffffff;
+}
+
+.experience-view {
+    color: #555555;
+
+    font-size: 0.62rem;
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+}
+
+.experience-card:hover .experience-view {
+    color: #057a9b;
+}
+
+.experience-card-arrow {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #000000;
+    color: #ffffff;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.experience-card:hover .experience-card-arrow {
+    background: #057a9b;
 
     transform: rotate(45deg);
 }
 
 
-/* =====================================================
-   TECHNOLOGY TAGS
-===================================================== */
-
-.experience-technologies {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 7px;
-
-    margin-top: 5px;
-
-    padding-top: 2px;
-}
-
-
-.experience-tech-tag {
-    display: inline-flex;
-
-    align-items: center;
-
-    padding: 7px 10px;
-
-    border: 1px solid rgba(98, 74, 104, 0.12);
-
-    border-radius: 9px;
-
-    background: rgba(255, 255, 255, 0.58);
-
-    color: #695b73;
-
-    font-size: 0.74rem;
-
-    font-weight: 650;
-
-    line-height: 1.3;
-
-    transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
-}
-
-
-.experience-tech-tag:hover {
-    transform: translateY(-2px);
-
-    border-color: rgba(166, 91, 143, 0.3);
-
-    background: rgba(255, 255, 255, 0.8);
-}
-
-
-/* =====================================================
-   CARD FOOTER
-===================================================== */
-
-.experience-card-footer {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 12px;
-
-    width: 100%;
-
-    margin-top: 15px;
-
-    padding-top: 12px;
-
-    border-top: 1px solid rgba(86, 64, 91, 0.12);
-}
-
-
-.experience-certificate {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    color: #92557f;
-
-    font-size: 0.84rem;
-
-    font-weight: 750;
-
-    text-decoration: none;
-
-    transition: color 0.2s ease;
-}
-
-
-a.experience-certificate:hover {
-    color: #663b63;
-}
-
-
-.experience-certificate-placeholder {
-    opacity: 0.72;
-}
-
-
-.experience-card-count {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 4px;
-
-    color: #8b7c92;
-
-    font-size: 0.8rem;
-
-    font-weight: 750;
-}
-
-
-/* =====================================================
-   IMAGE PANEL
-===================================================== */
-
-.experience-card-image {
-    position: relative;
-
-    width: 100%;
-
-    height: 100%;
-
-    min-width: 0;
-
-    min-height: 0;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border: 5px solid rgba(255, 255, 255, 0.72);
-
-    border-radius: 20px;
-
-    background: #f4edf3;
-
-    box-sizing: border-box;
-}
-
-
-.experience-card-image img {
-    position: absolute;
-
-    inset: 0;
-
-    display: block;
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: center;
-
-    padding: 7px;
-
-    box-sizing: border-box;
-
-    transition: transform 0.45s ease;
-}
-
-
-.experience-card-image:hover img {
-    transform: scale(1.02);
-}
-
-
-/* =====================================================
-   IMAGE OVERLAY
-===================================================== */
-
-.experience-image-overlay {
-    position: absolute;
-
-    right: 12px;
-
-    bottom: 12px;
-
-    left: 12px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    padding: 11px 13px;
-
-    border: 1px solid rgba(255, 255, 255, 0.65);
-
-    border-radius: 12px;
-
-    background: rgba(255, 255, 255, 0.88);
-
-    color: var(--text-main);
-
-    font-size: 0.76rem;
-
-    font-weight: 700;
-
-    backdrop-filter: blur(12px);
-
-    -webkit-backdrop-filter: blur(12px);
-}
-
-
-/* =====================================================
-   ENDING
-===================================================== */
+/* =========================================================
+   EXPERIENCE ENDING
+========================================================= */
 
 .experience-ending {
-    position: relative;
+    max-width: 650px;
 
-    z-index: 10;
-
-    padding: 70px 20px 30px;
+    margin: 4.5rem auto 0;
 
     text-align: center;
 }
 
-
 .experience-ending-eyebrow {
-    display: inline-block;
+    color: #057a9b;
 
-    margin-bottom: 15px;
+    font-family: monospace;
 
-    color: var(--brand-purple);
+    font-size: 0.65rem;
+    font-weight: 700;
 
-    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+}
 
-    font-weight: 800;
+.experience-ending h3 {
+    margin: 0.7rem 0 0.5rem;
 
-    letter-spacing: 0.18em;
+    color: #000000;
+
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+
+    line-height: 1.2;
+
+    letter-spacing: -0.035em;
+}
+
+.experience-ending p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
 
-.experience-ending h3 {
-    margin: 0;
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
 
-    color: var(--text-main);
+.experience-modal-overlay {
+    position: fixed;
 
-    font-size: clamp(1.9rem, 4vw, 3.2rem);
+    inset: 0;
 
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.experience-modal {
+    width: min(850px, 100%);
+
+    max-height: min(700px, 90vh);
+
+    overflow-y: auto;
+
+    border: 1px solid #dedede;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.experience-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.15rem 1.3rem;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    background: #fafafa;
+}
+
+.modal-header-left {
+    display: flex;
+    align-items: center;
+
+    gap: 0.8rem;
+}
+
+.modal-number {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #057a9b;
+    color: #ffffff;
+
+    font-size: 0.72rem;
     font-weight: 800;
+}
+
+.modal-meta {
+    display: flex;
+    align-items: center;
+
+    gap: 0.5rem;
+}
+
+.modal-year {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    color: #555555;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.modal-current {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    color: #057a9b;
+
+    font-size: 0.64rem;
+    font-weight: 700;
+}
+
+.modal-current span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #057a9b;
+}
+
+
+/* =========================================================
+   MODAL CLOSE
+========================================================= */
+
+.modal-close {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #000000;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #000000;
+
+    border-color: #000000;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MODAL TITLE
+========================================================= */
+
+.experience-modal-title {
+    padding: 1.7rem 1.6rem 0.8rem;
+}
+
+.modal-overline {
+    color: #057a9b;
+
+    font-size: 0.62rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+.experience-modal-title h2 {
+    margin: 0.5rem 0 0;
+
+    color: #000000;
+
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+
+    line-height: 1.1;
 
     letter-spacing: -0.04em;
 }
 
+.experience-modal-title h3 {
+    margin: 0.45rem 0 0;
 
-.experience-ending p {
-    margin: 14px 0 0;
+    color: #057a9b;
 
-    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
 
-    font-size: 1rem;
+
+/* =========================================================
+   MODAL DESCRIPTION
+========================================================= */
+
+.experience-modal-description {
+    padding: 0 1.6rem 1.3rem;
+}
+
+.experience-modal-description p {
+    margin: 0;
+
+    color: #626262;
+
+    font-size: 0.86rem;
 
     line-height: 1.7;
 }
 
 
-/* =====================================================
-   LARGE DESKTOP
-===================================================== */
+/* =========================================================
+   MODAL CONTENT GRID
+========================================================= */
 
-@media (min-width: 1200px) {
+.experience-modal-grid {
+    display: grid;
 
-    .experience-section {
-        padding-top: 5.5rem;
+    grid-template-columns: 1.2fr 0.8fr;
 
-        padding-bottom: 4.5rem;
+    gap: 1.5rem;
+
+    margin: 0 1.6rem;
+
+    padding: 1.3rem 0;
+
+    border-top: 1px solid #e8e8e8;
+
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.modal-detail-section {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   MODAL SECTION TITLE
+========================================================= */
+
+.modal-section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 0.55rem;
+
+    margin-bottom: 1rem;
+}
+
+.modal-section-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(5, 122, 155, 0.1);
+
+    color: #057a9b;
+}
+
+.modal-section-heading h4 {
+    margin: 0;
+
+    color: #000000;
+
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   MODAL RESPONSIBILITIES
+========================================================= */
+
+.modal-responsibilities {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.7rem;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.modal-responsibilities li {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 0.6rem;
+
+    color: #555555;
+
+    font-size: 0.76rem;
+
+    line-height: 1.6;
+}
+
+.modal-bullet {
+    width: 5px;
+    height: 5px;
+
+    flex: 0 0 5px;
+
+    margin-top: 0.48rem;
+
+    border-radius: 50%;
+
+    background: #057a9b;
+}
+
+
+/* =========================================================
+   MODAL TECHNOLOGIES
+========================================================= */
+
+.modal-technologies {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.45rem;
+}
+
+.modal-technologies span {
+    padding: 0.4rem 0.6rem;
+
+    border: 1px solid #dedede;
+
+    border-radius: 7px;
+
+    background: #f8f8f8;
+
+    color: #555555;
+
+    font-size: 0.65rem;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.modal-technologies span:hover {
+    border-color: rgba(5, 122, 155, 0.35);
+
+    background: rgba(5, 122, 155, 0.08);
+
+    color: #057a9b;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.experience-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem 1.6rem;
+}
+
+.modal-certificate {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.45rem;
+
+    color: #057a9b;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.modal-certificate.disabled {
+    color: #aaa;
+}
+
+.modal-done-button {
+    padding: 0.65rem 1rem;
+
+    border: 1px solid #000000;
+
+    border-radius: 8px;
+
+    background: #000000;
+    color: #ffffff;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.modal-done-button:hover {
+    background: #057a9b;
+
+    border-color: #057a9b;
+}
+
+
+/* =========================================================
+   LARGE LAPTOP
+========================================================= */
+
+@media (max-width: 1250px) {
+
+    .experience-container {
+        width: 94%;
     }
 
-    .experience-heading {
-        padding-bottom: 4.2rem;
+    .experience-grid {
+        gap: 0.55rem;
     }
 
-    .experience-company {
-        font-size: 2.25rem;
+    .experience-card {
+        min-height: 235px;
     }
 
-    .experience-description {
-        font-size: 0.96rem;
+    .experience-card h3 {
+        font-size: 0.86rem;
     }
 
-    .experience-responsibilities li {
-        font-size: 0.88rem;
+    .experience-card h4 {
+        font-size: 0.64rem;
     }
 }
 
 
-/* =====================================================
-   TABLET / SMALL LAPTOP
-===================================================== */
+/* =========================================================
+   TABLET
+========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .experience-section {
-        padding: 5rem 18px 4rem;
+        padding: 5rem 0 4rem;
     }
 
+    .experience-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
 
-    .experience-heading {
-        padding-bottom: 3.5rem;
+        gap: 0.8rem;
     }
 
-
-    .experience-card-wrapper {
-        top: 78px;
-
-        height: 80vh;
-
-        min-height: 570px;
+    .experience-card {
+        min-height: 230px;
     }
 
-
-    .experience-stack-card {
-        height: min(680px, calc(80vh - 15px));
-
-        min-height: 540px;
-
-        padding: 22px;
+    .experience-card h3 {
+        font-size: 0.92rem;
     }
 
-
-    .experience-card-layout {
-        grid-template-columns: 1fr 0.85fr;
-
-        gap: 20px;
-    }
-
-
-    .experience-company {
-        font-size: clamp(1.5rem, 3vw, 2rem);
-    }
-
-
-    .experience-role {
-        font-size: 1rem;
-    }
-
-
-    .experience-description {
-        font-size: 0.88rem;
-    }
-
-
-    .experience-responsibilities li {
-        font-size: 0.82rem;
-    }
-
-
-    .experience-tech-tag {
-        font-size: 0.7rem;
-    }
-
-
-    .experience-card-image {
-        border-width: 3px;
-
-        border-radius: 17px;
-    }
-
-
-    .experience-card-image img {
-        padding: 6px;
-    }
-
-
-    .experience-image-overlay {
-        right: 8px;
-
-        bottom: 8px;
-
-        left: 8px;
-
-        padding: 9px 10px;
-
-        font-size: 0.7rem;
+    .experience-card h4 {
+        font-size: 0.68rem;
     }
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     .experience-section {
-        padding: 4rem 13px 3rem;
+        padding: 4.5rem 0 4rem;
     }
 
+    .experience-container {
+        width: 92%;
+    }
 
     .experience-heading {
-        padding-bottom: 2.8rem;
+        margin-bottom: 2rem;
     }
-
-
-    .experience-eyebrow {
-        font-size: 0.7rem;
-    }
-
 
     .experience-title {
-        font-size: clamp(2.2rem, 9vw, 3rem);
+        font-size: 2.2rem;
     }
-
 
     .experience-subtitle {
-        font-size: 0.9rem;
-
-        line-height: 1.65;
+        font-size: 0.85rem;
     }
 
+    .experience-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-    .experience-scroll-hint {
-        font-size: 0.76rem;
+        gap: 0.75rem;
     }
 
-
-    .experience-card-wrapper {
-        top: 72px;
-
-        height: 82vh;
-
-        min-height: 650px;
-
-        padding-bottom: 20px;
+    .experience-card {
+        min-height: 220px;
     }
 
-
-    .experience-stack-card {
-        height: min(740px, calc(82vh - 10px));
-
-        min-height: 620px;
-
-        padding: 17px;
-
-        border-radius: 22px;
+    .experience-card-body {
+        padding: 0.9rem 0.75rem;
     }
 
-
-    /* =================================
-       CARD HEADER
-    ================================= */
-
-    .experience-card-top {
-        align-items: flex-start;
-
-        gap: 8px;
-
-        margin-bottom: 13px;
-    }
-
-
-    .experience-card-number {
-        padding-top: 7px;
-
-        font-size: 0.64rem;
-    }
-
-
-    .experience-card-badges {
-        gap: 5px;
-    }
-
-
-    .experience-year,
-    .experience-current {
-        padding: 6px 8px;
-
-        font-size: 0.64rem;
-    }
-
-
-    /* =================================
-       CONTENT + IMAGE
-    ================================= */
-
-    .experience-card-layout {
-        grid-template-columns: 1fr;
-
-        grid-template-rows:
-            minmax(0, 1fr)
-            minmax(180px, 0.65fr);
-
-        gap: 13px;
-
-        height: calc(100% - 35px);
-    }
-
-
-    .experience-card-content {
-        overflow-y: auto;
-
-        padding-right: 3px;
-    }
-
-
-    /* =================================
-       MOBILE TEXT
-    ================================= */
-
-    .experience-card-label {
-        margin-bottom: 6px;
-
-        font-size: 0.64rem;
-    }
-
-
-    .experience-company {
-        font-size: clamp(1.45rem, 6vw, 1.9rem);
-
-        line-height: 1.17;
-    }
-
-
-    .experience-role {
-        margin-top: 5px;
-
-        font-size: 0.95rem;
-    }
-
-
-    .experience-description {
-        margin: 9px 0 11px;
-
-        font-size: 0.84rem;
-
-        line-height: 1.55;
-    }
-
-
-    /* =================================
-       MOBILE RESPONSIBILITIES
-    ================================= */
-
-    .experience-responsibilities {
-        gap: 6px;
-
-        margin-bottom: 10px;
-    }
-
-
-    .experience-responsibilities li {
-        gap: 8px;
-
-        font-size: 0.78rem;
-
-        line-height: 1.45;
-    }
-
-
-    .experience-bullet {
-        width: 6px;
-
-        height: 6px;
-
-        margin-top: 5px;
-    }
-
-
-    /* =================================
-       MOBILE TECHNOLOGIES
-    ================================= */
-
-    .experience-technologies {
-        gap: 5px;
-
-        margin-top: 2px;
-    }
-
-
-    .experience-tech-tag {
-        padding: 5px 7px;
-
-        font-size: 0.65rem;
-    }
-
-
-    /* =================================
-       MOBILE FOOTER
-    ================================= */
-
-    .experience-card-footer {
-        margin-top: 10px;
-
-        padding-top: 9px;
-    }
-
-
-    .experience-certificate {
-        gap: 5px;
-
-        font-size: 0.73rem;
-    }
-
-
-    .experience-card-count {
-        font-size: 0.7rem;
-    }
-
-
-    /* =================================
-       MOBILE IMAGE
-    ================================= */
-
-    .experience-card-image {
-        width: 100%;
-
-        height: 100%;
-
-        min-height: 180px;
-
-        border-radius: 15px;
-
-        border-width: 3px;
-
-        background: #f4edf3;
-    }
-
-
-    .experience-card-image img {
-        width: 100%;
-
-        height: 100%;
-
-        padding: 5px;
-
-        object-fit: contain;
-
-        object-position: center;
-    }
-
-
-    /* =================================
-       IMAGE OVERLAY
-    ================================= */
-
-    .experience-image-overlay {
-        right: 8px;
-
-        bottom: 8px;
-
-        left: 8px;
-
-        padding: 8px 10px;
-
-        font-size: 0.64rem;
-    }
-
-
-    /* =================================
-       ENDING
-    ================================= */
-
-    .experience-ending {
-        padding-top: 45px;
-    }
-
-
-    .experience-ending p {
-        font-size: 0.9rem;
-    }
-}
-
-
-/* =====================================================
-   SHORT MOBILE SCREENS
-===================================================== */
-
-@media (max-width: 600px) and (max-height: 700px) {
-
-    .experience-card-wrapper {
-        height: 690px;
-
-        min-height: 690px;
-    }
-
-
-    .experience-stack-card {
-        height: 660px;
-
-        min-height: 660px;
-    }
-
-
-    .experience-card-layout {
-        grid-template-rows:
-            minmax(0, 1fr)
-            minmax(165px, 0.6fr);
-    }
-
-
-    .experience-card-image {
-        min-height: 165px;
-    }
-}
-
-
-/* =====================================================
-   VERY SMALL DEVICES
-===================================================== */
-
-@media (max-width: 380px) {
-
-    .experience-section {
-        padding-left: 10px;
-
-        padding-right: 10px;
-    }
-
-
-    .experience-stack-card {
-        padding: 14px;
-
-        border-radius: 19px;
-    }
-
-
-    .experience-card-layout {
-        gap: 10px;
-    }
-
-
-    .experience-company {
-        font-size: 1.35rem;
-    }
-
-
-    .experience-role {
+    .experience-card h3 {
         font-size: 0.88rem;
     }
 
-
-    .experience-description {
-        font-size: 0.77rem;
+    .experience-card h4 {
+        font-size: 0.66rem;
     }
 
 
-    .experience-responsibilities li {
-        font-size: 0.71rem;
+    /* MODAL */
+
+    .experience-modal-overlay {
+        padding: 0.8rem;
     }
 
+    .experience-modal {
+        max-height: 94vh;
 
-    .experience-card-image {
-        min-height: 155px;
-
-        border-radius: 13px;
+        border-radius: 18px;
     }
 
+    .experience-modal-grid {
+        grid-template-columns: 1fr;
 
-    .experience-card-image img {
-        padding: 4px;
-    }
-
-
-    .experience-image-overlay {
-        right: 6px;
-
-        bottom: 6px;
-
-        left: 6px;
-
-        padding: 7px 8px;
-
-        font-size: 0.58rem;
+        gap: 1.3rem;
     }
 }
 
 
-/* =====================================================
-   ACCESSIBILITY
-===================================================== */
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        min-height: 210px;
+    }
+
+    .experience-modal-title {
+        padding: 1.3rem 1.1rem 0.7rem;
+    }
+
+    .experience-modal-description {
+        padding: 0 1.1rem 1rem;
+    }
+
+    .experience-modal-grid {
+        margin: 0 1.1rem;
+    }
+
+    .experience-modal-footer {
+        padding: 0.9rem 1.1rem;
+    }
+
+    .experience-modal-header {
+        padding: 0.9rem 1rem;
+    }
+
+    .modal-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .experience-stack-card {
-        will-change: auto;
-    }
-
-
-    .experience-card-image img {
+    .experience-card,
+    .experience-card-arrow,
+    .experience-card-view,
+    .modal-close,
+    .modal-done-button {
         transition: none;
-    }
-
-
-    .experience-card-image:hover img {
-        transform: none;
     }
 }
