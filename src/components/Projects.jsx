@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -13,17 +12,35 @@ import './Projects.css';
 
 // =====================================================
 // PROJECT IMAGES
+// All images are inside:
+// src/assets/
 // =====================================================
 
-// Images must be imported from src/assets
-import akshithaImage from '../assets/akshitha.jpeg';
+import weatherImg from '../assets/weather.jpeg';
+import tryzoneImg from '../assets/tryzone.jpeg';
+import owltrackrImg from '../assets/owltrakr.jpeg';
+import owlixImg from '../assets/owlix.jpeg';
+import neoImg from '../assets/neo.jpeg';
+import hiremindsImg from '../assets/hireminds.jpeg';
+import grindoImg from '../assets/grindo.jpeg';
+import chotekisanImg from '../assets/chotekisan.jpeg';
+import calcverseImg from '../assets/calcverse.jpeg';
 
-// Add your other project images here when available.
-// Example:
-// import choteKisanImage from '../assets/chotekisan.jpeg';
-// import hireMindsImage from '../assets/hireminds.jpeg';
-// import stmLaserImage from '../assets/stmlaser.jpeg';
+// =====================================================
+// PROJECT IMAGE MAP
+// =====================================================
 
+const projectImages = {
+    weather: weatherImg,
+    tryzone: tryzoneImg,
+    owltrackr: owltrackrImg,
+    owlix: owlixImg,
+    neo: neoImg,
+    hireminds: hiremindsImg,
+    grindo: grindoImg,
+    chotekisan: chotekisanImg,
+    calcverse: calcverseImg
+};
 
 // =====================================================
 // GITHUB ICON
@@ -43,17 +60,8 @@ function GithubIcon({ size = 18 }) {
     );
 }
 
-
 // =====================================================
-// FALLBACK IMAGE
-// =====================================================
-
-const FALLBACK_IMAGE =
-    'https://placehold.co/1200x700/f5f3ff/475569?text=Project+Preview';
-
-
-// =====================================================
-// PROJECT IMAGE
+// PROJECT IMAGE COMPONENT
 // =====================================================
 
 function ProjectImage({
@@ -62,12 +70,12 @@ function ProjectImage({
     className,
     ...props
 }) {
-    const [imageSrc, setImageSrc] = useState(
-        src || FALLBACK_IMAGE
-    );
+    const [imageSrc, setImageSrc] = useState(src);
 
     const handleImageError = () => {
-        setImageSrc(FALLBACK_IMAGE);
+        setImageSrc(
+            'https://placehold.co/1200x700/f5f3ff/475569?text=Project+Preview'
+        );
     };
 
     return (
@@ -83,6 +91,96 @@ function ProjectImage({
     );
 }
 
+// =====================================================
+// GET LOCAL PROJECT IMAGE
+// =====================================================
+
+function getProjectImage(project) {
+    if (!project) {
+        return null;
+    }
+
+    const title = String(
+        project.title || ''
+    ).toLowerCase();
+
+    // Weather / SkyCast
+    if (
+        title.includes('weather') ||
+        title.includes('skycast')
+    ) {
+        return projectImages.weather;
+    }
+
+    // TryZone
+    if (
+        title.includes('tryzone') ||
+        title.includes('try zone')
+    ) {
+        return projectImages.tryzone;
+    }
+
+    // OwlTracKR
+    if (
+        title.includes('owltrackr') ||
+        title.includes('owltrack')
+    ) {
+        return projectImages.owltrackr;
+    }
+
+    // Owlix
+    if (
+        title.includes('owlix') ||
+        title.includes('employee hub') ||
+        title.includes('employee')
+    ) {
+        return projectImages.owlix;
+    }
+
+    // Neo Wheels
+    if (
+        title.includes('neo wheels') ||
+        title.includes('neo-wheels') ||
+        title.includes('neo')
+    ) {
+        return projectImages.neo;
+    }
+
+    // HireMinds
+    if (
+        title.includes('hireminds') ||
+        title.includes('hire minds')
+    ) {
+        return projectImages.hireminds;
+    }
+
+    // Grindo
+    if (
+        title.includes('grindo')
+    ) {
+        return projectImages.grindo;
+    }
+
+    // ChoteKisan
+    if (
+        title.includes('chotekisan') ||
+        title.includes('chote kisan')
+    ) {
+        return projectImages.chotekisan;
+    }
+
+    // CalcVerse
+    if (
+        title.includes('calcverse') ||
+        title.includes('calculator')
+    ) {
+        return projectImages.calcverse;
+    }
+
+    // If image_url already contains a valid URL/path,
+    // use it as a fallback.
+    return project.image_url || null;
+}
 
 // =====================================================
 // PROJECTS COMPONENT
@@ -99,35 +197,16 @@ export default function Projects({ projectsList }) {
     const [activeModalProject, setActiveModalProject] =
         useState(null);
 
-
     // =================================================
     // PROJECT DATA
     // =================================================
 
     const projects = Array.isArray(projectsList)
-        ? projectsList.map((project) => {
-
-            /*
-             * Match your project image here.
-             *
-             * If your project title is "Akshitha Interiors",
-             * use the imported akshithaImage.
-             */
-
-            if (
-                project?.title?.toLowerCase().includes('akshitha')
-            ) {
-                return {
-                    ...project,
-                    image_url: akshithaImage
-                };
-            }
-
-            return project;
-
-        })
+        ? projectsList.map((project) => ({
+            ...project,
+            localImage: getProjectImage(project)
+        }))
         : [];
-
 
     // =================================================
     // CATEGORIES
@@ -151,7 +230,6 @@ export default function Projects({ projectsList }) {
         return Array.from(categorySet);
 
     }, [projects]);
-
 
     // =================================================
     // FILTER PROJECTS
@@ -202,7 +280,6 @@ export default function Projects({ projectsList }) {
         searchQuery
     ]);
 
-
     // =================================================
     // CLOSE MODAL
     // =================================================
@@ -211,9 +288,8 @@ export default function Projects({ projectsList }) {
         setActiveModalProject(null);
     };
 
-
     // =================================================
-    // COMPONENT
+    // RETURN
     // =================================================
 
     return (
@@ -254,12 +330,13 @@ export default function Projects({ projectsList }) {
 
                 </div>
 
-
                 {/* =====================================
                     FILTER + SEARCH
                 ====================================== */}
 
                 <div className="projects-control-bar">
+
+                    {/* CATEGORY FILTER */}
 
                     <div className="category-pills">
 
@@ -291,6 +368,7 @@ export default function Projects({ projectsList }) {
 
                     </div>
 
+                    {/* SEARCH */}
 
                     <div className="project-search-box glass-panel">
 
@@ -331,7 +409,6 @@ export default function Projects({ projectsList }) {
                     </div>
 
                 </div>
-
 
                 {/* =====================================
                     PROJECT GRID
@@ -376,13 +453,15 @@ export default function Projects({ projectsList }) {
                                     }`}
                                 >
 
-                                    {/* PROJECT IMAGE */}
+                                    {/* =================================
+                                        IMAGE
+                                    ================================== */}
 
                                     <div className="bento-img-container">
 
                                         <ProjectImage
                                             src={
-                                                project.image_url
+                                                project.localImage
                                             }
                                             alt={
                                                 project.title ||
@@ -413,7 +492,6 @@ export default function Projects({ projectsList }) {
 
                                         </div>
 
-
                                         {project.is_featured && (
 
                                             <span className="featured-badge">
@@ -424,8 +502,9 @@ export default function Projects({ projectsList }) {
 
                                     </div>
 
-
-                                    {/* PROJECT CONTENT */}
+                                    {/* =================================
+                                        CONTENT
+                                    ================================== */}
 
                                     <div className="bento-content">
 
@@ -449,7 +528,6 @@ export default function Projects({ projectsList }) {
 
                                         </div>
 
-
                                         <h3
                                             className="project-title"
                                             onClick={() =>
@@ -464,7 +542,6 @@ export default function Projects({ projectsList }) {
 
                                         </h3>
 
-
                                         <p className="project-desc">
 
                                             {project.description ||
@@ -472,6 +549,7 @@ export default function Projects({ projectsList }) {
 
                                         </p>
 
+                                        {/* TECHNOLOGIES */}
 
                                         {Array.isArray(
                                             project.technologies
@@ -514,8 +592,7 @@ export default function Projects({ projectsList }) {
 
                                             )}
 
-
-                                        {/* ACTION BUTTONS */}
+                                        {/* BUTTONS */}
 
                                         <div className="bento-actions">
 
@@ -545,7 +622,6 @@ export default function Projects({ projectsList }) {
                                                     </a>
 
                                                 )}
-
 
                                             {project.github_url && (
 
@@ -584,8 +660,9 @@ export default function Projects({ projectsList }) {
 
                 </motion.div>
 
-
-                {/* NO RESULTS */}
+                {/* =====================================
+                    NO RESULTS
+                ====================================== */}
 
                 {filteredProjects.length ===
                     0 && (
@@ -603,7 +680,6 @@ export default function Projects({ projectsList }) {
                 )}
 
             </div>
-
 
             {/* =========================================
                 PROJECT MODAL
@@ -626,6 +702,8 @@ export default function Projects({ projectsList }) {
                         aria-labelledby="project-modal-title"
                     >
 
+                        {/* CLOSE BUTTON */}
+
                         <button
                             type="button"
                             className="modal-close-btn"
@@ -637,16 +715,17 @@ export default function Projects({ projectsList }) {
 
                         </button>
 
-
                         <div className="modal-body">
 
-                            {/* MODAL IMAGE */}
+                            {/* =================================
+                                MODAL IMAGE
+                            ================================== */}
 
                             <div className="modal-img-wrapper">
 
                                 <ProjectImage
                                     src={
-                                        activeModalProject.image_url
+                                        activeModalProject.localImage
                                     }
                                     alt={
                                         activeModalProject.title ||
@@ -657,8 +736,9 @@ export default function Projects({ projectsList }) {
 
                             </div>
 
-
-                            {/* MODAL DETAILS */}
+                            {/* =================================
+                                MODAL DETAILS
+                            ================================== */}
 
                             <div className="modal-details">
 
@@ -668,7 +748,6 @@ export default function Projects({ projectsList }) {
                                         'Project'}
 
                                 </span>
-
 
                                 <h2
                                     className="modal-title"
@@ -680,7 +759,6 @@ export default function Projects({ projectsList }) {
 
                                 </h2>
 
-
                                 <p className="modal-long-desc">
 
                                     {activeModalProject.long_description ||
@@ -689,6 +767,7 @@ export default function Projects({ projectsList }) {
 
                                 </p>
 
+                                {/* TECHNOLOGIES */}
 
                                 {Array.isArray(
                                     activeModalProject.technologies
@@ -736,8 +815,7 @@ export default function Projects({ projectsList }) {
 
                                     )}
 
-
-                                {/* MODAL ACTIONS */}
+                                {/* ACTIONS */}
 
                                 <div className="modal-actions">
 
@@ -765,7 +843,6 @@ export default function Projects({ projectsList }) {
                                             </a>
 
                                         )}
-
 
                                     {activeModalProject.github_url && (
 
