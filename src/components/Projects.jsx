@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -9,6 +10,20 @@ import {
 } from 'lucide-react';
 
 import './Projects.css';
+
+// =====================================================
+// PROJECT IMAGES
+// =====================================================
+
+// Images must be imported from src/assets
+import akshithaImage from '../assets/akshitha.jpeg';
+
+// Add your other project images here when available.
+// Example:
+// import choteKisanImage from '../assets/chotekisan.jpeg';
+// import hireMindsImage from '../assets/hireminds.jpeg';
+// import stmLaserImage from '../assets/stmlaser.jpeg';
+
 
 // =====================================================
 // GITHUB ICON
@@ -28,12 +43,14 @@ function GithubIcon({ size = 18 }) {
     );
 }
 
+
 // =====================================================
-// IMAGE FALLBACK
+// FALLBACK IMAGE
 // =====================================================
 
 const FALLBACK_IMAGE =
     'https://placehold.co/1200x700/f5f3ff/475569?text=Project+Preview';
+
 
 // =====================================================
 // PROJECT IMAGE
@@ -66,6 +83,7 @@ function ProjectImage({
     );
 }
 
+
 // =====================================================
 // PROJECTS COMPONENT
 // =====================================================
@@ -81,13 +99,35 @@ export default function Projects({ projectsList }) {
     const [activeModalProject, setActiveModalProject] =
         useState(null);
 
+
     // =================================================
     // PROJECT DATA
     // =================================================
 
     const projects = Array.isArray(projectsList)
-        ? projectsList
+        ? projectsList.map((project) => {
+
+            /*
+             * Match your project image here.
+             *
+             * If your project title is "Akshitha Interiors",
+             * use the imported akshithaImage.
+             */
+
+            if (
+                project?.title?.toLowerCase().includes('akshitha')
+            ) {
+                return {
+                    ...project,
+                    image_url: akshithaImage
+                };
+            }
+
+            return project;
+
+        })
         : [];
+
 
     // =================================================
     // CATEGORIES
@@ -111,6 +151,7 @@ export default function Projects({ projectsList }) {
         return Array.from(categorySet);
 
     }, [projects]);
+
 
     // =================================================
     // FILTER PROJECTS
@@ -161,6 +202,7 @@ export default function Projects({ projectsList }) {
         searchQuery
     ]);
 
+
     // =================================================
     // CLOSE MODAL
     // =================================================
@@ -168,6 +210,7 @@ export default function Projects({ projectsList }) {
     const closeModal = () => {
         setActiveModalProject(null);
     };
+
 
     // =================================================
     // COMPONENT
@@ -211,13 +254,12 @@ export default function Projects({ projectsList }) {
 
                 </div>
 
+
                 {/* =====================================
                     FILTER + SEARCH
                 ====================================== */}
 
                 <div className="projects-control-bar">
-
-                    {/* CATEGORY */}
 
                     <div className="category-pills">
 
@@ -249,7 +291,6 @@ export default function Projects({ projectsList }) {
 
                     </div>
 
-                    {/* SEARCH */}
 
                     <div className="project-search-box glass-panel">
 
@@ -290,6 +331,7 @@ export default function Projects({ projectsList }) {
                     </div>
 
                 </div>
+
 
                 {/* =====================================
                     PROJECT GRID
@@ -334,9 +376,7 @@ export default function Projects({ projectsList }) {
                                     }`}
                                 >
 
-                                    {/* =========================
-                                        PROJECT IMAGE
-                                    ========================== */}
+                                    {/* PROJECT IMAGE */}
 
                                     <div className="bento-img-container">
 
@@ -350,8 +390,6 @@ export default function Projects({ projectsList }) {
                                             }
                                             className="bento-img"
                                         />
-
-                                        {/* OVERLAY */}
 
                                         <div className="bento-overlay">
 
@@ -375,7 +413,6 @@ export default function Projects({ projectsList }) {
 
                                         </div>
 
-                                        {/* FEATURED */}
 
                                         {project.is_featured && (
 
@@ -387,13 +424,10 @@ export default function Projects({ projectsList }) {
 
                                     </div>
 
-                                    {/* =========================
-                                        PROJECT CONTENT
-                                    ========================== */}
+
+                                    {/* PROJECT CONTENT */}
 
                                     <div className="bento-content">
-
-                                        {/* HEADER */}
 
                                         <div className="bento-header">
 
@@ -415,7 +449,6 @@ export default function Projects({ projectsList }) {
 
                                         </div>
 
-                                        {/* TITLE */}
 
                                         <h3
                                             className="project-title"
@@ -431,7 +464,6 @@ export default function Projects({ projectsList }) {
 
                                         </h3>
 
-                                        {/* DESCRIPTION */}
 
                                         <p className="project-desc">
 
@@ -440,7 +472,6 @@ export default function Projects({ projectsList }) {
 
                                         </p>
 
-                                        {/* TECHNOLOGIES */}
 
                                         {Array.isArray(
                                             project.technologies
@@ -483,11 +514,10 @@ export default function Projects({ projectsList }) {
 
                                             )}
 
+
                                         {/* ACTION BUTTONS */}
 
                                         <div className="bento-actions">
-
-                                            {/* LIVE */}
 
                                             {project.live_url &&
                                                 project.live_url !==
@@ -516,7 +546,6 @@ export default function Projects({ projectsList }) {
 
                                                 )}
 
-                                            {/* GITHUB */}
 
                                             {project.github_url && (
 
@@ -555,9 +584,8 @@ export default function Projects({ projectsList }) {
 
                 </motion.div>
 
-                {/* =====================================
-                    NO RESULTS
-                ====================================== */}
+
+                {/* NO RESULTS */}
 
                 {filteredProjects.length ===
                     0 && (
@@ -575,6 +603,7 @@ export default function Projects({ projectsList }) {
                 )}
 
             </div>
+
 
             {/* =========================================
                 PROJECT MODAL
@@ -597,8 +626,6 @@ export default function Projects({ projectsList }) {
                         aria-labelledby="project-modal-title"
                     >
 
-                        {/* CLOSE */}
-
                         <button
                             type="button"
                             className="modal-close-btn"
@@ -610,11 +637,10 @@ export default function Projects({ projectsList }) {
 
                         </button>
 
+
                         <div className="modal-body">
 
-                            {/* =================================
-                                MODAL IMAGE
-                            ================================== */}
+                            {/* MODAL IMAGE */}
 
                             <div className="modal-img-wrapper">
 
@@ -631,9 +657,8 @@ export default function Projects({ projectsList }) {
 
                             </div>
 
-                            {/* =================================
-                                MODAL DETAILS
-                            ================================== */}
+
+                            {/* MODAL DETAILS */}
 
                             <div className="modal-details">
 
@@ -643,6 +668,7 @@ export default function Projects({ projectsList }) {
                                         'Project'}
 
                                 </span>
+
 
                                 <h2
                                     className="modal-title"
@@ -654,6 +680,7 @@ export default function Projects({ projectsList }) {
 
                                 </h2>
 
+
                                 <p className="modal-long-desc">
 
                                     {activeModalProject.long_description ||
@@ -662,7 +689,6 @@ export default function Projects({ projectsList }) {
 
                                 </p>
 
-                                {/* TECHNOLOGIES */}
 
                                 {Array.isArray(
                                     activeModalProject.technologies
@@ -710,11 +736,10 @@ export default function Projects({ projectsList }) {
 
                                     )}
 
+
                                 {/* MODAL ACTIONS */}
 
                                 <div className="modal-actions">
-
-                                    {/* LIVE WEBSITE */}
 
                                     {activeModalProject.live_url &&
                                         activeModalProject.live_url !==
@@ -741,7 +766,6 @@ export default function Projects({ projectsList }) {
 
                                         )}
 
-                                    {/* GITHUB */}
 
                                     {activeModalProject.github_url && (
 
