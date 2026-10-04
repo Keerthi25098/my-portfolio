@@ -16,7 +16,8 @@ export const DEFAULT_SITE_SETTINGS = {
     availability_status: 'Open to Opportunities',
     availability_badge_visible: true,
     meta_title: 'Keerthika KT — Creative Frontend Developer & Software Engineer',
-    meta_description: 'Portfolio & Projects of Keerthika KT, Frontend Developer in Coimbatore specializing in React.js, JavaScript, and Web Development.',
+    meta_description:
+        'Portfolio & Projects of Keerthika KT, Frontend Developer in Coimbatore specializing in React.js, JavaScript, and Web Development.',
     updated_at: new Date().toISOString(),
 };
 
@@ -25,7 +26,12 @@ export const DEFAULT_HERO_CONTENT = {
     greeting: "Hello, I'm",
     headline: 'Keerthika KT',
     tagline: 'Building Thoughtful & Engaging Digital Experiences',
-    roles: ['Frontend Developer', 'React Developer', 'Junior Software Developer', 'UI Enthusiast'],
+    roles: [
+        'Frontend Developer',
+        'React Developer',
+        'Junior Software Developer',
+        'UI Enthusiast',
+    ],
     bio: 'I am a passionate frontend developer dedicated to crafting clean, responsive, and intuitive web applications with modern technologies.',
     cta_primary_label: 'View My Work',
     cta_primary_link: '#projects',
@@ -38,10 +44,14 @@ export const DEFAULT_HERO_CONTENT = {
 export const DEFAULT_ABOUT_CONTENT = {
     id: 'about-content-1',
     heading: 'I Create Products, Not Just Interfaces.',
-    subheading: 'A quick introduction about who I am, my philosophy, and my journey.',
-    bio_paragraph_1: 'I am Keerthika KT, a React.js Frontend Developer passionate about building clean, performant, and responsive web applications. I enjoy converting creative ideas into real working products.',
-    bio_paragraph_2: 'My focus centers on high usability, pixel-perfect layouts, fast load times, and seamless interactive experiences. I pay strict attention to design details and intuitive navigation.',
-    bio_paragraph_3: 'From working on client landing pages at Cloudi5 Technologies to building web applications during internships, I continuously expand my skill set across React, PHP, Laravel, MySQL, and modern web tooling.',
+    subheading:
+        'A quick introduction about who I am, my philosophy, and my journey.',
+    bio_paragraph_1:
+        'I am Keerthika KT, a React.js Frontend Developer passionate about building clean, performant, and responsive web applications. I enjoy converting creative ideas into real working products.',
+    bio_paragraph_2:
+        'My focus centers on high usability, pixel-perfect layouts, fast load times, and seamless interactive experiences. I pay strict attention to design details and intuitive navigation.',
+    bio_paragraph_3:
+        'From working on client landing pages at Cloudi5 Technologies to building web applications during internships, I continuously expand my skill set across React, PHP, Laravel, MySQL, and modern web tooling.',
     years_experience_label: '1+ Years Experience',
     projects_completed_label: '10+ Featured Projects',
     internships_completed_label: '3+ Industry Internships',
@@ -55,8 +65,10 @@ export const DEFAULT_PROJECTS = [
         number_label: '01',
         title: 'ChoteKisan',
         category: 'Marketplace',
-        description: 'A farmer marketplace platform focused on managing products and creating a simple digital experience for agricultural users.',
-        long_description: 'ChoteKisan empowers farmers to list products, connect directly with buyers, and streamline agricultural commerce with a user-friendly frontend interface.',
+        description:
+            'A farmer marketplace platform focused on managing products and creating a simple digital experience for agricultural users.',
+        long_description:
+            'ChoteKisan empowers farmers to list products, connect directly with buyers, and streamline agricultural commerce with a user-friendly frontend interface.',
         technologies: ['React.js', 'Bootstrap', 'JavaScript', 'HTML5/CSS3'],
         image_url: '/src/assets/chotekisan.jpeg',
         live_url: 'https://chotekisan.com/',
@@ -70,8 +82,10 @@ export const DEFAULT_PROJECTS = [
         number_label: '02',
         title: 'Grindo',
         category: 'E-Commerce',
-        description: 'An Indian masala and grocery e-commerce website designed with a warm, traditional visual identity and responsive shopping experience.',
-        long_description: 'Designed and built with an authentic aesthetic showcasing traditional Indian food products, easy cart workflows, and high-performance product listings.',
+        description:
+            'An Indian masala and grocery e-commerce website designed with a warm, traditional visual identity and responsive shopping experience.',
+        long_description:
+            'Designed and built with an authentic aesthetic showcasing traditional Indian food products, easy cart workflows, and high-performance product listings.',
         technologies: ['React.js', 'CSS3', 'JavaScript', 'Responsive UI'],
         image_url: '/src/assets/grindo.jpeg',
         live_url: 'https://grindo.life/',
@@ -85,8 +99,10 @@ export const DEFAULT_PROJECTS = [
         number_label: '03',
         title: 'HireMinds',
         category: 'E-Learning',
-        description: 'A course purchasing website designed to help users explore courses, view information and make informed learning decisions.',
-        long_description: 'Built for seamless online education discovery featuring categorized course grids, curriculum previews, and structured layout components.',
+        description:
+            'A course purchasing website designed to help users explore courses, view information and make informed learning decisions.',
+        long_description:
+            'Built for seamless online education discovery featuring categorized course grids, curriculum previews, and structured layout components.',
         technologies: ['React.js', 'Tailwind CSS', 'REST API', 'JavaScript'],
         image_url: '/src/assets/hireminds.jpeg',
         live_url: 'https://hireminds.ci5.in/',
@@ -100,8 +116,10 @@ export const DEFAULT_PROJECTS = [
         number_label: '04',
         title: 'TryZone',
         category: 'Medicine Enquiry',
-        description: 'A medicine enquiry website designed to help users explore medicine-related information and submit enquiries easily.',
-        long_description: 'Focused healthcare digital tool enabling users to search pharmaceutical categories, read detailed information, and request medical product quotes.',
+        description:
+            'A medicine enquiry website designed to help users explore medicine-related information and submit enquiries easily.',
+        long_description:
+            'Focused healthcare digital tool enabling users to search pharmaceutical categories, read detailed information, and request medical product quotes.',
         technologies: ['React.js', 'JavaScript', 'HTML5', 'CSS Modules'],
         image_url: '/src/assets/tryzone.jpeg',
         live_url: 'https://tryzone.ci5.in/',
@@ -115,8 +133,10 @@ export const DEFAULT_PROJECTS = [
         number_label: '05',
         title: 'Akshitha Interior Studio',
         category: 'Landing Page',
-        description: 'A visually focused interior design landing page created to showcase services, portfolio projects, and brand identity.',
-        long_description: 'High-end interior architecture landing experience showcasing luxury spatial designs, project photo galleries, and inquiry contact funnels.',
+        description:
+            'A visually focused interior design landing page created to showcase services, portfolio projects, and brand identity.',
+        long_description:
+            'High-end interior architecture landing experience showcasing luxury spatial designs, project photo galleries, and inquiry contact funnels.',
         technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
         image_url: '/src/assets/akshitha.jpeg',
         live_url: 'https://www.akshithainteriorstudio.com/',
@@ -130,8 +150,10 @@ export const DEFAULT_PROJECTS = [
         number_label: '06',
         title: 'OwlTracKR',
         category: 'Management System',
-        description: 'A React-based internship management system with trainer and intern roles, task assignment and local tracking.',
-        long_description: 'Comprehensive workspace platform built to assign intern tasks, track progress deadlines, manage role credentials, and review daily submissions.',
+        description:
+            'A React-based internship management system with trainer and intern roles, task assignment and local tracking.',
+        long_description:
+            'Comprehensive workspace platform built to assign intern tasks, track progress deadlines, manage role credentials, and review daily submissions.',
         technologies: ['React.js', 'State Management', 'LocalStorage', 'CSS3'],
         image_url: '/src/assets/owltrakr.jpeg',
         live_url: 'https://owltrackr.netlify.app/',
@@ -145,8 +167,10 @@ export const DEFAULT_PROJECTS = [
         number_label: '07',
         title: 'Employee HUB (Owlix)',
         category: 'Web Application',
-        description: 'A responsive employee management application built with React.js featuring full CRUD operations and dashboard analytics.',
-        long_description: 'Admin hub featuring dynamic employee onboarding, salary grade updates, search/filter tables, and modal data operations.',
+        description:
+            'A responsive employee management application built with React.js featuring full CRUD operations and dashboard analytics.',
+        long_description:
+            'Admin hub featuring dynamic employee onboarding, salary grade updates, search/filter tables, and modal data operations.',
         technologies: ['React.js', 'REST API', 'JavaScript', 'Custom Hooks'],
         image_url: '/src/assets/owlix.jpeg',
         live_url: 'https://owlix.netlify.app/',
@@ -160,8 +184,10 @@ export const DEFAULT_PROJECTS = [
         number_label: '08',
         title: 'SkyCast',
         category: 'Weather App',
-        description: 'A real-time weather web application retrieving live meteorological metrics via weather APIs with interactive UI.',
-        long_description: 'SkyCast retrieves live humidity, wind speeds, UV index, and 5-day forecasts across global locations with custom weather icons.',
+        description:
+            'A real-time weather web application retrieving live meteorological metrics via weather APIs with interactive UI.',
+        long_description:
+            'SkyCast retrieves live humidity, wind speeds, UV index, and 5-day forecasts across global locations with custom weather icons.',
         technologies: ['React.js', 'OpenWeather API', 'JavaScript', 'CSS3'],
         image_url: '/src/assets/weather.jpeg',
         live_url: 'https://skycastify.netlify.app/',
@@ -175,8 +201,10 @@ export const DEFAULT_PROJECTS = [
         number_label: '09',
         title: 'Neo Wheels 2.0',
         category: 'E-Commerce',
-        description: 'A modern electric vehicle shopping platform built with React.js for browsing, comparing, and booking electric bikes & cars.',
-        long_description: 'Next-generation EV marketplace showcasing battery ranges, motor specs, interactive vehicle visualizer, and test-drive booking workflows.',
+        description:
+            'A modern electric vehicle shopping platform built with React.js for browsing, comparing, and booking electric bikes & cars.',
+        long_description:
+            'Next-generation EV marketplace showcasing battery ranges, motor specs, interactive vehicle visualizer, and test-drive booking workflows.',
         technologies: ['React.js', 'Vite', 'Framer Motion', 'Tailwind CSS'],
         image_url: '/src/assets/neo.jpeg',
         live_url: 'https://neo-wheels-2-0.vercel.app/',
@@ -190,8 +218,10 @@ export const DEFAULT_PROJECTS = [
         number_label: '10',
         title: 'CalcVerse',
         category: 'Web Application',
-        description: 'A smart web calculator suite bringing scientific, financial, and unit calculation utilities into one unified application.',
-        long_description: 'All-in-one calculation environment with clean UI switches for standard math, EMI calculations, BMI index, and unit conversions.',
+        description:
+            'A smart web calculator suite bringing scientific, financial, and unit calculation utilities into one unified application.',
+        long_description:
+            'All-in-one calculation environment with clean UI switches for standard math, EMI calculations, BMI index, and unit conversions.',
         technologies: ['React.js', 'JavaScript', 'Math Logic', 'CSS Grid'],
         image_url: '/src/assets/calcverse.jpeg',
         live_url: 'https://calcversee.netlify.app/',
@@ -213,14 +243,24 @@ export const DEFAULT_EXPERIENCE = [
         start_date: '2026',
         end_date: 'Present',
         is_current: true,
-        description: 'Expanded technical skills across full frontend and backend web development stack working on real production client projects.',
+        description:
+            'Expanded technical skills across full frontend and backend web development stack working on real production client projects.',
         responsibilities: [
             'Developed responsive website components using React.js, HTML5, CSS3, and Bootstrap.',
             'Implemented backend functionality and integrations using PHP, Laravel, and MySQL.',
             'Managed cloud server deployments on AWS EC2 and InMotion web hosting platforms.',
-            'Customized client WordPress sites and optimized web page load performance.'
+            'Customized client WordPress sites and optimized web page load performance.',
         ],
-        technologies: ['React.js', 'JavaScript', 'PHP', 'Laravel', 'MySQL', 'Bootstrap', 'AWS EC2', 'WordPress'],
+        technologies: [
+            'React.js',
+            'JavaScript',
+            'PHP',
+            'Laravel',
+            'MySQL',
+            'Bootstrap',
+            'AWS EC2',
+            'WordPress',
+        ],
         image_url: '/src/assets/journey/currently.jpeg',
         certificate_url: '/certificates/cloudi5.pdf',
         is_published: true,
@@ -236,11 +276,12 @@ export const DEFAULT_EXPERIENCE = [
         start_date: '2025',
         end_date: '2025',
         is_current: false,
-        description: 'Completed an intensive 3-month React.js internship in Coimbatore building modular frontend web applications.',
+        description:
+            'Completed an intensive 3-month React.js internship in Coimbatore building modular frontend web applications.',
         responsibilities: [
             'Built reusable React components with clean state management.',
             'Designed responsive UI layouts and integrated RESTful backend endpoints.',
-            'Collaborated on web application user interfaces and stateful form controls.'
+            'Collaborated on web application user interfaces and stateful form controls.',
         ],
         technologies: ['React.js', 'JavaScript', 'CSS3', 'REST API', 'Git'],
         image_url: '/src/assets/journey/react.jpeg',
@@ -258,12 +299,18 @@ export const DEFAULT_EXPERIENCE = [
         start_date: '2024',
         end_date: '2024',
         is_current: false,
-        description: 'Won Second Prize at the National Level IT Symposium for developing an interactive web game under tight time constraints.',
+        description:
+            'Won Second Prize at the National Level IT Symposium for developing an interactive web game under tight time constraints.',
         responsibilities: [
             'Engineered interactive game logic and visual rendering using HTML5 Canvas & JS.',
-            'Collaborated under competition time limits to present working prototype to judges.'
+            'Collaborated under competition time limits to present working prototype to judges.',
         ],
-        technologies: ['JavaScript', 'HTML5 Canvas', 'CSS Animations', 'Game Logic'],
+        technologies: [
+            'JavaScript',
+            'HTML5 Canvas',
+            'CSS Animations',
+            'Game Logic',
+        ],
         image_url: '/src/assets/journey/game.jpeg',
         certificate_url: '/certificates/symposium.pdf',
         is_published: true,
@@ -279,10 +326,11 @@ export const DEFAULT_EXPERIENCE = [
         start_date: '2024',
         end_date: '2024',
         is_current: false,
-        description: 'Completed web development internship focused on crafting real e-commerce website structures.',
+        description:
+            'Completed web development internship focused on crafting real e-commerce website structures.',
         responsibilities: [
             'Developed a functional Flipkart website clone featuring product grids and checkout UI.',
-            'Deepened core knowledge of HTML5 structure, CSS flexbox/grid, and DOM JS manipulation.'
+            'Deepened core knowledge of HTML5 structure, CSS flexbox/grid, and DOM JS manipulation.',
         ],
         technologies: ['HTML5', 'CSS3', 'JavaScript', 'UI Design'],
         image_url: '/src/assets/journey/flipcart.jpeg',
@@ -300,10 +348,11 @@ export const DEFAULT_EXPERIENCE = [
         start_date: '2023',
         end_date: '2023',
         is_current: false,
-        description: 'Introduced to modern UI design systems, visual hierarchy, wireframing, and interactive prototyping.',
+        description:
+            'Introduced to modern UI design systems, visual hierarchy, wireframing, and interactive prototyping.',
         responsibilities: [
             'Designed mobile & web UI wireframes using Figma vector tools.',
-            'Created component style guides, typography specs, and user flow diagrams.'
+            'Created component style guides, typography specs, and user flow diagrams.',
         ],
         technologies: ['Figma', 'UI/UX Design', 'Wireframing', 'Prototyping'],
         image_url: '/src/assets/journey/figma.png',
@@ -321,17 +370,18 @@ export const DEFAULT_EXPERIENCE = [
         start_date: '2023',
         end_date: '2023',
         is_current: false,
-        description: 'Learned foundational full-stack software development principles, object-oriented Java, and database queries.',
+        description:
+            'Learned foundational full-stack software development principles, object-oriented Java, and database queries.',
         responsibilities: [
             'Studied Java OOP principles, NetBeans IDE, and database management.',
-            'Discovered a strong passion for frontend interactive engineering and web development.'
+            'Discovered a strong passion for frontend interactive engineering and web development.',
         ],
         technologies: ['Java', 'SQL', 'HTML', 'CSS', 'OOP Principles'],
         image_url: '/src/assets/journey/java.png',
         certificate_url: '/certificates/java-full-stack.pdf',
         is_published: true,
         display_order: 6,
-    }
+    },
 ];
 
 export const DEFAULT_SKILLS = [
@@ -340,7 +390,8 @@ export const DEFAULT_SKILLS = [
         name: 'React.js',
         category: 'Frontend',
         logo_url: '/src/assets/skills-logo/react.png',
-        description: 'Building modular reusable components, state hooks, and fast single-page app interfaces.',
+        description:
+            'Building modular reusable components, state hooks, and fast single-page app interfaces.',
         proficiency_label: 'Proficient',
         display_order: 1,
         is_visible: true,
@@ -350,7 +401,8 @@ export const DEFAULT_SKILLS = [
         name: 'JavaScript (ES6+)',
         category: 'Frontend',
         logo_url: '/src/assets/skills-logo/jss.png',
-        description: 'Adding dynamic logic, handling async requests, DOM manipulation, and modern array methods.',
+        description:
+            'Adding dynamic logic, handling async requests, DOM manipulation, and modern array methods.',
         proficiency_label: 'Proficient',
         display_order: 2,
         is_visible: true,
@@ -360,7 +412,8 @@ export const DEFAULT_SKILLS = [
         name: 'HTML5',
         category: 'Frontend',
         logo_url: '/src/assets/skills-logo/html.png',
-        description: 'Crafting clean, accessible, SEO-friendly semantic markup structures.',
+        description:
+            'Crafting clean, accessible, SEO-friendly semantic markup structures.',
         proficiency_label: 'Advanced',
         display_order: 3,
         is_visible: true,
@@ -370,7 +423,8 @@ export const DEFAULT_SKILLS = [
         name: 'CSS3',
         category: 'Frontend',
         logo_url: '/src/assets/skills-logo/css.png',
-        description: 'Designing responsive layouts, CSS grid, flexbox, glassmorphism, and keyframe animations.',
+        description:
+            'Designing responsive layouts, CSS grid, flexbox, glassmorphism, and keyframe animations.',
         proficiency_label: 'Advanced',
         display_order: 4,
         is_visible: true,
@@ -380,7 +434,8 @@ export const DEFAULT_SKILLS = [
         name: 'Bootstrap',
         category: 'Frontend',
         logo_url: '/src/assets/skills-logo/bootstrapp.png',
-        description: 'Utilizing responsive grid containers, utility classes, and modal design elements.',
+        description:
+            'Utilizing responsive grid containers, utility classes, and modal design elements.',
         proficiency_label: 'Proficient',
         display_order: 5,
         is_visible: true,
@@ -390,7 +445,8 @@ export const DEFAULT_SKILLS = [
         name: 'PHP & Laravel',
         category: 'Backend',
         logo_url: '/src/assets/skills-logo/larawal.png',
-        description: 'Working with backend routing, server rendering, controller endpoints, and database interactions.',
+        description:
+            'Working with backend routing, server rendering, controller endpoints, and database interactions.',
         proficiency_label: 'Intermediate',
         display_order: 6,
         is_visible: true,
@@ -400,7 +456,8 @@ export const DEFAULT_SKILLS = [
         name: 'MySQL',
         category: 'Database',
         logo_url: '/src/assets/skills-logo/sql.png',
-        description: 'Structuring tables, writing SQL queries, relational joins, and database operations.',
+        description:
+            'Structuring tables, writing SQL queries, relational joins, and database operations.',
         proficiency_label: 'Intermediate',
         display_order: 7,
         is_visible: true,
@@ -410,7 +467,8 @@ export const DEFAULT_SKILLS = [
         name: 'WordPress',
         category: 'Tools & CMS',
         logo_url: '/src/assets/skills-logo/wordpress.png',
-        description: 'Customizing themes, page builders, site maintenance, and client content management.',
+        description:
+            'Customizing themes, page builders, site maintenance, and client content management.',
         proficiency_label: 'Proficient',
         display_order: 8,
         is_visible: true,
@@ -420,7 +478,8 @@ export const DEFAULT_SKILLS = [
         name: 'GitHub & Git',
         category: 'Tools & Deployment',
         logo_url: '/src/assets/skills-logo/github.png',
-        description: 'Managing source code repositories, version control, branching, and pull requests.',
+        description:
+            'Managing source code repositories, version control, branching, and pull requests.',
         proficiency_label: 'Proficient',
         display_order: 9,
         is_visible: true,
@@ -436,7 +495,8 @@ export const DEFAULT_EDUCATION = [
         start_year: '2022',
         end_year: '2026',
         grade_or_cgpa: 'First Class',
-        description: 'Studied core computer science concepts, object-oriented programming, algorithms, database systems, and software development methodologies.',
+        description:
+            'Studied core computer science concepts, object-oriented programming, algorithms, database systems, and software development methodologies.',
         institution_logo_url: '',
         display_order: 1,
         is_published: true,
@@ -449,18 +509,20 @@ export const DEFAULT_EDUCATION = [
         start_year: '2020',
         end_year: '2022',
         grade_or_cgpa: 'Distinction',
-        description: 'Focused on computer science fundamentals, mathematics, and analytical problem-solving skills.',
+        description:
+            'Focused on computer science fundamentals, mathematics, and analytical problem-solving skills.',
         institution_logo_url: '',
         display_order: 2,
         is_published: true,
-    }
+    },
 ];
 
 export const DEFAULT_SERVICES = [
     {
         id: 'serv-1',
         title: 'React.js Web App Development',
-        description: 'Building custom dynamic single-page web applications with modular components, smooth state management, and API integrations.',
+        description:
+            'Building custom dynamic single-page web applications with modular components, smooth state management, and API integrations.',
         icon_name: 'Code2',
         display_order: 1,
         is_published: true,
@@ -468,7 +530,8 @@ export const DEFAULT_SERVICES = [
     {
         id: 'serv-2',
         title: 'Figma to Pixel-Perfect Code',
-        description: 'Converting Figma or Adobe XD UI designs into clean, semantic, responsive HTML5, CSS3, and React components.',
+        description:
+            'Converting Figma or Adobe XD UI designs into clean, semantic, responsive HTML5, CSS3, and React components.',
         icon_name: 'Layout',
         display_order: 2,
         is_published: true,
@@ -476,7 +539,8 @@ export const DEFAULT_SERVICES = [
     {
         id: 'serv-3',
         title: 'High-Converting Landing Pages',
-        description: 'Designing eye-catching animated landing pages optimized for desktop & mobile viewports, fast loading speed, and user engagement.',
+        description:
+            'Designing eye-catching animated landing pages optimized for desktop & mobile viewports, fast loading speed, and user engagement.',
         icon_name: 'Sparkles',
         display_order: 3,
         is_published: true,
@@ -484,11 +548,12 @@ export const DEFAULT_SERVICES = [
     {
         id: 'serv-4',
         title: 'Website Redesign & UI Enhancement',
-        description: 'Upgrading existing web pages with modern glassmorphism aesthetics, fluid micro-interactions, dark mode, and accessibility.',
+        description:
+            'Upgrading existing web pages with modern glassmorphism aesthetics, fluid micro-interactions, dark mode, and accessibility.',
         icon_name: 'Smartphone',
         display_order: 4,
         is_published: true,
-    }
+    },
 ];
 
 export const DEFAULT_TESTIMONIALS = [
@@ -497,11 +562,12 @@ export const DEFAULT_TESTIMONIALS = [
         client_name: 'Cloudi5 Project Lead',
         client_role: 'Senior Software Engineer',
         organization: 'Cloudi5 Technologies',
-        feedback: 'Keerthika demonstrates great dedication to clean UI code and rapid learning. Her work on frontend development and client websites is remarkable.',
+        feedback:
+            'Keerthika demonstrates great dedication to clean UI code and rapid learning. Her work on frontend development and client websites is remarkable.',
         avatar_url: '',
         rating: 5,
         is_published: true,
-    }
+    },
 ];
 
 export const DEFAULT_ENQUIRIES = [
@@ -510,11 +576,12 @@ export const DEFAULT_ENQUIRIES = [
         name: 'Sample Recruiter',
         email: 'recruiter@techfirm.com',
         subject: 'Frontend Developer Opportunity',
-        message: 'Hello Keerthika, We reviewed your portfolio and were impressed with your React.js projects. We would love to discuss an opening in our software team.',
+        message:
+            'Hello Keerthika, We reviewed your portfolio and were impressed with your React.js projects. We would love to discuss an opening in our software team.',
         status: 'new',
         email_notification_status: 'sent',
         created_at: new Date(Date.now() - 3600000 * 4).toISOString(),
-    }
+    },
 ];
 
 // =====================================================
@@ -544,372 +611,1015 @@ const setLocal = (key, value) => {
 // =====================================================
 
 export const dataService = {
-    // --- Site Settings ---
+    // =====================================================
+    // SITE SETTINGS
+    // =====================================================
+
     async getSiteSettings() {
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('site_settings').select('*').limit(1).maybeSingle();
+            const { data, error } = await supabase
+                .from('site_settings')
+                .select('*')
+                .limit(1)
+                .maybeSingle();
+
             if (!error && data) return data;
         }
+
         return getLocal('site_settings', DEFAULT_SITE_SETTINGS);
     },
 
     async updateSiteSettings(settingsData) {
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('site_settings').upsert({
-                ...settingsData,
-                updated_at: new Date().toISOString(),
-            }).select().single();
+            const { data, error } = await supabase
+                .from('site_settings')
+                .upsert({
+                    ...settingsData,
+                    updated_at: new Date().toISOString(),
+                })
+                .select()
+                .single();
+
             if (!error && data) return data;
         }
-        const updated = { ...settingsData, updated_at: new Date().toISOString() };
+
+        const updated = {
+            ...settingsData,
+            updated_at: new Date().toISOString(),
+        };
+
         setLocal('site_settings', updated);
         return updated;
     },
 
-    // --- Hero Content ---
+    // =====================================================
+    // HERO CONTENT
+    // =====================================================
+
     async getHeroContent() {
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('hero_content').select('*').limit(1).maybeSingle();
+            const { data, error } = await supabase
+                .from('hero_content')
+                .select('*')
+                .limit(1)
+                .maybeSingle();
+
             if (!error && data) return data;
         }
+
         return getLocal('hero_content', DEFAULT_HERO_CONTENT);
     },
 
     async updateHeroContent(heroData) {
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('hero_content').upsert({
-                ...heroData,
-                updated_at: new Date().toISOString(),
-            }).select().single();
+            const { data, error } = await supabase
+                .from('hero_content')
+                .upsert({
+                    ...heroData,
+                    updated_at: new Date().toISOString(),
+                })
+                .select()
+                .single();
+
             if (!error && data) return data;
         }
-        const updated = { ...heroData, updated_at: new Date().toISOString() };
+
+        const updated = {
+            ...heroData,
+            updated_at: new Date().toISOString(),
+        };
+
         setLocal('hero_content', updated);
         return updated;
     },
 
-    // --- About Content ---
+    // =====================================================
+    // ABOUT CONTENT
+    // =====================================================
+
     async getAboutContent() {
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('about_content').select('*').limit(1).maybeSingle();
+            const { data, error } = await supabase
+                .from('about_content')
+                .select('*')
+                .limit(1)
+                .maybeSingle();
+
             if (!error && data) return data;
         }
+
         return getLocal('about_content', DEFAULT_ABOUT_CONTENT);
     },
 
     async updateAboutContent(aboutData) {
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('about_content').upsert({
-                ...aboutData,
-                updated_at: new Date().toISOString(),
-            }).select().single();
+            const { data, error } = await supabase
+                .from('about_content')
+                .upsert({
+                    ...aboutData,
+                    updated_at: new Date().toISOString(),
+                })
+                .select()
+                .single();
+
             if (!error && data) return data;
         }
-        const updated = { ...aboutData, updated_at: new Date().toISOString() };
+
+        const updated = {
+            ...aboutData,
+            updated_at: new Date().toISOString(),
+        };
+
         setLocal('about_content', updated);
         return updated;
     },
 
-    // --- Projects ---
+    // =====================================================
+    // PROJECTS
+    // =====================================================
+
     async getProjects(includeUnpublished = false) {
         if (isSupabaseConfigured) {
-            let query = supabase.from('projects').select('*').order('display_order', { ascending: true });
-            if (!includeUnpublished) query = query.eq('is_published', true);
+            let query = supabase
+                .from('projects')
+                .select('*')
+                .order('display_order', { ascending: true });
+
+            if (!includeUnpublished) {
+                query = query.eq('is_published', true);
+            }
+
             const { data, error } = await query;
+
             if (!error && data) return data;
         }
+
         const local = getLocal('projects', DEFAULT_PROJECTS);
-        return includeUnpublished ? local : local.filter(p => p.is_published);
+
+        return includeUnpublished
+            ? local
+            : local.filter((p) => p.is_published);
     },
 
     async saveProject(projectData) {
         const isNew = !projectData.id;
         const id = projectData.id || `proj-${Date.now()}`;
+
         const payload = {
             ...projectData,
             id,
             updated_at: new Date().toISOString(),
-            created_at: projectData.created_at || new Date().toISOString(),
+            created_at:
+                projectData.created_at || new Date().toISOString(),
         };
 
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('projects').upsert(payload).select().single();
+            const { data, error } = await supabase
+                .from('projects')
+                .upsert(payload)
+                .select()
+                .single();
+
             if (!error && data) return data;
         }
 
         const projects = getLocal('projects', DEFAULT_PROJECTS);
-        let updatedList;
-        if (isNew) {
-            updatedList = [payload, ...projects];
-        } else {
-            updatedList = projects.map(p => (p.id === id ? payload : p));
-        }
+
+        const updatedList = isNew
+            ? [payload, ...projects]
+            : projects.map((p) => (p.id === id ? payload : p));
+
         setLocal('projects', updatedList);
+
         return payload;
     },
 
     async deleteProject(id) {
         if (isSupabaseConfigured) {
-            await supabase.from('projects').delete().eq('id', id);
+            await supabase
+                .from('projects')
+                .delete()
+                .eq('id', id);
         }
+
         const projects = getLocal('projects', DEFAULT_PROJECTS);
-        setLocal('projects', projects.filter(p => p.id !== id));
+
+        setLocal(
+            'projects',
+            projects.filter((p) => p.id !== id)
+        );
+
         return true;
     },
 
-    // --- Experience ---
+    // =====================================================
+    // EXPERIENCE
+    // =====================================================
+
     async getExperience(includeUnpublished = false) {
         if (isSupabaseConfigured) {
-            let query = supabase.from('experience').select('*').order('display_order', { ascending: true });
-            if (!includeUnpublished) query = query.eq('is_published', true);
+            let query = supabase
+                .from('experience')
+                .select('*')
+                .order('display_order', { ascending: true });
+
+            if (!includeUnpublished) {
+                query = query.eq('is_published', true);
+            }
+
             const { data, error } = await query;
+
             if (!error && data) return data;
         }
-        const local = getLocal('experience', DEFAULT_EXPERIENCE);
-        return includeUnpublished ? local : local.filter(e => e.is_published);
+
+        const local = getLocal(
+            'experience',
+            DEFAULT_EXPERIENCE
+        );
+
+        return includeUnpublished
+            ? local
+            : local.filter((e) => e.is_published);
     },
 
     async saveExperience(experienceData) {
-        const id = experienceData.id || `exp-${Date.now()}`;
-        const payload = { ...experienceData, id };
+        const id =
+            experienceData.id || `exp-${Date.now()}`;
+
+        const payload = {
+            ...experienceData,
+            id,
+        };
 
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('experience').upsert(payload).select().single();
+            const { data, error } = await supabase
+                .from('experience')
+                .upsert(payload)
+                .select()
+                .single();
+
             if (!error && data) return data;
         }
 
-        const list = getLocal('experience', DEFAULT_EXPERIENCE);
-        const updated = list.some(e => e.id === id)
-            ? list.map(e => (e.id === id ? payload : e))
+        const list = getLocal(
+            'experience',
+            DEFAULT_EXPERIENCE
+        );
+
+        const updated = list.some((e) => e.id === id)
+            ? list.map((e) =>
+                  e.id === id ? payload : e
+              )
             : [payload, ...list];
+
         setLocal('experience', updated);
+
         return payload;
     },
 
     async deleteExperience(id) {
         if (isSupabaseConfigured) {
-            await supabase.from('experience').delete().eq('id', id);
+            await supabase
+                .from('experience')
+                .delete()
+                .eq('id', id);
         }
-        const list = getLocal('experience', DEFAULT_EXPERIENCE);
-        setLocal('experience', list.filter(e => e.id !== id));
+
+        const list = getLocal(
+            'experience',
+            DEFAULT_EXPERIENCE
+        );
+
+        setLocal(
+            'experience',
+            list.filter((e) => e.id !== id)
+        );
+
         return true;
     },
 
-    // --- Skills ---
+    // =====================================================
+    // SKILLS
+    // =====================================================
+
     async getSkills(includeHidden = false) {
         if (isSupabaseConfigured) {
-            let query = supabase.from('skills').select('*').order('display_order', { ascending: true });
-            if (!includeHidden) query = query.eq('is_visible', true);
+            let query = supabase
+                .from('skills')
+                .select('*')
+                .order('display_order', {
+                    ascending: true,
+                });
+
+            if (!includeHidden) {
+                query = query.eq('is_visible', true);
+            }
+
             const { data, error } = await query;
+
             if (!error && data) return data;
         }
-        const local = getLocal('skills', DEFAULT_SKILLS);
-        return includeHidden ? local : local.filter(s => s.is_visible);
+
+        const local = getLocal(
+            'skills',
+            DEFAULT_SKILLS
+        );
+
+        return includeHidden
+            ? local
+            : local.filter((s) => s.is_visible);
     },
 
     async saveSkill(skillData) {
-        const id = skillData.id || `skill-${Date.now()}`;
-        const payload = { ...skillData, id };
+        const id =
+            skillData.id || `skill-${Date.now()}`;
+
+        const payload = {
+            ...skillData,
+            id,
+        };
 
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('skills').upsert(payload).select().single();
+            const { data, error } = await supabase
+                .from('skills')
+                .upsert(payload)
+                .select()
+                .single();
+
             if (!error && data) return data;
         }
 
-        const list = getLocal('skills', DEFAULT_SKILLS);
-        const updated = list.some(s => s.id === id)
-            ? list.map(s => (s.id === id ? payload : s))
+        const list = getLocal(
+            'skills',
+            DEFAULT_SKILLS
+        );
+
+        const updated = list.some((s) => s.id === id)
+            ? list.map((s) =>
+                  s.id === id ? payload : s
+              )
             : [...list, payload];
+
         setLocal('skills', updated);
+
         return payload;
     },
 
     async deleteSkill(id) {
         if (isSupabaseConfigured) {
-            await supabase.from('skills').delete().eq('id', id);
+            await supabase
+                .from('skills')
+                .delete()
+                .eq('id', id);
         }
-        const list = getLocal('skills', DEFAULT_SKILLS);
-        setLocal('skills', list.filter(s => s.id !== id));
+
+        const list = getLocal(
+            'skills',
+            DEFAULT_SKILLS
+        );
+
+        setLocal(
+            'skills',
+            list.filter((s) => s.id !== id)
+        );
+
         return true;
     },
 
-    // --- Education ---
+    // =====================================================
+    // EDUCATION
+    // =====================================================
+
     async getEducation() {
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('education').select('*').order('display_order', { ascending: true });
+            const { data, error } = await supabase
+                .from('education')
+                .select('*')
+                .order('display_order', {
+                    ascending: true,
+                });
+
             if (!error && data) return data;
         }
-        return getLocal('education', DEFAULT_EDUCATION);
+
+        return getLocal(
+            'education',
+            DEFAULT_EDUCATION
+        );
     },
 
     async saveEducation(eduData) {
-        const id = eduData.id || `edu-${Date.now()}`;
-        const payload = { ...eduData, id };
+        const id =
+            eduData.id || `edu-${Date.now()}`;
+
+        const payload = {
+            ...eduData,
+            id,
+        };
 
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('education').upsert(payload).select().single();
+            const { data, error } = await supabase
+                .from('education')
+                .upsert(payload)
+                .select()
+                .single();
+
             if (!error && data) return data;
         }
 
-        const list = getLocal('education', DEFAULT_EDUCATION);
-        const updated = list.some(e => e.id === id)
-            ? list.map(e => (e.id === id ? payload : e))
+        const list = getLocal(
+            'education',
+            DEFAULT_EDUCATION
+        );
+
+        const updated = list.some((e) => e.id === id)
+            ? list.map((e) =>
+                  e.id === id ? payload : e
+              )
             : [...list, payload];
+
         setLocal('education', updated);
+
         return payload;
     },
 
     async deleteEducation(id) {
         if (isSupabaseConfigured) {
-            await supabase.from('education').delete().eq('id', id);
+            await supabase
+                .from('education')
+                .delete()
+                .eq('id', id);
         }
-        const list = getLocal('education', DEFAULT_EDUCATION);
-        setLocal('education', list.filter(e => e.id !== id));
+
+        const list = getLocal(
+            'education',
+            DEFAULT_EDUCATION
+        );
+
+        setLocal(
+            'education',
+            list.filter((e) => e.id !== id)
+        );
+
         return true;
     },
 
-    // --- Services ---
+    // =====================================================
+    // SERVICES
+    // =====================================================
+
     async getServices() {
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('services').select('*').order('display_order', { ascending: true });
+            const { data, error } = await supabase
+                .from('services')
+                .select('*')
+                .order('display_order', {
+                    ascending: true,
+                });
+
             if (!error && data) return data;
         }
-        return getLocal('services', DEFAULT_SERVICES);
+
+        return getLocal(
+            'services',
+            DEFAULT_SERVICES
+        );
     },
 
     async saveService(serviceData) {
-        const id = serviceData.id || `serv-${Date.now()}`;
-        const payload = { ...serviceData, id };
+        const id =
+            serviceData.id || `serv-${Date.now()}`;
+
+        const payload = {
+            ...serviceData,
+            id,
+        };
 
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('services').upsert(payload).select().single();
+            const { data, error } = await supabase
+                .from('services')
+                .upsert(payload)
+                .select()
+                .single();
+
             if (!error && data) return data;
         }
 
-        const list = getLocal('services', DEFAULT_SERVICES);
-        const updated = list.some(s => s.id === id)
-            ? list.map(s => (s.id === id ? payload : s))
+        const list = getLocal(
+            'services',
+            DEFAULT_SERVICES
+        );
+
+        const updated = list.some((s) => s.id === id)
+            ? list.map((s) =>
+                  s.id === id ? payload : s
+              )
             : [...list, payload];
+
         setLocal('services', updated);
+
         return payload;
     },
 
     async deleteService(id) {
         if (isSupabaseConfigured) {
-            await supabase.from('services').delete().eq('id', id);
+            await supabase
+                .from('services')
+                .delete()
+                .eq('id', id);
         }
-        const list = getLocal('services', DEFAULT_SERVICES);
-        setLocal('services', list.filter(s => s.id !== id));
+
+        const list = getLocal(
+            'services',
+            DEFAULT_SERVICES
+        );
+
+        setLocal(
+            'services',
+            list.filter((s) => s.id !== id)
+        );
+
         return true;
     },
 
-    // --- Testimonials ---
+    // =====================================================
+    // TESTIMONIALS
+    // =====================================================
+
     async getTestimonials(includeUnpublished = false) {
         if (isSupabaseConfigured) {
-            let query = supabase.from('testimonials').select('*');
-            if (!includeUnpublished) query = query.eq('is_published', true);
+            let query = supabase
+                .from('testimonials')
+                .select('*');
+
+            if (!includeUnpublished) {
+                query = query.eq(
+                    'is_published',
+                    true
+                );
+            }
+
             const { data, error } = await query;
+
             if (!error && data) return data;
         }
-        const local = getLocal('testimonials', DEFAULT_TESTIMONIALS);
-        return includeUnpublished ? local : local.filter(t => t.is_published);
+
+        const local = getLocal(
+            'testimonials',
+            DEFAULT_TESTIMONIALS
+        );
+
+        return includeUnpublished
+            ? local
+            : local.filter((t) => t.is_published);
     },
 
     async saveTestimonial(testData) {
-        const id = testData.id || `test-${Date.now()}`;
-        const payload = { ...testData, id };
+        const id =
+            testData.id || `test-${Date.now()}`;
+
+        const payload = {
+            ...testData,
+            id,
+        };
 
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('testimonials').upsert(payload).select().single();
+            const { data, error } = await supabase
+                .from('testimonials')
+                .upsert(payload)
+                .select()
+                .single();
+
             if (!error && data) return data;
         }
 
-        const list = getLocal('testimonials', DEFAULT_TESTIMONIALS);
-        const updated = list.some(t => t.id === id)
-            ? list.map(t => (t.id === id ? payload : t))
+        const list = getLocal(
+            'testimonials',
+            DEFAULT_TESTIMONIALS
+        );
+
+        const updated = list.some((t) => t.id === id)
+            ? list.map((t) =>
+                  t.id === id ? payload : t
+              )
             : [...list, payload];
+
         setLocal('testimonials', updated);
+
         return payload;
     },
 
     async deleteTestimonial(id) {
         if (isSupabaseConfigured) {
-            await supabase.from('testimonials').delete().eq('id', id);
+            await supabase
+                .from('testimonials')
+                .delete()
+                .eq('id', id);
         }
-        const list = getLocal('testimonials', DEFAULT_TESTIMONIALS);
-        setLocal('testimonials', list.filter(t => t.id !== id));
+
+        const list = getLocal(
+            'testimonials',
+            DEFAULT_TESTIMONIALS
+        );
+
+        setLocal(
+            'testimonials',
+            list.filter((t) => t.id !== id)
+        );
+
         return true;
     },
 
-    // --- Enquiries ---
+    // =====================================================
+    // ENQUIRIES
+    // =====================================================
+
     async getEnquiries() {
+        /*
+         * Admin panel:
+         * If Supabase is configured, always read from
+         * Supabase. This prevents the deployed admin
+         * panel from silently showing browser localStorage.
+         */
+
         if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('enquiries').select('*').order('created_at', { ascending: false });
-            if (!error && data) return data;
+            const { data, error } = await supabase
+                .from('enquiries')
+                .select('*')
+                .order('created_at', {
+                    ascending: false,
+                });
+
+            if (error) {
+                console.error(
+                    'Supabase getEnquiries Error:',
+                    error
+                );
+
+                throw new Error(
+                    error.message ||
+                        'Unable to load enquiries from Supabase.'
+                );
+            }
+
+            return data || [];
         }
-        return getLocal('enquiries', DEFAULT_ENQUIRIES);
+
+        /*
+         * Local development fallback.
+         */
+        return getLocal(
+            'enquiries',
+            DEFAULT_ENQUIRIES
+        );
     },
+
+    // =====================================================
+    // SUBMIT ENQUIRY
+    // =====================================================
 
     async submitEnquiry(enquiryInput) {
         const newEnquiry = {
             id: `enq-${Date.now()}`,
-            name: enquiryInput.name,
-            email: enquiryInput.email,
-            subject: enquiryInput.subject || 'General Portfolio Enquiry',
-            message: enquiryInput.message,
+            name: String(enquiryInput.name || '').trim(),
+            email: String(enquiryInput.email || '').trim(),
+            subject:
+                String(
+                    enquiryInput.subject || ''
+                ).trim() ||
+                'General Portfolio Enquiry',
+            message: String(
+                enquiryInput.message || ''
+            ).trim(),
             status: 'new',
             email_notification_status: 'pending',
             created_at: new Date().toISOString(),
         };
 
-        // Save to Database
-        let savedRecord = newEnquiry;
-        if (isSupabaseConfigured) {
-            const { data, error } = await supabase.from('enquiries').insert([newEnquiry]).select().single();
-            if (!error && data) savedRecord = data;
-        }
+        /*
+         * -------------------------------------------------
+         * LOCAL DEVELOPMENT
+         * -------------------------------------------------
+         *
+         * When running normal Vite development:
+         *
+         * npm run dev
+         *
+         * there may be no Netlify function available.
+         *
+         * Therefore, if Supabase is configured and the
+         * application is running in development mode,
+         * save directly to Supabase.
+         */
 
-        // Always keep local copy as well
-        const list = getLocal('enquiries', DEFAULT_ENQUIRIES);
-        setLocal('enquiries', [savedRecord, ...list]);
+        if (
+            import.meta.env.DEV &&
+            isSupabaseConfigured
+        ) {
+            const {
+                data,
+                error,
+            } = await supabase
+                .from('enquiries')
+                .insert([newEnquiry])
+                .select()
+                .single();
 
-        // Dispatch Email Notification to keerthikeerthi32155@gmail.com
-        try {
-            const response = await fetch('/.netlify/functions/send-enquiry', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ enquiry: savedRecord }),
-            });
-            if (response.ok) {
-                await this.updateEnquiryStatus(savedRecord.id, { email_notification_status: 'sent' });
-            } else {
-                await this.updateEnquiryStatus(savedRecord.id, { email_notification_status: 'failed' });
+            if (error) {
+                console.error(
+                    'Local Supabase Enquiry Error:',
+                    error
+                );
+
+                throw new Error(
+                    error.message ||
+                        'Unable to save enquiry.'
+                );
             }
-        } catch (err) {
-            console.warn('Netlify function call fallback (Offline/Dev mode):', err);
-            // In dev mode without Netlify CLI running, mark email as queued/sent
-            await this.updateEnquiryStatus(savedRecord.id, { email_notification_status: 'sent' });
+
+            const savedRecord = data;
+
+            const list = getLocal(
+                'enquiries',
+                []
+            );
+
+            setLocal('enquiries', [
+                savedRecord,
+                ...list.filter(
+                    (item) =>
+                        item.id !== savedRecord.id
+                ),
+            ]);
+
+            return savedRecord;
         }
 
-        return savedRecord;
+        /*
+         * -------------------------------------------------
+         * NETLIFY / PRODUCTION
+         * -------------------------------------------------
+         *
+         * In production the enquiry is sent to the
+         * Netlify serverless function.
+         *
+         * The serverless function will:
+         *
+         * 1. Validate the enquiry
+         * 2. Save it to Supabase
+         * 3. Send email notification through Resend
+         * 4. Return the saved record
+         */
+
+        try {
+            const response = await fetch(
+                '/.netlify/functions/send-enquiry',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type':
+                            'application/json',
+                    },
+                    body: JSON.stringify({
+                        enquiry: newEnquiry,
+                    }),
+                }
+            );
+
+            let result = {};
+
+            try {
+                result =
+                    await response.json();
+            } catch (jsonError) {
+                console.warn(
+                    'Could not parse Netlify function response:',
+                    jsonError
+                );
+            }
+
+            if (
+                !response.ok ||
+                !result.success
+            ) {
+                const errorMessage =
+                    result.error ||
+                    result.message ||
+                    `Enquiry submission failed with status ${response.status}.`;
+
+                console.error(
+                    'Netlify Enquiry Error:',
+                    errorMessage
+                );
+
+                throw new Error(
+                    errorMessage
+                );
+            }
+
+            /*
+             * Function should return:
+             *
+             * {
+             *   success: true,
+             *   data: savedRecord
+             * }
+             *
+             * If data is not returned, use our
+             * locally-created record as a fallback.
+             */
+            const savedRecord =
+                result.data || {
+                    ...newEnquiry,
+                    email_notification_status:
+                        'sent',
+                };
+
+            /*
+             * Keep a local copy for the current browser.
+             * This does NOT replace the Supabase record.
+             */
+            const list = getLocal(
+                'enquiries',
+                []
+            );
+
+            setLocal('enquiries', [
+                savedRecord,
+                ...list.filter(
+                    (item) =>
+                        item.id !==
+                        savedRecord.id
+                ),
+            ]);
+
+            return savedRecord;
+        } catch (error) {
+            console.error(
+                'Enquiry Submission Error:',
+                error
+            );
+
+            /*
+             * IMPORTANT:
+             *
+             * Do NOT silently mark the enquiry as sent.
+             * If Netlify/Supabase failed, the user needs
+             * to know that the enquiry was not saved.
+             */
+            throw error;
+        }
     },
 
-    async updateEnquiryStatus(id, updates) {
+    // =====================================================
+    // UPDATE ENQUIRY STATUS
+    // =====================================================
+
+    async updateEnquiryStatus(
+        id,
+        updates
+    ) {
+        /*
+         * Supports BOTH:
+         *
+         * updateEnquiryStatus(id, 'read')
+         *
+         * and:
+         *
+         * updateEnquiryStatus(id, {
+         *     status: 'read'
+         * })
+         */
+
+        const updatePayload =
+            typeof updates === 'string'
+                ? {
+                      status: updates,
+                  }
+                : {
+                      ...(updates || {}),
+                  };
+
+        /*
+         * Update Supabase when configured.
+         */
         if (isSupabaseConfigured) {
-            await supabase.from('enquiries').update(updates).eq('id', id);
+            const {
+                data,
+                error,
+            } = await supabase
+                .from('enquiries')
+                .update(updatePayload)
+                .eq('id', id)
+                .select()
+                .single();
+
+            if (error) {
+                console.error(
+                    'Supabase updateEnquiryStatus Error:',
+                    error
+                );
+
+                throw new Error(
+                    error.message ||
+                        'Unable to update enquiry.'
+                );
+            }
+
+            /*
+             * Keep local copy synchronized.
+             */
+            const list = getLocal(
+                'enquiries',
+                []
+            );
+
+            const updatedList = list.map(
+                (enquiry) =>
+                    enquiry.id === id
+                        ? {
+                              ...enquiry,
+                              ...updatePayload,
+                              ...(data || {}),
+                          }
+                        : enquiry
+            );
+
+            setLocal(
+                'enquiries',
+                updatedList
+            );
+
+            return data;
         }
-        const list = getLocal('enquiries', DEFAULT_ENQUIRIES);
-        const updated = list.map(e => (e.id === id ? { ...e, ...updates } : e));
-        setLocal('enquiries', updated);
-        return updated.find(e => e.id === id);
+
+        /*
+         * LocalStorage fallback.
+         */
+        const list = getLocal(
+            'enquiries',
+            DEFAULT_ENQUIRIES
+        );
+
+        const updatedList = list.map(
+            (enquiry) =>
+                enquiry.id === id
+                    ? {
+                          ...enquiry,
+                          ...updatePayload,
+                      }
+                    : enquiry
+        );
+
+        setLocal(
+            'enquiries',
+            updatedList
+        );
+
+        return updatedList.find(
+            (enquiry) =>
+                enquiry.id === id
+        );
     },
+
+    // =====================================================
+    // DELETE ENQUIRY
+    // =====================================================
 
     async deleteEnquiry(id) {
         if (isSupabaseConfigured) {
-            await supabase.from('enquiries').delete().eq('id', id);
+            const {
+                error,
+            } = await supabase
+                .from('enquiries')
+                .delete()
+                .eq('id', id);
+
+            if (error) {
+                console.error(
+                    'Supabase deleteEnquiry Error:',
+                    error
+                );
+
+                throw new Error(
+                    error.message ||
+                        'Unable to delete enquiry.'
+                );
+            }
         }
-        const list = getLocal('enquiries', DEFAULT_ENQUIRIES);
-        setLocal('enquiries', list.filter(e => e.id !== id));
+
+        const list = getLocal(
+            'enquiries',
+            DEFAULT_ENQUIRIES
+        );
+
+        setLocal(
+            'enquiries',
+            list.filter(
+                (e) => e.id !== id
+            )
+        );
+
         return true;
     },
 };
