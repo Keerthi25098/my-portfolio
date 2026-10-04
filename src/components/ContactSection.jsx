@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
     Mail,
@@ -9,8 +8,6 @@ import {
     Sparkles,
     Loader2,
     ArrowUpRight,
-    Code2,
-    BriefcaseBusiness,
 } from "lucide-react";
 
 import profileImg from "../assets/profile.png";
@@ -117,8 +114,9 @@ export default function ContactSection({
                     message: formData.message.trim(),
                 });
             } else {
-                // Fallback for development
-                await new Promise((resolve) => setTimeout(resolve, 1000));
+                await new Promise((resolve) =>
+                    setTimeout(resolve, 1000)
+                );
             }
 
             setSuccess(true);
@@ -167,61 +165,65 @@ export default function ContactSection({
         "https://linkedin.com/in/keerthika25";
 
     const availability =
-        siteSettings?.availability_status || "Available for opportunities";
+        siteSettings?.availability_status ||
+        "Available for opportunities";
 
     const profile =
         profileSettings?.profile_image_url || profileImg;
 
     return (
         <section className="contact-section" id="contact">
+
             {/* =================================================
                 BACKGROUND DECORATION
             ================================================= */}
 
             <div className="contact-bg-orb contact-bg-orb-1" />
             <div className="contact-bg-orb contact-bg-orb-2" />
-            <div className="contact-bg-orb contact-bg-orb-3" />
 
-            <div className="section-container contact-container">
+            <div className="contact-container">
 
                 {/* =================================================
                     SECTION HEADER
                 ================================================= */}
 
-                <div className="section-header hire-me-header">
-                    <span className="section-tag">
-                        <Sparkles size={14} />
+                <div className="contact-header">
+
+                    <span className="contact-eyebrow">
+                        <Sparkles size={13} />
                         Available for Opportunities
                     </span>
 
-                    <h2 className="section-title">
+                    <h2>
                         Let's Work Together
                     </h2>
 
-                    <p className="section-subtitle">
-                        Looking for a React.js developer for your next project?
-                        I'm open to developer roles, freelance projects, and
-                        exciting collaborations.
+                    <p>
+                        Looking for a React.js developer for your next
+                        project? I'm open to developer roles, freelance
+                        projects, and exciting collaborations.
                     </p>
+
                 </div>
 
+
                 {/* =================================================
-                    MAIN CONTACT GRID
+                    MAIN CONTENT
                 ================================================= */}
 
                 <div className="contact-grid">
 
                     {/* =================================================
-                        LEFT — HIRE ME CARD
+                        LEFT SIDE
                     ================================================= */}
 
-                    <div className="hire-card glass-panel">
-
-                        <div className="hire-card-gradient" />
+                    <div className="hire-card">
 
                         {/* Profile */}
                         <div className="hire-profile">
+
                             <div className="profile-image-wrapper">
+
                                 <img
                                     src={profile}
                                     alt="Keerthika KT"
@@ -229,18 +231,25 @@ export default function ContactSection({
                                 />
 
                                 <span className="profile-online-dot" />
+
                             </div>
 
                             <div className="hire-profile-info">
-                                <h3>Keerthika KT</h3>
+
+                                <h3>
+                                    Keerthika KT
+                                </h3>
 
                                 <p>
                                     React.js Developer
                                 </p>
+
                             </div>
+
                         </div>
 
-                        {/* Main intro */}
+
+                        {/* Main Content */}
                         <div className="hire-me-content">
 
                             <span className="hire-me-label">
@@ -249,97 +258,76 @@ export default function ContactSection({
 
                             <h3 className="hire-me-title">
                                 I build clean, responsive and
-                                <span> user-focused web experiences.</span>
+                                <span>
+                                    {" "}user-focused web experiences.
+                                </span>
                             </h3>
 
                             <p className="contact-intro">
-                                I enjoy turning ideas and designs into modern
-                                web applications using React.js, JavaScript
-                                and modern frontend technologies.
+                                I enjoy turning ideas and designs into
+                                modern web applications using React.js,
+                                JavaScript and modern frontend technologies.
                             </p>
 
-                            {/* Points */}
-                            <div className="hire-me-points">
-
-                                <div className="hire-point">
-                                    <div className="hire-point-icon">
-                                        <Code2 size={17} />
-                                    </div>
-
-                                    <div>
-                                        <h4>Modern Development</h4>
-                                        <p>
-                                            React.js, JavaScript and responsive
-                                            frontend development.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="hire-point">
-                                    <div className="hire-point-icon">
-                                        <BriefcaseBusiness size={17} />
-                                    </div>
-
-                                    <div>
-                                        <h4>Real Project Experience</h4>
-                                        <p>
-                                            Experience working on real-world
-                                            websites and web applications.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="hire-point">
-                                    <div className="hire-point-icon">
-                                        <CheckCircle2 size={17} />
-                                    </div>
-
-                                    <div>
-                                        <h4>Detail Focused</h4>
-                                        <p>
-                                            Clean UI, responsive layouts and
-                                            attention to design details.
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
                         </div>
 
-                        {/* Contact details */}
+
+                        {/* Contact Details */}
                         <div className="contact-details">
 
                             <a
                                 href={`mailto:${email}`}
                                 className="contact-detail"
                             >
+
                                 <div className="contact-detail-icon">
-                                    <Mail size={17} />
+                                    <Mail size={16} />
                                 </div>
 
-                                <div>
-                                    <span>Email</span>
-                                    <strong>{email}</strong>
+                                <div className="contact-detail-text">
+
+                                    <span>
+                                        Email
+                                    </span>
+
+                                    <strong>
+                                        {email}
+                                    </strong>
+
                                 </div>
+
                             </a>
 
+
                             <div className="contact-detail">
+
                                 <div className="contact-detail-icon">
-                                    <MapPin size={17} />
+                                    <MapPin size={16} />
                                 </div>
 
-                                <div>
-                                    <span>Location</span>
-                                    <strong>{location}</strong>
+                                <div className="contact-detail-text">
+
+                                    <span>
+                                        Location
+                                    </span>
+
+                                    <strong>
+                                        {location}
+                                    </strong>
+
                                 </div>
+
                             </div>
 
                         </div>
 
-                        {/* Socials */}
+
+                        {/* Social Links */}
                         <div className="hire-socials">
 
-                            <span>Connect with me</span>
+                            <span className="social-title">
+                                Connect with me
+                            </span>
 
                             <div className="social-links">
 
@@ -349,7 +337,7 @@ export default function ContactSection({
                                     rel="noopener noreferrer"
                                     aria-label="GitHub"
                                 >
-                                    <GithubIcon size={18} />
+                                    <GithubIcon size={17} />
                                 </a>
 
                                 <a
@@ -358,25 +346,29 @@ export default function ContactSection({
                                     rel="noopener noreferrer"
                                     aria-label="LinkedIn"
                                 >
-                                    <LinkedinIcon size={18} />
+                                    <LinkedinIcon size={17} />
                                 </a>
 
                             </div>
+
                         </div>
+
                     </div>
 
+
                     {/* =================================================
-                        RIGHT — CONTACT FORM
+                        RIGHT SIDE - WHITE FORM
                     ================================================= */}
 
-                    <div className="contact-form-card glass-panel">
+                    <div className="contact-form-card">
 
                         {success ? (
-                            /* SUCCESS STATE */
+
+                            /* SUCCESS */
                             <div className="contact-success">
 
                                 <div className="success-icon">
-                                    <CheckCircle2 size={34} />
+                                    <CheckCircle2 size={32} />
                                 </div>
 
                                 <span className="success-small-label">
@@ -388,8 +380,9 @@ export default function ContactSection({
                                 </h3>
 
                                 <p>
-                                    Your message has been received successfully.
-                                    I'll get back to you as soon as possible.
+                                    Your message has been received
+                                    successfully. I'll get back to you
+                                    as soon as possible.
                                 </p>
 
                                 <button
@@ -398,16 +391,20 @@ export default function ContactSection({
                                     onClick={() => setSuccess(false)}
                                 >
                                     Send another message
-                                    <ArrowUpRight size={16} />
+                                    <ArrowUpRight size={15} />
                                 </button>
 
                             </div>
+
                         ) : (
+
                             <>
-                                {/* Form heading */}
+
+                                {/* Form Header */}
                                 <div className="form-top-content">
 
                                     <div>
+
                                         <span className="form-label">
                                             GET STARTED
                                         </span>
@@ -415,25 +412,35 @@ export default function ContactSection({
                                         <h3>
                                             Tell me about your project
                                         </h3>
+
                                     </div>
 
                                     <div className="form-heading-icon">
-                                        <Send size={20} />
+                                        <Send size={18} />
                                     </div>
+
                                 </div>
+
 
                                 <p className="form-description">
                                     Have an idea, project, or opportunity?
                                     Send me a message and let's discuss it.
                                 </p>
 
+
                                 {/* Error */}
                                 {errorMsg && (
                                     <div className="form-message form-error">
-                                        <AlertCircle size={17} />
-                                        <span>{errorMsg}</span>
+
+                                        <AlertCircle size={16} />
+
+                                        <span>
+                                            {errorMsg}
+                                        </span>
+
                                     </div>
                                 )}
+
 
                                 {/* Form */}
                                 <form
@@ -452,10 +459,12 @@ export default function ContactSection({
                                         autoComplete="off"
                                     />
 
+
                                     {/* Name + Email */}
                                     <div className="form-row">
 
                                         <div className="form-group">
+
                                             <label htmlFor="name">
                                                 Your Name
                                             </label>
@@ -469,9 +478,12 @@ export default function ContactSection({
                                                 onChange={handleChange}
                                                 required
                                             />
+
                                         </div>
 
+
                                         <div className="form-group">
+
                                             <label htmlFor="email">
                                                 Email Address
                                             </label>
@@ -485,12 +497,15 @@ export default function ContactSection({
                                                 onChange={handleChange}
                                                 required
                                             />
+
                                         </div>
 
                                     </div>
 
+
                                     {/* Subject */}
                                     <div className="form-group">
+
                                         <label htmlFor="subject">
                                             Subject
                                         </label>
@@ -504,10 +519,13 @@ export default function ContactSection({
                                             onChange={handleChange}
                                             required
                                         />
+
                                     </div>
+
 
                                     {/* Message */}
                                     <div className="form-group">
+
                                         <label htmlFor="message">
                                             Message
                                         </label>
@@ -515,16 +533,19 @@ export default function ContactSection({
                                         <textarea
                                             id="message"
                                             name="message"
-                                            rows="5"
+                                            rows="4"
                                             placeholder="Tell me a little about your project or opportunity..."
                                             value={formData.message}
                                             onChange={handleChange}
                                             required
                                         />
+
                                     </div>
+
 
                                     {/* Consent */}
                                     <label className="consent-row">
+
                                         <input
                                             type="checkbox"
                                             name="consent"
@@ -536,7 +557,9 @@ export default function ContactSection({
                                             I agree to be contacted regarding
                                             this enquiry.
                                         </span>
+
                                     </label>
+
 
                                     {/* Submit */}
                                     <button
@@ -544,10 +567,11 @@ export default function ContactSection({
                                         className="contact-submit-button"
                                         disabled={loading}
                                     >
+
                                         {loading ? (
                                             <>
                                                 <Loader2
-                                                    size={18}
+                                                    size={17}
                                                     className="loading-spinner"
                                                 />
                                                 Sending...
@@ -555,48 +579,39 @@ export default function ContactSection({
                                         ) : (
                                             <>
                                                 Let's Talk
-                                                <ArrowUpRight size={18} />
+                                                <ArrowUpRight size={17} />
                                             </>
                                         )}
+
                                     </button>
 
                                 </form>
+
                             </>
+
                         )}
+
                     </div>
+
                 </div>
 
+
                 {/* =================================================
-                    AVAILABILITY BAR
+                    AVAILABILITY
                 ================================================= */}
 
-                <div className="hire-availability glass-panel">
+                <div className="contact-availability">
 
-                    <div className="availability-left">
-                        <span className="availability-dot" />
+                    <span className="availability-dot" />
 
-                        <div>
-                            <span className="availability-status">
-                                {availability}
-                            </span>
-
-                            <span className="availability-role">
-                                Open to Developer Roles & Freelance Projects
-                            </span>
-                        </div>
-                    </div>
-
-                    <a
-                        href={`mailto:${email}`}
-                        className="availability-link"
-                    >
-                        Start a conversation
-                        <ArrowUpRight size={15} />
-                    </a>
+                    <span>
+                        {availability}
+                    </span>
 
                 </div>
 
             </div>
+
         </section>
     );
 }

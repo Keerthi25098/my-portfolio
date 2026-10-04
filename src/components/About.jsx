@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import {
     Award,
@@ -14,84 +13,223 @@ import './About.css';
 
 export default function About({ aboutContent }) {
 
-    // Always use the local imported profile image.
-    // This prevents an invalid profile_image_url from overriding it.
+    /* ============================================
+       PROFILE IMAGE
+    ============================================ */
+
     const profileImage = profileImg;
 
-    const stats = [
-        {
-            icon: Briefcase,
-            label:
-                aboutContent?.years_experience_label ||
-                '1+ Years Experience',
-            sub: 'In Web Development'
-        },
-        {
-            icon: Code,
-            label:
-                aboutContent?.projects_completed_label ||
-                '10+ Featured Projects',
-            sub: 'Built & Deployed'
-        },
-        {
-            icon: Award,
-            label:
-                aboutContent?.internships_completed_label ||
-                '3+ Industry Internships',
-            sub: 'Hands-on Learning'
-        }
-    ];
+
+    /* ============================================
+       COUNTER STATE
+    ============================================ */
+
+    const [hasCounted, setHasCounted] = useState(false);
+
+    const [counters, setCounters] = useState({
+        experience: 0,
+        projects: 0,
+        internships: 0,
+        achievement: 0
+    });
+
+
+    /* ============================================
+       COUNTER TARGETS
+    ============================================ */
+
+    const counterTargets = {
+        experience: 6,
+        projects: 10,
+        internships: 3,
+        achievement: 2
+    };
+
+
+    /* ============================================
+       COUNTER ANIMATION
+       Starts when About section enters viewport
+    ============================================ */
+
+    useEffect(() => {
+
+        const section = document.getElementById('about');
+
+        if (!section) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+
+                if (entry.isIntersecting && !hasCounted) {
+
+                    setHasCounted(true);
+
+                    const duration = 1600;
+                    const startTime = performance.now();
+
+                    const animateCounters = (currentTime) => {
+
+                        const progress = Math.min(
+                            (currentTime - startTime) / duration,
+                            1
+                        );
+
+                        /* Smooth ease-out animation */
+                        const easeOut =
+                            1 - Math.pow(1 - progress, 3);
+
+
+                        setCounters({
+
+                            experience: Math.floor(
+                                counterTargets.experience * easeOut
+                            ),
+
+                            projects: Math.floor(
+                                counterTargets.projects * easeOut
+                            ),
+
+                            internships: Math.floor(
+                                counterTargets.internships * easeOut
+                            ),
+
+                            achievement: Math.floor(
+                                counterTargets.achievement * easeOut
+                            )
+
+                        });
+
+
+                        if (progress < 1) {
+
+                            requestAnimationFrame(
+                                animateCounters
+                            );
+
+                        }
+
+                    };
+
+
+                    requestAnimationFrame(
+                        animateCounters
+                    );
+
+                }
+
+            },
+            {
+                threshold: 0.25
+            }
+        );
+
+
+        observer.observe(section);
+
+
+        return () => {
+            observer.disconnect();
+        };
+
+    }, [hasCounted]);
+
 
     return (
-        <section className="about-section" id="about">
+
+        <section
+            className="about-section"
+            id="about"
+        >
 
             <div className="section-container">
 
-                {/* ================================
+
+                {/* ============================================
                     SECTION HEADER
-                ================================= */}
-                <div className="section-header">
+                ============================================ */}
+
+                <motion.div
+                    className="section-header"
+
+                    initial={{
+                        opacity: 0,
+                        y: 20
+                    }}
+
+                    whileInView={{
+                        opacity: 1,
+                        y: 0
+                    }}
+
+                    viewport={{
+                        once: true,
+                        amount: 0.3
+                    }}
+
+                    transition={{
+                        duration: 0.6
+                    }}
+                >
 
                     <span className="section-tag">
+
                         <Sparkles size={14} />
-                        <span>About Me</span>
+
+                        <span>
+                            About Me
+                        </span>
+
                     </span>
 
+
                     <h2 className="section-title">
+
                         {aboutContent?.heading ||
                             'I Create Products, Not Just Interfaces.'}
+
                     </h2>
 
+
                     <p className="section-subtitle">
+
                         {aboutContent?.subheading ||
                             'A quick introduction about who I am, my philosophy, and my journey.'}
+
                     </p>
 
-                </div>
+                </motion.div>
 
 
-                {/* ================================
+
+                {/* ============================================
                     MAIN ABOUT GRID
-                ================================= */}
+                ============================================ */}
+
                 <div className="about-grid">
 
-                    {/* =================================
-                        LEFT COLUMN
-                    ================================= */}
+
+                    {/* ========================================
+                        LEFT PROFILE COLUMN
+                    ======================================== */}
+
                     <motion.div
                         className="about-visual-col"
+
                         initial={{
                             opacity: 0,
                             x: -30
                         }}
+
                         whileInView={{
                             opacity: 1,
                             x: 0
                         }}
+
                         viewport={{
                             once: true,
                             amount: 0.2
                         }}
+
                         transition={{
                             duration: 0.7
                         }}
@@ -99,28 +237,39 @@ export default function About({ aboutContent }) {
 
                         <div className="about-card glass-panel">
 
-                            {/* Profile Image */}
+
+                            {/* PROFILE IMAGE */}
+
                             <div className="about-img-frame">
 
                                 <img
                                     src={profileImage}
                                     alt="Keerthika KT"
                                     className="about-profile-img"
-                                    loading="eager"
+
+                                    loading="lazy"
                                     decoding="async"
+
                                     onError={(event) => {
+
                                         console.error(
                                             'About profile image failed to load:',
                                             event.currentTarget.src
                                         );
+
                                     }}
                                 />
 
                             </div>
 
 
-                            {/* Highlights */}
+
+                            {/* ==================================
+                                HIGHLIGHTS
+                            ================================== */}
+
                             <div className="about-highlights-list">
+
 
                                 <div className="highlight-item">
 
@@ -136,19 +285,6 @@ export default function About({ aboutContent }) {
                                 </div>
 
 
-                                <div className="highlight-item">
-
-                                    <CheckCircle
-                                        size={18}
-                                        className="check-icon"
-                                    />
-
-                                    <span>
-                                        Responsive Glassmorphic UI/UX Design
-                                    </span>
-
-                                </div>
-
 
                                 <div className="highlight-item">
 
@@ -158,11 +294,26 @@ export default function About({ aboutContent }) {
                                     />
 
                                     <span>
-                                        Full Stack Integration
-                                        (PHP, Laravel, MySQL)
+                                        Responsive UI/UX & Modern Web Design
                                     </span>
 
                                 </div>
+
+
+
+                                <div className="highlight-item">
+
+                                    <CheckCircle
+                                        size={18}
+                                        className="check-icon"
+                                    />
+
+                                    <span>
+                                        Full Stack Integration with PHP, Laravel & MySQL
+                                    </span>
+
+                                </div>
+
 
                             </div>
 
@@ -171,99 +322,253 @@ export default function About({ aboutContent }) {
                     </motion.div>
 
 
-                    {/* =================================
-                        RIGHT COLUMN
-                    ================================= */}
+
+                    {/* ========================================
+                        RIGHT CONTENT COLUMN
+                    ======================================== */}
+
                     <motion.div
                         className="about-text-col"
+
                         initial={{
                             opacity: 0,
                             x: 30
                         }}
+
                         whileInView={{
                             opacity: 1,
                             x: 0
                         }}
+
                         viewport={{
                             once: true,
                             amount: 0.2
                         }}
+
                         transition={{
                             duration: 0.7
                         }}
                     >
 
-                        {/* About Paragraphs */}
+
+                        {/* ==================================
+                            ABOUT PARAGRAPHS
+                        ================================== */}
+
                         <div className="about-paragraphs">
 
+
                             <p className="bio-p">
+
                                 {aboutContent?.bio_paragraph_1 ||
+
                                     'I am Keerthika KT, a React.js Frontend Developer passionate about building clean, performant, and responsive web applications. I enjoy converting creative ideas into real working products.'}
+
                             </p>
 
 
+
                             <p className="bio-p">
+
                                 {aboutContent?.bio_paragraph_2 ||
-                                    'My focus centers on high usability, pixel-perfect layouts, fast load times, and seamless interactive experiences. I pay strict attention to design details and intuitive navigation.'}
+
+                                    'My focus centers on high usability, pixel-perfect layouts, fast load times, and seamless interactive experiences. I pay close attention to design details and intuitive navigation.'}
+
                             </p>
+
 
 
                             <p className="bio-p">
+
                                 {aboutContent?.bio_paragraph_3 ||
-                                    'From working on client landing pages at Cloudi5 Technologies to building web applications during internships, I continuously expand my skill set across React, PHP, Laravel, MySQL, and modern web tooling.'}
+
+                                    'From working on client projects at Cloudi5 Technologies to building applications during internships, I continuously expand my skills across React, JavaScript, PHP, Laravel, MySQL, and modern web tooling.'}
+
                             </p>
 
-                        </div>
-
-
-                        {/* =================================
-                            STAT CARDS
-                        ================================= */}
-                        <div className="about-stats-grid">
-
-                            {stats.map((item, idx) => {
-
-                                const IconComponent = item.icon;
-
-                                return (
-                                    <div
-                                        key={idx}
-                                        className="stat-card glass-panel"
-                                    >
-
-                                        <div className="stat-icon-box">
-
-                                            <IconComponent
-                                                size={20}
-                                            />
-
-                                        </div>
-
-
-                                        <div>
-
-                                            <h4 className="stat-label">
-                                                {item.label}
-                                            </h4>
-
-                                            <p className="stat-sub">
-                                                {item.sub}
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-                                );
-                            })}
 
                         </div>
+
+
+
+                        {/* ==================================
+                            MINI SKILL POINTS
+                        ================================== */}
+
+                        <div className="about-mini-points">
+
+
+                            <div className="mini-point">
+
+                                <Code size={17} />
+
+                                <span>
+                                    Clean & Reusable Code
+                                </span>
+
+                            </div>
+
+
+
+                            <div className="mini-point">
+
+                                <CheckCircle size={17} />
+
+                                <span>
+                                    Responsive Development
+                                </span>
+
+                            </div>
+
+
+
+                            <div className="mini-point">
+
+                                <Award size={17} />
+
+                                <span>
+                                    Continuous Learning
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
 
                     </motion.div>
 
+
                 </div>
+
+
+
+                {/* ============================================
+                    COUNTERS
+                ============================================ */}
+
+                <motion.div
+                    className="about-counters"
+
+                    initial={{
+                        opacity: 0,
+                        y: 25
+                    }}
+
+                    whileInView={{
+                        opacity: 1,
+                        y: 0
+                    }}
+
+                    viewport={{
+                        once: true,
+                        amount: 0.25
+                    }}
+
+                    transition={{
+                        duration: 0.7
+                    }}
+                >
+
+
+                    {/* ==================================
+                        EXPERIENCE
+                    ================================== */}
+
+                    <div className="counter-item">
+
+                        <div className="counter-number">
+
+                            {counters.experience}+
+
+                        </div>
+
+                        <div className="counter-label">
+
+                            Months Experience
+
+                        </div>
+
+                    </div>
+
+
+
+                    {/* ==================================
+                        PROJECTS
+                    ================================== */}
+
+                    <div className="counter-item">
+
+                        <div className="counter-number">
+
+                            {counters.projects}+
+
+                        </div>
+
+                        <div className="counter-label">
+
+                            Featured Projects
+
+                        </div>
+
+                    </div>
+
+
+
+                    {/* ==================================
+                        INTERNSHIPS
+                    ================================== */}
+
+                    <div className="counter-item">
+
+                        <div className="counter-number">
+
+                            {counters.internships}+
+
+                        </div>
+
+                        <div className="counter-label">
+
+                            Industry Internships
+
+                        </div>
+
+                    </div>
+
+
+
+                    {/* ==================================
+                        ACHIEVEMENT
+                    ================================== */}
+
+                    <div className="counter-item">
+
+                        <div className="counter-number">
+
+                            {counters.achievement}
+
+                            <sup>
+                                nd
+                            </sup>
+
+                        </div>
+
+                        <div className="counter-label">
+
+                            National Competition
+
+                        </div>
+
+                    </div>
+
+
+                </motion.div>
+
 
             </div>
 
         </section>
+
     );
+
 }

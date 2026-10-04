@@ -1,233 +1,827 @@
+/* =====================================================
+   FLOATING NAVBAR
+===================================================== */
+
 .navbar-header {
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
   right: 0;
+
   z-index: 1000;
-  padding: 1.25rem 2rem;
-  transition: all var(--transition-normal);
+
+  padding: 0 24px;
+
+  background: transparent;
+
+  pointer-events: none;
+
+  transition:
+    top 0.3s ease,
+    padding 0.3s ease;
 }
 
-.navbar-header.scrolled {
-  padding: 0.85rem 2rem;
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-}
-.button {
-  width: 110px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  background-color: rgb(161, 255, 20);
-  border-radius: 30px;
-  color: rgb(19, 19, 19);
-  font-weight: 600;
-  border: none;
-  position: relative;
-  cursor: pointer;
-  transition-duration: .2s;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
-  padding-left: 8px;
-  transition-duration: .5s;
-}
 
-.svgIcon {
-  height: 25px;
-  transition-duration: 1.5s;
-}
-
-.bell path {
-  fill: rgb(19, 19, 19);
-}
-
-.button:hover {
-  background-color: rgb(192, 255, 20);
-  transition-duration: .5s;
-}
-
-.button:active {
-  transform: scale(0.97);
-  transition-duration: .2s;
-}
-
-.button:hover .svgIcon {
-  transform: rotate(250deg);
-  transition-duration: 1.5s;
-}
-
+/* =====================================================
+   MAIN NAVBAR CONTAINER
+===================================================== */
 
 .navbar-container {
-  max-width: 1280px;
+  width: min(1180px, calc(100% - 20px));
+
+  min-height: 66px;
+
   margin: 0 auto;
+
+  padding: 8px 10px 8px 20px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  gap: 20px;
+
+  /*
+     Deep plum glass background
+  */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(48, 36, 58, 0.97),
+      rgba(61, 43, 70, 0.95)
+    );
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 15px 40px
+      rgba(48, 36, 58, 0.22),
+    0 4px 12px
+      rgba(48, 36, 58, 0.12);
+
+  pointer-events: auto;
+
+  transition:
+    all 0.3s ease;
 }
 
+
+/* =====================================================
+   SCROLLED STATE
+===================================================== */
+
+.navbar-header.scrolled {
+  top: 12px;
+}
+
+.navbar-header.scrolled
+.navbar-container {
+  min-height: 60px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(43, 32, 52, 0.98),
+      rgba(57, 40, 67, 0.97)
+    );
+
+  box-shadow:
+    0 15px 42px
+      rgba(48, 36, 58, 0.28);
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
 .navbar-logo {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--text-main);
-  letter-spacing: -0.03em;
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-family: var(--font-heading);
+
+  font-size: 1.45rem;
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c982aa,
+      #9a78c8
+    );
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 5px 16px
+      rgba(201, 130, 170, 0.22);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.06);
+
+  box-shadow:
+    0 7px 22px
+      rgba(201, 130, 170, 0.35);
 }
 
 .logo-dot {
-  color: var(--brand-pink);
+  color: #f5b8d5;
 }
+
+
+/* =====================================================
+   DESKTOP NAVIGATION
+===================================================== */
 
 .navbar-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+
+  gap: 3px;
+
+  flex: 1;
 }
+
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
 
 .nav-link {
-  font-weight: 500;
-  font-size: 0.95rem;
-  color: var(--text-muted);
   position: relative;
-  padding: 0.25rem 0;
-  transition: color var(--transition-fast);
+
+  padding: 9px 13px;
+
+  border-radius: 999px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--text-main);
+.nav-link:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  transform: translateY(-1px);
 }
+
+.nav-link.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(201, 130, 170, 0.28),
+      rgba(154, 120, 200, 0.28)
+    );
+
+  box-shadow:
+    inset 0 0 0 1px
+      rgba(255, 255, 255, 0.08);
+}
+
+
+/* Remove old underline */
 
 .active-pill {
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  right: 0;
-  height: 2.5px;
-  background: var(--gradient-primary);
-  border-radius: 999px;
+  display: none;
 }
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
 
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+
+  gap: 8px;
+
+  flex-shrink: 0;
 }
 
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
 .theme-toggle-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid var(--border-color);
-  background: var(--bg-card);
-  color: var(--text-main);
+  width: 38px;
+  height: 38px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
   cursor: pointer;
-  transition: all var(--transition-fast);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .theme-toggle-btn:hover {
-  transform: scale(1.05);
-  border-color: var(--brand-purple);
-  color: var(--brand-purple);
+  transform: rotate(12deg);
+
+  border-color:
+    rgba(201, 130, 170, 0.5);
+
+  color: #f3b5d2;
+
+  background:
+    rgba(201, 130, 170, 0.14);
 }
 
+
+/* =====================================================
+   CV BUTTON
+===================================================== */
+
 .btn-cv-download {
+  min-height: 38px;
+
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.1rem;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0 14px;
+
   border-radius: 999px;
-  border: 1px solid var(--border-color);
-  background: var(--bg-card);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-main);
-  transition: all var(--transition-fast);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.09);
+
+  color: #ffffff;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    all 0.25s ease;
 }
 
 .btn-cv-download:hover {
-  border-color: var(--brand-purple);
-  color: var(--brand-purple);
-  transform: translateY(-2px);
-}
-
-.btn-navbar-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1.35rem;
-  border-radius: 999px;
-  background: var(--gradient-primary);
   color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
-  transition: all var(--transition-fast);
+
+  border-color:
+    rgba(216, 157, 192, 0.45);
+
+  background:
+    rgba(216, 157, 192, 0.18);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 18px
+      rgba(201, 130, 170, 0.12);
 }
 
-.btn-navbar-cta:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+
+/* =====================================================
+   LET'S TALK BUTTON
+===================================================== */
+
+.button {
+  width: 120px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 8px;
+
+  padding: 0 10px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  /*
+     Soft pink instead of neon green
+  */
+  background:
+    linear-gradient(
+      135deg,
+      #d996b9,
+      #b982c7
+    );
+
+  color: #30243a;
+
+  font-size: 0.82rem;
+  font-weight: 750;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 15px
+      rgba(201, 130, 170, 0.22);
+
+  transition:
+    transform 0.25s ease,
+    background 0.35s ease,
+    box-shadow 0.25s ease;
 }
+
+.button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #e3a7c7,
+      #c893d5
+    );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 22px
+      rgba(201, 130, 170, 0.3);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+
+/* =====================================================
+   LET'S TALK ICON
+===================================================== */
+
+.svgIcon {
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  transition:
+    transform 0.8s ease;
+}
+
+.svgIcon path {
+  fill: #30243a;
+}
+
+.button:hover .svgIcon {
+  transform: rotate(250deg);
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
 
 .mobile-menu-btn {
   display: none;
-  background: none;
-  border: none;
-  color: var(--text-main);
+
+  width: 38px;
+  height: 38px;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
   cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
+
+.mobile-menu-btn:hover {
+  background:
+    rgba(255, 255, 255, 0.14);
+
+  transform: scale(1.04);
+}
+
+
+/* =====================================================
+   MOBILE DRAWER
+===================================================== */
 
 .mobile-drawer {
-  display: none;
+  position: absolute;
+
+  top: calc(100% + 10px);
+
+  left: 20px;
+  right: 20px;
+
+  padding: 18px;
+
+  border-radius: 24px;
+
+  /*
+     Same dark plum theme
+  */
+  background:
+    linear-gradient(
+      145deg,
+      rgba(48, 36, 58, 0.98),
+      rgba(61, 43, 70, 0.98)
+    );
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 20px 55px
+      rgba(48, 36, 58, 0.3);
+
+  pointer-events: auto;
+
+  animation:
+    mobileMenuIn 0.25s ease;
 }
 
-@media (max-width: 992px) {
+@keyframes mobileMenuIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =====================================================
+   MOBILE LINKS
+===================================================== */
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 14px;
+
+  border-radius: 14px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(201, 130, 170, 0.2),
+      rgba(154, 120, 200, 0.2)
+    );
+}
+
+.mobile-active-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    #e1a1c2;
+
+  box-shadow:
+    0 0 0 4px
+      rgba(225, 161, 194, 0.1);
+}
+
+
+/* =====================================================
+   MOBILE ACTIONS
+===================================================== */
+
+.mobile-drawer-actions {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 12px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+.mobile-cv {
+  width: 100%;
+
+  min-height: 44px;
+}
+
+.mobile-talk-button {
+  width: 100%;
+
+  min-height: 44px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d996b9,
+      #b982c7
+    );
+
+  color: #30243a;
+
+  font-size: 0.9rem;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 15px
+      rgba(201, 130, 170, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.mobile-talk-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #e3a7c7,
+      #c893d5
+    );
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .navbar-container {
+    width: calc(100% - 10px);
+
+    padding-left: 14px;
+  }
+
+  .navbar-menu {
+    gap: 0;
+  }
+
+  .nav-link {
+    padding-left: 9px;
+    padding-right: 9px;
+
+    font-size: 0.78rem;
+  }
+
+  .button {
+    width: 112px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .navbar-header {
+    top: 12px;
+
+    padding:
+      0 12px;
+  }
+
+  .navbar-header.scrolled {
+    top: 8px;
+  }
+
+  .navbar-container {
+    width: 100%;
+
+    min-height: 60px;
+
+    padding:
+      7px 8px 7px 14px;
+  }
+
   .navbar-menu {
     display: none;
   }
 
-  .mobile-menu-btn {
-    display: block;
-  }
-
-  .btn-navbar-cta {
+  .btn-cv-download {
     display: none;
   }
 
+  /*
+     Compact Let's Talk button
+     on mobile.
+  */
+
+  .button {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    justify-content: center;
+
+    gap: 0;
+  }
+
+  .button span {
+    display: none;
+  }
+
+  .svgIcon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .navbar-actions {
+    gap: 6px;
+  }
+
+  .theme-toggle-btn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .navbar-header {
+    top: 8px;
+
+    padding:
+      0 8px;
+  }
+
+  .navbar-container {
+    min-height: 56px;
+
+    border-radius: 20px;
+
+    padding:
+      6px 7px 6px 10px;
+  }
+
+  .navbar-logo {
+    width: 38px;
+    height: 38px;
+
+    font-size: 1.3rem;
+  }
+
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+  }
+
   .mobile-drawer {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    position: absolute;
-    top: 100%;
-    left: 1rem;
-    right: 1rem;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-color);
+    left: 4px;
+    right: 4px;
+
+    border-radius: 20px;
+  }
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar-container,
+  .navbar-logo,
+  .nav-link,
+  .button,
+  .mobile-menu-btn,
+  .mobile-drawer {
+    transition: none;
   }
 
-  .mobile-nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .mobile-nav-link {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    padding: 0.5rem 0;
-  }
-
-  .mobile-nav-link.active {
-    color: var(--brand-purple);
+  .mobile-drawer {
+    animation: none;
   }
 }

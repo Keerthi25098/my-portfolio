@@ -1,14 +1,7 @@
+import React from "react";
+import "./Footer.css";
 
-import React from 'react';
-import { ArrowUp, Mail } from 'lucide-react';
-import './Footer.css';
-
-// =====================================================
-// BRAND ICONS
-// GitHub and LinkedIn are not available in lucide-react
-// =====================================================
-
-function GithubIcon({ size = 16 }) {
+function GithubIcon({ size = 17 }) {
     return (
         <svg
             width={size}
@@ -17,12 +10,12 @@ function GithubIcon({ size = 16 }) {
             fill="currentColor"
             aria-hidden="true"
         >
-            <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.96 3.22 9.17 7.69 10.66.56.1.77-.24.77-.54v-1.9c-3.13.68-3.79-1.5-3.79-1.5-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1.79-1.65 2.76-1.65.9 0 1.64.3 2.05.77.1-.76.35-1.28.64-1.58-2.5-.28-5.13-1.25-5.13-5.55 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .94-.3 3.08 1.16a10.7 10.7 0 0 1 5.61 0c2.14-1.46 3.08-1.16 3.08-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.31-2.63 5.27-5.14 5.55.36.31.69.92.69 1.85v2.74c0 .3.2.65.78.54a11.27 11.27 0 0 0 7.68-10.66C23.25 5.48 18.27.5 12 .5Z" />
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.34.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A10.99 10.99 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
         </svg>
     );
 }
 
-function LinkedinIcon({ size = 16 }) {
+function LinkedinIcon({ size = 17 }) {
     return (
         <svg
             width={size}
@@ -31,125 +24,153 @@ function LinkedinIcon({ size = 16 }) {
             fill="currentColor"
             aria-hidden="true"
         >
-            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0-4.12ZM7.1 20.45H3.54V8.99H7.1v11.46ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.23 0Z" />
+            <path d="M5.2 3.5A2.7 2.7 0 1 1 5.2 8.9a2.7 2.7 0 0 1 0-5.4ZM2.8 10.8h4.8V21H2.8V10.8ZM10.5 10.8h4.6v1.4h.07c.64-1.1 2.2-2.25 4.53-2.25 4.84 0 5.74 3.19 5.74 7.34V21h-4.8v-3.28c0-1.56-.03-3.57-2.17-3.57-2.17 0-2.5 1.69-2.5 3.45V21h-4.8V10.8Z" />
         </svg>
     );
 }
 
-export default function Footer({ siteSettings }) {
+function MailIcon({ size = 17 }) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+        >
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+        </svg>
+    );
+}
+
+function ArrowUpIcon({ size = 15 }) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+        >
+            <path d="M12 19V5" />
+            <path d="m6 11 6-6 6 6" />
+        </svg>
+    );
+}
+
+const Footer = ({ siteSettings }) => {
+    const github =
+        siteSettings?.github || "https://github.com/Keerthi25098";
+
+    const linkedin =
+        siteSettings?.linkedin || "https://linkedin.com/in/keerthika25";
+
+    const email =
+        siteSettings?.email || "keerthikeerthi32155@gmail.com";
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth',
+            behavior: "smooth",
         });
     };
 
+    const currentYear = new Date().getFullYear();
+
     return (
-        <footer className="footer-container">
-            <div className="section-container footer-content">
+        <footer className="footer">
+            <div className="footer-container">
 
-                {/* ================= FOOTER TOP ================= */}
-                <div className="footer-top">
+                {/* Main Footer */}
+                <div className="footer-main">
 
-                    {/* BRAND */}
+                    {/* Brand */}
                     <div className="footer-brand">
                         <a href="#home" className="footer-logo">
                             K<span>.</span>
                         </a>
 
-                        <p className="footer-tagline">
-                            {siteSettings?.name || 'Keerthika KT'} —{' '}
-                            {siteSettings?.role_title || 'Frontend Developer'}
-                        </p>
-
-                        <p className="footer-location">
-                            {siteSettings?.location ||
-                                'Coimbatore, Tamil Nadu, India'}
-                        </p>
+                        <div>
+                            <h3>Keerthika KT</h3>
+                            <p>React.js Developer</p>
+                        </div>
                     </div>
 
-                    {/* LINKS */}
-                    <div className="footer-links-group">
+                    {/* Navigation */}
+                    <nav className="footer-nav">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
 
-                        {/* NAVIGATION */}
-                        <div className="footer-nav">
-                            <span className="footer-nav-title">
-                                Navigation
-                            </span>
+                    {/* Socials */}
+                    <div className="footer-socials">
+                        <a
+                            href={github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+                            <GithubIcon />
+                        </a>
 
-                            <a href="#home">Home</a>
-                            <a href="#about">About</a>
-                            <a href="#experience">Experience</a>
-                            <a href="#projects">Projects</a>
-                            <a href="#skills">Skills</a>
-                            <a href="#education">Education</a>
-                            <a href="#contact">Contact</a>
-                        </div>
+                        <a
+                            href={linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                        >
+                            <LinkedinIcon />
+                        </a>
 
-                        {/* SOCIALS */}
-                        <div className="footer-social">
-                            <span className="footer-nav-title">
-                                Socials
-                            </span>
-
-                            <a
-                                href={
-                                    siteSettings?.github_url ||
-                                    'https://github.com/Keerthi25098'
-                                }
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <GithubIcon size={16} />
-                                GitHub
-                            </a>
-
-                            <a
-                                href={
-                                    siteSettings?.linkedin_url ||
-                                    'https://linkedin.com/in/keerthika25'
-                                }
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <LinkedinIcon size={16} />
-                                LinkedIn
-                            </a>
-
-                            <a
-                                href={`mailto:${
-                                    siteSettings?.email ||
-                                    'keerthikeerthi32155@gmail.com'
-                                }`}
-                            >
-                                <Mail size={16} />
-                                Email
-                            </a>
-                        </div>
+                        <a
+                            href={`mailto:${email}`}
+                            aria-label="Email"
+                        >
+                            <MailIcon />
+                        </a>
                     </div>
                 </div>
 
-                {/* ================= FOOTER BOTTOM ================= */}
+                {/* Divider */}
+                <div className="footer-divider" />
+
+                {/* Bottom */}
                 <div className="footer-bottom">
 
                     <p>
-                        © {new Date().getFullYear()} Keerthika KT. All rights
-                        reserved.
+                        © {currentYear} Keerthika KT. All rights reserved.
+                    </p>
+
+                    <p className="footer-built">
+                        Built with <span>React</span> &amp; JavaScript
                     </p>
 
                     <button
-                        type="button"
+                        className="footer-top"
                         onClick={scrollToTop}
-                        className="back-to-top-btn"
-                        aria-label="Back to Top"
+                        aria-label="Back to top"
                     >
-                        <span>Back to Top</span>
-                        <ArrowUp size={16} />
+                        <span>Back to top</span>
+                        <ArrowUpIcon />
                     </button>
 
                 </div>
             </div>
         </footer>
     );
-}
+};
 
+export default Footer;

@@ -1,4 +1,3 @@
-
 /* =====================================================
    ABOUT SECTION
 ===================================================== */
@@ -6,9 +5,7 @@
 .about-section {
     position: relative;
 
-    /* Do NOT force the section to exactly 100vh */
     min-height: 100vh;
-    height: auto;
 
     display: flex;
     align-items: center;
@@ -18,16 +15,13 @@
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 
-    /*
-       Extra top padding gives breathing space above
-       the "About Me" pill.
-    */
-    padding: 7rem 0 5rem;
+    padding: 5.5rem 0 4rem;
 
     box-sizing: border-box;
 
-    overflow: visible;
+    overflow: hidden;
 }
+
 
 /* =====================================================
    ABOUT GRID
@@ -38,12 +32,15 @@
 
     display: grid;
 
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 0.82fr 1.18fr;
 
-    gap: 3rem;
+    gap: 3.5rem;
 
     align-items: center;
+
+    margin-top: 2.2rem;
 }
+
 
 /* =====================================================
    LEFT PROFILE COLUMN
@@ -51,15 +48,23 @@
 
 .about-visual-col {
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 }
 
+
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
 .about-card {
     width: 100%;
-    max-width: 400px;
 
-    padding: 1.1rem;
+    max-width: 360px;
+
+    padding: 0.9rem;
 
     border-radius: var(--radius-xl);
 
@@ -68,7 +73,14 @@
     box-shadow: var(--shadow-lg);
 
     box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
 }
+
 
 /* =====================================================
    PROFILE IMAGE
@@ -77,33 +89,29 @@
 .about-img-frame {
     width: 100%;
 
-    /*
-       Smaller height so the entire About section
-       fits comfortably without clipping.
-    */
-    height: 255px;
+    height: 235px;
 
     overflow: hidden;
 
     border-radius: var(--radius-lg);
 
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background: var(--gradient-soft);
 }
 
+
 .about-profile-img {
     width: 100%;
+
     height: 100%;
 
-    /*
-       IMPORTANT:
-       Keeps the entire image visible.
-    */
     object-fit: contain;
 
     object-position: center;
@@ -113,9 +121,11 @@
     transition: transform var(--transition-normal);
 }
 
+
 .about-card:hover .about-profile-img {
-    transform: scale(1.02);
+    transform: scale(1.025);
 }
+
 
 /* =====================================================
    HIGHLIGHTS
@@ -123,25 +133,29 @@
 
 .about-highlights-list {
     display: flex;
+
     flex-direction: column;
 
-    gap: 0.55rem;
+    gap: 0.45rem;
 }
+
 
 .highlight-item {
     display: flex;
+
     align-items: center;
 
-    gap: 0.65rem;
+    gap: 0.55rem;
 
-    font-size: 0.83rem;
+    font-size: 0.78rem;
 
-    line-height: 1.35;
+    line-height: 1.3;
 
     font-weight: 600;
 
     color: var(--text-main);
 }
+
 
 .check-icon {
     color: var(--brand-purple);
@@ -149,15 +163,19 @@
     flex-shrink: 0;
 }
 
+
 /* =====================================================
    RIGHT CONTENT
 ===================================================== */
 
 .about-text-col {
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
 }
+
 
 /* =====================================================
    PARAGRAPHS
@@ -165,286 +183,529 @@
 
 .about-paragraphs {
     display: flex;
+
     flex-direction: column;
 
-    gap: 0.75rem;
+    gap: 0.65rem;
 
-    margin-bottom: 1.3rem;
+    margin-bottom: 1.25rem;
 }
 
+
 .bio-p {
-    font-size: 0.94rem;
+    font-size: 0.92rem;
 
     color: var(--text-muted);
 
-    line-height: 1.55;
+    line-height: 1.52;
 
     margin: 0;
 }
 
+
 /* =====================================================
-   STAT CARDS
+   MINI POINTS
 ===================================================== */
 
-.about-stats-grid {
-    display: grid;
+.about-mini-points {
+    display: flex;
 
-    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
 
-    gap: 0.75rem;
+    gap: 0.65rem;
 }
 
-.stat-card {
-    min-width: 0;
 
-    padding: 0.8rem;
+.mini-point {
+    display: inline-flex;
 
-    border-radius: var(--radius-md);
-
-    display: flex;
     align-items: center;
 
-    gap: 0.6rem;
+    gap: 0.4rem;
+
+    padding: 0.5rem 0.75rem;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.65);
 
     border: 1px solid var(--border-color);
+
+    color: var(--text-main);
+
+    font-size: 0.76rem;
+
+    font-weight: 600;
 
     transition:
         transform var(--transition-fast),
         border-color var(--transition-fast),
-        box-shadow var(--transition-fast);
+        background var(--transition-fast);
 }
 
-.stat-card:hover {
-    transform: translateY(-3px);
 
-    border-color: var(--brand-purple);
-
-    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.1);
-}
-
-/* =====================================================
-   STAT ICON
-===================================================== */
-
-.stat-icon-box {
-    width: 38px;
-    height: 38px;
-
-    border-radius: 10px;
-
-    background: var(--gradient-soft);
-
+.mini-point svg {
     color: var(--brand-purple);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     flex-shrink: 0;
 }
 
+
+.mini-point:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--brand-purple);
+
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
 /* =====================================================
-   STAT TEXT
+   COUNTERS
 ===================================================== */
 
-.stat-label {
-    font-size: 0.77rem;
+.about-counters {
+    width: 100%;
 
-    line-height: 1.25;
+    display: grid;
 
-    font-weight: 700;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 2.8rem;
+
+    padding-top: 1.8rem;
+
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* =====================================================
+   COUNTER ITEM
+===================================================== */
+
+.counter-item {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 0.5rem 1rem;
+
+    min-width: 0;
+}
+
+
+/* =====================================================
+   COUNTER SEPARATOR
+===================================================== */
+
+.counter-item:not(:last-child)::after {
+    content: '';
+
+    position: absolute;
+
+    right: 0;
+
+    top: 10%;
+
+    width: 1px;
+
+    height: 80%;
+
+    background: var(--border-color);
+}
+
+
+/* =====================================================
+   COUNTER NUMBER
+===================================================== */
+
+.counter-number {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -0.055em;
 
     color: var(--text-main);
 
-    margin: 0;
+    white-space: nowrap;
+
+    transition: transform 0.3s ease;
 }
 
-.stat-sub {
-    font-size: 0.67rem;
 
-    line-height: 1.25;
+.counter-number sup {
+    font-size: 1.1rem;
 
-    color: var(--text-subtle);
+    font-weight: 700;
 
-    margin: 0.18rem 0 0;
+    vertical-align: super;
+
+    margin-left: 2px;
+
+    letter-spacing: 0;
 }
+
 
 /* =====================================================
-   LARGE SCREEN
+   COUNTER LABEL
+===================================================== */
+
+.counter-label {
+    margin-top: 0.65rem;
+
+    font-size: 0.85rem;
+
+    line-height: 1.3;
+
+    color: var(--text-muted);
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   COUNTER HOVER
+===================================================== */
+
+.counter-item:hover .counter-number {
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
 ===================================================== */
 
 @media (min-width: 1200px) {
+
     .about-section {
-        padding-top: 6.5rem;
-        padding-bottom: 4.5rem;
+        padding-top: 5.5rem;
+
+        padding-bottom: 3.5rem;
     }
+
+
+    .about-grid {
+        margin-top: 1.8rem;
+
+        gap: 4rem;
+    }
+
+
+    .about-card {
+        max-width: 375px;
+    }
+
 
     .about-img-frame {
-        height: 270px;
+        height: 245px;
     }
 
+
     .bio-p {
-        font-size: 0.96rem;
+        font-size: 0.95rem;
+
+        line-height: 1.55;
     }
+
+
+    .about-counters {
+        margin-top: 2.5rem;
+
+        padding-top: 1.7rem;
+    }
+
+
+    .counter-number {
+        font-size: 3.2rem;
+    }
+
+
+    .counter-label {
+        font-size: 0.88rem;
+    }
+
 }
+
 
 /* =====================================================
    TABLET / SMALL LAPTOP
 ===================================================== */
 
 @media (max-width: 1100px) {
+
     .about-section {
-        padding-top: 6.5rem;
-        padding-bottom: 4rem;
+        padding-top: 5rem;
+
+        padding-bottom: 3.5rem;
     }
+
 
     .about-grid {
-        gap: 2rem;
+        gap: 2.3rem;
     }
+
 
     .about-card {
-        max-width: 360px;
+        max-width: 340px;
     }
+
 
     .about-img-frame {
-        height: 240px;
+        height: 225px;
     }
+
 
     .bio-p {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
     }
 
-    .stat-card {
-        padding: 0.7rem;
+
+    .about-counters {
+        margin-top: 2.2rem;
     }
+
+
+    .counter-number {
+        font-size: 2.7rem;
+    }
+
 }
+
 
 /* =====================================================
    TABLET
 ===================================================== */
 
 @media (max-width: 992px) {
+
     .about-section {
         min-height: auto;
 
-        /*
-           More space because the layout becomes vertical.
-        */
-        padding-top: 6rem;
-        padding-bottom: 5rem;
+        padding-top: 5rem;
+
+        padding-bottom: 4rem;
+
+        overflow: visible;
     }
+
 
     .about-grid {
         grid-template-columns: 1fr;
 
-        gap: 2.5rem;
+        gap: 2rem;
+
+        margin-top: 2rem;
     }
+
 
     .about-visual-col {
         order: 1;
     }
 
+
     .about-text-col {
         order: 2;
     }
 
+
     .about-card {
-        max-width: 390px;
+        max-width: 380px;
     }
+
 
     .about-img-frame {
-        height: 280px;
+        height: 270px;
     }
 
-    .about-paragraphs {
-        gap: 0.9rem;
-    }
 
     .bio-p {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
     }
+
+
+    .about-counters {
+        margin-top: 2.5rem;
+    }
+
+
+    .counter-number {
+        font-size: 2.6rem;
+    }
+
+
+    .counter-label {
+        font-size: 0.8rem;
+    }
+
 }
+
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
+
     .about-section {
-        padding-top: 5rem;
-        padding-bottom: 4rem;
+        padding-top: 4.5rem;
+
+        padding-bottom: 3.5rem;
     }
+
 
     .about-grid {
-        gap: 1.75rem;
+        gap: 1.7rem;
     }
+
 
     .about-card {
-        padding: 0.9rem;
+        padding: 0.8rem;
+
+        max-width: 350px;
     }
+
 
     .about-img-frame {
-        height: 260px;
+        height: 245px;
     }
 
-    .about-highlights-list {
+
+    .highlight-item {
+        font-size: 0.78rem;
+    }
+
+
+    .about-paragraphs {
+        gap: 0.7rem;
+
+        margin-bottom: 1rem;
+    }
+
+
+    .bio-p {
+        font-size: 0.88rem;
+
+        line-height: 1.5;
+    }
+
+
+    .about-mini-points {
         gap: 0.5rem;
     }
 
-    .highlight-item {
-        font-size: 0.8rem;
+
+    .mini-point {
+        font-size: 0.7rem;
+
+        padding: 0.45rem 0.65rem;
     }
 
-    .about-paragraphs {
-        gap: 0.8rem;
 
-        margin-bottom: 1.25rem;
+    /* 2 x 2 counters */
+
+    .about-counters {
+        grid-template-columns: repeat(2, 1fr);
+
+        margin-top: 2.2rem;
+
+        padding-top: 1.5rem;
+
+        row-gap: 1.6rem;
     }
 
-    .bio-p {
-        font-size: 0.9rem;
 
-        line-height: 1.55;
+    .counter-item {
+        padding: 0.5rem;
     }
 
-    .about-stats-grid {
-        grid-template-columns: 1fr;
 
-        gap: 0.7rem;
+    .counter-item::after {
+        display: none;
     }
 
-    .stat-card {
-        padding: 0.8rem;
+
+    .counter-number {
+        font-size: 2.3rem;
     }
 
-    .stat-label {
-        font-size: 0.85rem;
+
+    .counter-label {
+        font-size: 0.75rem;
+
+        white-space: normal;
     }
 
-    .stat-sub {
-        font-size: 0.72rem;
-    }
 }
+
 
 /* =====================================================
    SMALL MOBILE
 ===================================================== */
 
 @media (max-width: 480px) {
+
     .about-section {
-        padding-top: 4.5rem;
-        padding-bottom: 3.5rem;
+        padding-top: 4rem;
+
+        padding-bottom: 3rem;
     }
+
+
+    .about-card {
+        max-width: 310px;
+    }
+
 
     .about-img-frame {
-        height: 230px;
+        height: 220px;
     }
+
 
     .highlight-item {
-        font-size: 0.76rem;
+        font-size: 0.73rem;
     }
 
+
     .bio-p {
-        font-size: 0.86rem;
+        font-size: 0.84rem;
     }
+
+
+    .about-mini-points {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .about-counters {
+        margin-top: 2rem;
+
+        row-gap: 1.4rem;
+    }
+
+
+    .counter-number {
+        font-size: 2rem;
+    }
+
+
+    .counter-label {
+        font-size: 0.7rem;
+    }
+
 }

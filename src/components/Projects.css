@@ -1,127 +1,234 @@
+/* =====================================================
+   PROJECTS SECTION
+===================================================== */
+
 .projects-section {
     position: relative;
     background: var(--bg-primary);
 }
 
+
+/* =====================================================
+   FILTER + SEARCH
+===================================================== */
+
 .projects-control-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    gap: 1.25rem;
+    margin-bottom: 2.2rem;
     flex-wrap: wrap;
 }
 
 .category-pills {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
 }
 
 .filter-pill {
-    padding: 0.5rem 1.25rem;
+    padding: 0.45rem 1.05rem;
     border-radius: 999px;
     border: 1px solid var(--border-color);
     background: var(--bg-card);
     color: var(--text-muted);
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.82rem;
+    font-weight: 650;
     cursor: pointer;
-    transition: all var(--transition-fast);
+
+    transition:
+        background var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
 }
 
-.filter-pill:hover,
+.filter-pill:hover {
+    transform: translateY(-1px);
+    border-color: var(--brand-purple);
+    color: var(--brand-purple);
+}
+
 .filter-pill.active {
     border-color: var(--brand-purple);
     background: var(--gradient-soft);
     color: var(--brand-purple);
 }
 
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
 .project-search-box {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.4rem 1rem;
+    gap: 0.55rem;
+
+    min-width: 270px;
+    height: 40px;
+
+    padding: 0.35rem 0.9rem;
+
     border-radius: 999px;
-    min-width: 280px;
+    box-sizing: border-box;
 }
 
 .search-icon {
+    flex-shrink: 0;
     color: var(--text-subtle);
 }
 
 .search-input {
+    width: 100%;
+
     border: none;
+    outline: none;
+
     background: transparent;
     color: var(--text-main);
-    outline: none;
-    width: 100%;
-    font-size: 0.9rem;
+
+    font-size: 0.82rem;
+}
+
+.search-input::placeholder {
+    color: var(--text-subtle);
 }
 
 .clear-search-btn {
-    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    padding: 0;
+
     border: none;
+    background: transparent;
+
     color: var(--text-muted);
+
     cursor: pointer;
 }
 
-/* Bento Grid Layout */
+
+/* =====================================================
+   PROJECT GRID
+===================================================== */
+
 .bento-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(285px, 1fr));
+
+    gap: 1.35rem;
 }
 
-@media (max-width: 768px) {
-    .bento-grid {
-        grid-template-columns: 1fr;
-    }
-}
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
 
 .bento-card {
-    border-radius: var(--radius-xl);
+    min-width: 0;
     overflow: hidden;
-    border: 1px solid var(--glass-border);
+
     display: flex;
     flex-direction: column;
-    transition: all var(--transition-fast);
+
+    border-radius: 19px;
+    border: 1px solid var(--glass-border);
+
+    background: var(--bg-card);
+
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        border-color var(--transition-fast);
 }
 
 .bento-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
+
     box-shadow: var(--shadow-lg);
+
     border-color: var(--border-hover);
 }
 
+
+/* =====================================================
+   PROJECT IMAGE
+===================================================== */
+
 .bento-img-container {
     position: relative;
-    height: 220px;
+
+    width: 100%;
+    height: 175px;
+
     overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f7f3f8;
 }
 
+
+/*
+   IMPORTANT:
+   contain keeps the complete screenshot visible.
+   Nothing will be cut from the project image.
+*/
+
 .bento-img {
+    display: block;
+
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-normal);
+
+    object-fit: contain;
+    object-position: center;
+
+    padding: 5px;
+    box-sizing: border-box;
+
+    transition:
+        transform var(--transition-normal);
 }
 
 .bento-card:hover .bento-img {
-    transform: scale(1.06);
+    transform: scale(1.025);
 }
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
 
 .bento-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(4px);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background: rgba(35, 24, 40, 0.48);
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
     opacity: 0;
-    transition: opacity var(--transition-fast);
+
+    transition:
+        opacity var(--transition-fast);
 }
 
 .bento-card:hover .bento-overlay {
@@ -131,117 +238,228 @@
 .btn-view-details {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.4rem;
+    justify-content: center;
+
+    gap: 0.4rem;
+
+    padding: 0.55rem 0.95rem;
+
+    border: none;
     border-radius: 999px;
+
     background: var(--gradient-primary);
     color: #ffffff;
-    font-weight: 600;
-    font-size: 0.85rem;
-    border: none;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+
+    box-shadow:
+        0 6px 18px rgba(236, 72, 153, 0.25);
+
+    transition:
+        transform var(--transition-fast);
 }
+
+.btn-view-details:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   FEATURED BADGE
+===================================================== */
 
 .featured-badge {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    padding: 0.3rem 0.8rem;
+
+    top: 0.7rem;
+    left: 0.7rem;
+
+    padding: 0.28rem 0.65rem;
+
     border-radius: 999px;
+
     background: var(--gradient-primary);
     color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 700;
+
+    font-size: 0.64rem;
+    font-weight: 750;
+
     text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
 .bento-content {
-    padding: 1.5rem;
     display: flex;
     flex-direction: column;
+
     flex-grow: 1;
+
+    padding: 1.05rem 1.1rem 1.1rem;
 }
+
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
 
 .bento-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+
+    gap: 0.5rem;
+
+    margin-bottom: 0.4rem;
 }
 
 .project-cat-tag {
-    font-size: 0.8rem;
-    font-weight: 700;
     color: var(--brand-purple);
+
+    font-size: 0.72rem;
+    font-weight: 750;
+
     text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 .project-num {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
     color: var(--text-light);
+
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
 }
 
+
+/* =====================================================
+   PROJECT TITLE
+===================================================== */
+
 .project-title {
-    font-size: 1.35rem;
-    font-weight: 800;
+    margin: 0 0 0.4rem;
+
     color: var(--text-main);
-    margin-bottom: 0.5rem;
+
+    font-size: 1.18rem;
+    font-weight: 800;
+
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+
     cursor: pointer;
-    transition: color var(--transition-fast);
+
+    transition:
+        color var(--transition-fast);
 }
 
 .project-title:hover {
     color: var(--brand-purple);
 }
 
+
+/* =====================================================
+   PROJECT DESCRIPTION
+===================================================== */
+
 .project-desc {
-    font-size: 0.95rem;
+    margin: 0 0 0.85rem;
+
     color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-    flex-grow: 1;
+
+    font-size: 0.84rem;
+    line-height: 1.55;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    overflow: hidden;
 }
+
+
+/* =====================================================
+   TECHNOLOGY BADGES
+===================================================== */
 
 .project-tech-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1.5rem;
+
+    gap: 0.35rem;
+
+    margin-bottom: 0.8rem;
 }
 
 .tech-badge-sm {
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.25rem 0.65rem;
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0.25rem 0.55rem;
+
+    border: 1px solid var(--border-color);
+
     border-radius: 999px;
+
     background: var(--gradient-soft);
     color: var(--brand-purple);
+
+    font-size: 0.67rem;
+    font-weight: 650;
+
+    line-height: 1.3;
 }
+
+
+/* =====================================================
+   LIVE DEMO BUTTON
+===================================================== */
 
 .bento-actions {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+
     margin-top: auto;
+    padding-top: 0.1rem;
 }
 
 .btn-project-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+
     gap: 0.4rem;
-    padding: 0.5rem 1.1rem;
+
+    padding: 0.46rem 0.85rem;
+
     border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: all var(--transition-fast);
+
+    font-size: 0.74rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.btn-project-link:hover {
+    transform: translateY(-1px);
 }
 
 .btn-project-link.primary {
+    border: 1px solid var(--border-color);
+
     background: var(--gradient-soft);
     color: var(--brand-purple);
-    border: 1px solid var(--border-color);
 }
 
 .btn-project-link.primary:hover {
@@ -249,105 +467,411 @@
     color: #ffffff;
 }
 
-.btn-project-link.secondary {
-    border: 1px solid var(--border-color);
-    color: var(--text-muted);
-}
 
-.btn-project-link.secondary:hover {
-    color: var(--text-main);
-    border-color: var(--text-main);
-}
+/* =====================================================
+   NO RESULTS
+===================================================== */
 
 .no-projects-found {
+    padding: 3rem 1rem;
+
     text-align: center;
-    padding: 4rem 1rem;
+
     color: var(--text-muted);
-    font-size: 1.1rem;
+
+    font-size: 0.95rem;
 }
 
-/* Modal Case Study Popup */
+
+/* =====================================================
+   MODAL
+===================================================== */
+
 .modal-overlay {
     position: fixed;
     inset: 0;
+
     z-index: 2000;
-    background: rgba(15, 23, 42, 0.75);
-    backdrop-filter: blur(8px);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+
+    padding: 1rem;
+
+    background: rgba(15, 23, 42, 0.72);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .modal-content {
     position: relative;
+
     width: 100%;
-    max-width: 800px;
+    max-width: 780px;
     max-height: 90vh;
+
     overflow-y: auto;
-    border-radius: var(--radius-xl);
-    padding: 2rem;
+
+    padding: 1.5rem;
+
     border: 1px solid var(--glass-border);
+
+    border-radius: 22px;
 }
 
 .modal-close-btn {
     position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--border-color);
-    background: var(--bg-card);
-    color: var(--text-main);
+
+    top: 0.9rem;
+    right: 0.9rem;
+
+    z-index: 5;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 50%;
+
+    background: var(--bg-card);
+    color: var(--text-main);
+
     cursor: pointer;
+
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+    transform: rotate(90deg);
 }
 
 .modal-body {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+
+    gap: 1.3rem;
 }
 
+
+/* =====================================================
+   MODAL IMAGE
+===================================================== */
+
 .modal-img-wrapper {
-    border-radius: var(--radius-lg);
+    width: 100%;
+    height: 330px;
+
     overflow: hidden;
-    max-height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #f7f3f8;
 }
 
 .modal-img {
+    display: block;
+
     width: 100%;
     height: 100%;
-    object-fit: cover;
+
+    object-fit: contain;
+    object-position: center;
+
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MODAL DETAILS
+===================================================== */
+
+.modal-details {
+    padding: 0.25rem;
 }
 
 .modal-title {
-    font-size: 2rem;
-    margin: 0.5rem 0 1rem 0;
+    margin: 0.45rem 0 0.8rem;
+
+    color: var(--text-main);
+
+    font-size: clamp(1.7rem, 4vw, 2.2rem);
+
+    font-weight: 800;
+
+    line-height: 1.15;
 }
 
 .modal-long-desc {
-    font-size: 1.05rem;
+    margin: 0 0 1.15rem;
+
     color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+
+    font-size: 0.92rem;
+
+    line-height: 1.65;
 }
 
 .modal-section-block {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.1rem;
 }
 
 .modal-section-block h4 {
-    font-size: 1.05rem;
-    margin-bottom: 0.75rem;
+    margin: 0 0 0.6rem;
+
+    color: var(--text-main);
+
+    font-size: 0.9rem;
+    font-weight: 750;
 }
+
+
+/* =====================================================
+   MODAL ACTION
+===================================================== */
 
 .modal-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+
+    gap: 0.7rem;
+
     flex-wrap: wrap;
+}
+
+.btn-primary-glow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.4rem;
+
+    padding: 0.58rem 0.95rem;
+
+    border-radius: 999px;
+
+    background: var(--gradient-primary);
+    color: #ffffff;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 6px 20px rgba(236, 72, 153, 0.2);
+
+    transition:
+        transform var(--transition-fast);
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .bento-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 1rem;
+    }
+
+    .bento-img-container {
+        height: 165px;
+    }
+
+    .bento-content {
+        padding: 0.95rem;
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+    }
+
+    .project-desc {
+        font-size: 0.81rem;
+    }
+
+    .project-search-box {
+        min-width: 235px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .projects-control-bar {
+        align-items: stretch;
+
+        gap: 0.8rem;
+
+        margin-bottom: 1.7rem;
+    }
+
+    .category-pills {
+        width: 100%;
+    }
+
+    .filter-pill {
+        padding: 0.42rem 0.85rem;
+
+        font-size: 0.75rem;
+    }
+
+    .project-search-box {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+    /*
+       Slightly taller on mobile so
+       complete screenshots remain visible.
+    */
+
+    .bento-img-container {
+        height: 190px;
+    }
+
+    .bento-img {
+        padding: 6px;
+    }
+
+    .bento-content {
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 1.12rem;
+    }
+
+    .project-desc {
+        font-size: 0.83rem;
+        line-height: 1.55;
+    }
+
+    .project-cat-tag {
+        font-size: 0.7rem;
+    }
+
+    .tech-badge-sm {
+        font-size: 0.64rem;
+    }
+
+    .btn-project-link {
+        font-size: 0.72rem;
+    }
+
+    /* Modal */
+
+    .modal-overlay {
+        padding: 0.7rem;
+    }
+
+    .modal-content {
+        padding: 1rem;
+
+        border-radius: 18px;
+    }
+
+    .modal-img-wrapper {
+        height: 230px;
+    }
+
+    .modal-img {
+        padding: 5px;
+    }
+
+    .modal-title {
+        font-size: 1.55rem;
+    }
+
+    .modal-long-desc {
+        font-size: 0.84rem;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .bento-img-container {
+        height: 170px;
+    }
+
+    .bento-content {
+        padding: 0.9rem;
+    }
+
+    .project-title {
+        font-size: 1.05rem;
+    }
+
+    .project-desc {
+        font-size: 0.79rem;
+    }
+
+    .btn-project-link {
+        font-size: 0.69rem;
+
+        padding: 0.4rem 0.75rem;
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .bento-card,
+    .bento-img,
+    .bento-overlay,
+    .btn-view-details,
+    .btn-project-link {
+        transition: none;
+    }
+
+    .bento-card:hover {
+        transform: none;
+    }
+
+    .bento-card:hover .bento-img {
+        transform: none;
+    }
 }

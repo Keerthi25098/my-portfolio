@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }) => {
             return data.user;
         } else {
             // Local fallback credentials check
-            if ((email === 'admin@keerthikakt.dev' || email === 'keerthikeerthi32155@gmail.com') && password === 'Admin@123') {
+            if ((email === 'admin@keerthika' || email === 'keerthikeerthi32155@gmail.com') && password === 'Admin@123') {
                 const adminObj = {
                     id: 'admin-local-1',
                     email: 'keerthikeerthi32155@gmail.com',

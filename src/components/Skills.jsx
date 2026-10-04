@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Code } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import './Skills.css';
 
 // Import logos from assets
@@ -31,76 +31,305 @@ export default function Skills({ skillsList }) {
         'PHP & Laravel': laravelLogo,
     };
 
-    const skills = skillsList || [];
+    const skills = Array.isArray(skillsList)
+        ? skillsList
+        : [];
 
-    const categories = ['All', 'Frontend', 'Backend', 'Database', 'Tools & Deployment'];
+    const categories = [
+        'All',
+        'Frontend',
+        'Backend',
+        'Database',
+        'Tools & Deployment',
+    ];
 
-    const filteredSkills = activeCategory === 'All'
-        ? skills
-        : skills.filter(s => s.category?.toLowerCase().includes(activeCategory.toLowerCase()));
+    const filteredSkills =
+        activeCategory === 'All'
+            ? skills
+            : skills.filter((skill) =>
+                skill.category
+                    ?.toLowerCase()
+                    .includes(
+                        activeCategory.toLowerCase()
+                    )
+            );
+
+    /*
+     * Split skills into two rows.
+     *
+     * Row 1:
+     * first half of the skills
+     *
+     * Row 2:
+     * second half of the skills
+     */
+    const rows = useMemo(() => {
+        const middle = Math.ceil(
+            filteredSkills.length / 2
+        );
+
+        return [
+            filteredSkills.slice(0, middle),
+            filteredSkills.slice(middle),
+        ];
+    }, [filteredSkills]);
+
+    /*
+     * Duplicate each row so the marquee can loop
+     * continuously without an empty space.
+     */
+    const getMarqueeItems = (row) => [
+        ...row,
+        ...row,
+    ];
 
     return (
-        <section className="skills-section" id="skills">
+        <section
+            className="skills-section"
+            id="skills"
+        >
             <div className="section-container">
+
                 {/* Section Header */}
                 <div className="section-header">
+
                     <span className="section-tag">
-                        <Sparkles size={14} /> Technical Proficiency
+                        <Sparkles size={14} />
+                        <span>
+                            Technical Proficiency
+                        </span>
                     </span>
-                    <h2 className="section-title">Skills & Technologies</h2>
+
+                    <h2 className="section-title">
+                        Skills & Technologies
+                    </h2>
+
                     <p className="section-subtitle">
-                        Languages, frameworks, database systems, and modern web development tools I work with daily.
+                        Languages, frameworks, databases,
+                        and modern web development tools
+                        I work with.
                     </p>
+
                 </div>
 
                 {/* Category Tabs */}
                 <div className="skills-tabs">
-                    {categories.map((cat) => (
+
+                    {categories.map((category) => (
                         <button
-                            key={cat}
+                            key={category}
                             type="button"
-                            className={`skill-tab-btn ${activeCategory === cat ? 'active' : ''}`}
-                            onClick={() => setActiveCategory(cat)}
+                            className={`skill-tab-btn ${
+                                activeCategory === category
+                                    ? 'active'
+                                    : ''
+                            }`}
+                            onClick={() =>
+                                setActiveCategory(
+                                    category
+                                )
+                            }
                         >
-                            {cat}
+                            {category}
                         </button>
                     ))}
+
                 </div>
 
-                {/* Skills Grid */}
-                <div className="skills-grid">
-                    {filteredSkills.map((skill, idx) => {
-                        const logoSrc = skill.logo_url && skill.logo_url.startsWith('/') && !skill.logo_url.includes('assets')
-                            ? skill.logo_url
-                            : (fallbackLogos[skill.name] || skill.logo_url || reactLogo);
-
-                        return (
-                            <motion.div
-                                key={skill.id || idx}
-                                className="skill-card glass-panel"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                            >
-                                <div className="skill-icon-wrap">
-                                    <img src={logoSrc} alt={skill.name} className="skill-logo-img" />
-                                </div>
-
-                                <div className="skill-info">
-                                    <span className="skill-cat">{skill.category}</span>
-                                    <h3 className="skill-name">{skill.name}</h3>
-                                    <p className="skill-desc">{skill.description}</p>
-                                </div>
-
-                                {skill.proficiency_label && (
-                                    <span className="skill-badge">{skill.proficiency_label}</span>
-                                )}
-                            </motion.div>
-                        );
-                    })}
-                </div>
             </div>
+
+            {/* =================================================
+                SKILLS MARQUEE
+            ================================================= */}
+
+            {filteredSkills.length > 0 ? (
+                <div className="skills-marquee-wrapper">
+
+                    {/* ROW 1 */}
+                    <div className="skills-marquee-row">
+
+                        <div className="skills-marquee-track row-one">
+
+                            {getMarqueeItems(
+                                rows[0]
+                            ).map(
+                                (skill, index) => {
+
+                                    const logoSrc =
+                                        skill.logo_url &&
+                                        skill.logo_url.startsWith(
+                                            '/'
+                                        ) &&
+                                        !skill.logo_url.includes(
+                                            'assets'
+                                        )
+                                            ? skill.logo_url
+                                            : fallbackLogos[
+                                                skill.name
+                                            ] ||
+                                            skill.logo_url ||
+                                            reactLogo;
+
+                                    return (
+                                        <motion.div
+                                            key={`row1-${skill.id || skill.name}-${index}`}
+                                            className="skill-card"
+                                            whileHover={{
+                                                y: -5,
+                                            }}
+                                        >
+
+                                            <div className="skill-icon-wrap">
+
+                                                <img
+                                                    src={
+                                                        logoSrc
+                                                    }
+                                                    alt={
+                                                        skill.name
+                                                    }
+                                                    className="skill-logo-img"
+                                                />
+
+                                            </div>
+
+                                            <div className="skill-info">
+
+                                                <span className="skill-cat">
+                                                    {
+                                                        skill.category
+                                                    }
+                                                </span>
+
+                                                <h3 className="skill-name">
+                                                    {
+                                                        skill.name
+                                                    }
+                                                </h3>
+
+                                                <p className="skill-desc">
+                                                    {
+                                                        skill.description
+                                                    }
+                                                </p>
+
+                                            </div>
+
+                                            {skill.proficiency_label && (
+                                                <span className="skill-badge">
+                                                    {
+                                                        skill.proficiency_label
+                                                    }
+                                                </span>
+                                            )}
+
+                                        </motion.div>
+                                    );
+                                }
+                            )}
+
+                        </div>
+
+                    </div>
+
+
+                    {/* ROW 2 */}
+                    <div className="skills-marquee-row">
+
+                        <div className="skills-marquee-track row-two">
+
+                            {getMarqueeItems(
+                                rows[1]
+                            ).map(
+                                (skill, index) => {
+
+                                    const logoSrc =
+                                        skill.logo_url &&
+                                        skill.logo_url.startsWith(
+                                            '/'
+                                        ) &&
+                                        !skill.logo_url.includes(
+                                            'assets'
+                                        )
+                                            ? skill.logo_url
+                                            : fallbackLogos[
+                                                skill.name
+                                            ] ||
+                                            skill.logo_url ||
+                                            reactLogo;
+
+                                    return (
+                                        <motion.div
+                                            key={`row2-${skill.id || skill.name}-${index}`}
+                                            className="skill-card"
+                                            whileHover={{
+                                                y: -5,
+                                            }}
+                                        >
+
+                                            <div className="skill-icon-wrap">
+
+                                                <img
+                                                    src={
+                                                        logoSrc
+                                                    }
+                                                    alt={
+                                                        skill.name
+                                                    }
+                                                    className="skill-logo-img"
+                                                />
+
+                                            </div>
+
+                                            <div className="skill-info">
+
+                                                <span className="skill-cat">
+                                                    {
+                                                        skill.category
+                                                    }
+                                                </span>
+
+                                                <h3 className="skill-name">
+                                                    {
+                                                        skill.name
+                                                    }
+                                                </h3>
+
+                                                <p className="skill-desc">
+                                                    {
+                                                        skill.description
+                                                    }
+                                                </p>
+
+                                            </div>
+
+                                            {skill.proficiency_label && (
+                                                <span className="skill-badge">
+                                                    {
+                                                        skill.proficiency_label
+                                                    }
+                                                </span>
+                                            )}
+
+                                        </motion.div>
+                                    );
+                                }
+                            )}
+
+                        </div>
+
+                    </div>
+
+                </div>
+            ) : (
+                <div className="skills-empty">
+                    <p>
+                        No skills available for this
+                        category.
+                    </p>
+                </div>
+            )}
+
         </section>
     );
 }
